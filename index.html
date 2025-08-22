@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rauful Alam</title>
+    <title>Dr. Rauful Alam - Medicinal Chemist</title>
     <style>
         * {
             margin: 0;
@@ -1005,6 +1005,137 @@
             to { opacity: 1; transform: translateX(-50%) translateY(0); }
         }
 
+        /* Mobile Navigation - Simplified and Fixed */
+        @media (max-width: 768px) {
+            nav {
+                transition: all 0.3s ease;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            /* Show nav when mobile-show class is added */
+            nav.mobile-show {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+                padding: 0.5rem 10px;
+                max-height: 70vh;
+                overflow-y: auto;
+                background: rgba(255, 255, 255, 0.98);
+            }
+
+            nav li {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid #eee;
+            }
+
+            nav li:last-child {
+                border-bottom: none;
+            }
+
+            nav a {
+                display: block;
+                width: 100%;
+                padding: 1rem;
+                font-size: 0.9rem;
+                color: #333;
+            }
+
+            nav a:hover {
+                background: rgba(52, 152, 219, 0.1);
+                color: #2c3e50;
+                transform: none;
+            }
+
+            /* Compact dropdowns */
+            .dropdown-content {
+                position: static;
+                width: 100%;
+                min-width: auto;
+                box-shadow: none;
+                border-radius: 0;
+                transform: none;
+                margin-top: 0;
+                background-color: rgba(240, 240, 240, 0.98);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            .dropdown.active .dropdown-content {
+                max-height: 200px;
+            }
+
+            .dropdown-content a {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.85rem;
+                border-radius: 0 !important;
+                background-color: rgba(255, 255, 255, 0.9);
+                color: #666 !important;
+            }
+
+            .dropdown-content a:hover {
+                background-color: rgba(52, 152, 219, 0.1) !important;
+                color: #2c3e50 !important;
+                transform: none !important;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: none;
+            }
+
+            .dropdown > a::after {
+                content: ' ▼';
+                font-size: 0.7rem;
+                margin-left: 0.5rem;
+                transition: transform 0.3s ease;
+            }
+
+            .dropdown.active > a::after {
+                transform: rotate(180deg);
+            }
+        }
+
+        /* Mobile nav toggle button - always visible */
+        .mobile-nav-toggle {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            z-index: 1001;
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            display: none;
+        }
+
+        .mobile-nav-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .mobile-nav-toggle.active {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+        }
+
+        @media (max-width: 768px) {
+            .mobile-nav-toggle {
+                display: block;
+            }
+        }
+
         /* Animations */
         .fade-in {
             opacity: 0;
@@ -1049,9 +1180,13 @@
         </ul>
     </nav>
 
+    <!-- Mobile Navigation Toggle Button -->
+    <button class="mobile-nav-toggle" id="mobileNavToggle">☰</button>
+
     <section id="hero" class="hero">
         <div class="hero-content">
-            <div class="Photo_RA.jpg">
+            <div class="hero-photo">
+                RA
             </div>
             <h1>Dr. Rauful Alam</h1>
             <p class="subtitle">Medicinal Chemist & Drug Discovery Expert</p>
@@ -1240,9 +1375,9 @@
                     <ul>
                         <li>Developed several novel catalytic stereoselective allylboration methods, enabling the construction of multiple stereocenters in a single step</li>
                         <li>Created strategies important for forging asymmetric C<sub>SP3</sub>-C<sub>SP3</sub> bonds that are powerful disconnections for pharmaceutical drug discovery</li>
-                        <li>Mentored multiple undergraduate students, resulting in three research article publications</li>
+                        <li>Mentored three undergraduates and one exchange-graduate student, resulting in three research article publications</li>
                         <li>Maintained chiral HPLC (Waters) set-up and Glovebox (Vigor), provided training for new users</li>
-                        <li>Awarded Bengt Lundqvist scholarship (350000 SEK) from Swedish Chemical Society</li>
+                        <li>Awarded prestigious postdoctoral stipend (~$45,000/year) from Swedish Chemical Society</li>
                         <li>Received seven travel grants totaling approximately $10,000</li>
                         <li>Attended four ACS meetings and delivered oral and poster presentations</li>
                     </ul>
@@ -1450,43 +1585,15 @@
                         <span>⏱️ 8 min read</span>
                     </div>
                 </div>
-                <div class="blog-post">
-    <h3>বিশ্ববিদ্যায়লয়ের সংস্কৃতি: ভাবনার কিছু কথা</h3>
-    <div class="blog-content">
-        <p>
-            চীনের বিশ্ববিদ‍্যালয়ে যাবেন, দেখবেন ছাত্র-শিক্ষকরা দিন-রাত কাজ করছে। রাজনীতি তো দূরের কথা, ফালতু কথা বলে সময় নষ্ট করার সময়ও ওদের নেই।
-        </p>
-        <p>
-            জাপানের বিশ্ববিদ‍্যালয়ে যাবেন, দেখবেন শিক্ষকদের রুমের লাইট বন্ধ হয় না। সকাল সাতটা থেকে শুরু হয়। অনেকের লাইট জ্বলে রাত দশটা পর্যন্ত।
-        </p>
-        <p>
-            কোন পোস্টার নাই। নেতা নাই। হলে রাজনীতি নাই। ছাত্রদের সংগঠণের নাম, ব‍্যানার টানিয়ে কোন কার্যক্রম নাই। ঐ ধর-ঐ মার এসব নাই। যে যার মতো স্বাধীনভাবে চলছে। পড়ছে। কাজ করছে। আবিষ্কার-উদ্ভাবন করে যাচ্ছে। কারণ একটা প্রতিষ্ঠান, প্রতিটা শিক্ষার্থীর। কোন দলের কাছে নত হওয়ার জন‍্য না। কোন দলের ছায়ায় চলার জন‍্য না।
-        </p>
-        <p>
-            ইউরোপে যাবেন, তাই দেখবেন। জার্মানী, সুইডেন, ফিনল‍্যান্ড, ইংল‍্যান্ড, ফ্রান্সের বিশ্ববিদ‍্যালয়গুলো পৃথিবী নাড়া দেয়া আবিষ্কার-উদ্ভাবন নিয়ে আছে। তাদের ছাত্ররা ২২-২৩ বছর বয়সে পিএইচডি শুরু করে। অসংখ‍্য তরুণের চোখ ভরা স্বপ্ন। আর সে বয়সী বাংলাদেশের পাবলিক বিশ্ববিদ‍্যালয়ের ছাত্ররা দলীয় রাজনীতি নিয়ে আছে।
-        </p>
-        <p>
-            এক দল আরেক দলকে খেদায়। দিনভর হাউকাউ! কিসের পড়াশুনা! কিসের গবেষণা! ছাত্র-শিক্ষকরা মিলে দলাদলি, রাজনীতি নিয়ে ব‍্যস্ত। এমন নোংরা সংস্কৃতি পৃথিবীর কোথাও নাই। আফ্রিকার ক্ষুধাপীড়িত দেশেও না। —এতোই দুর্ভাগা আমরা! —এতোই দুর্ভাগা আমার দেশ!
-        </p>
-        <p>
-            আমেরিকার ছেলে-মেয়েরা আছে রোবট নিয়ে। নতুন নতুন ড্রাগ আবিষ্কার নিয়ে। মেশিন লার্নিং নিয়ে। মহাকাশ গবেষণা নিয়ে। ২৫-২৬ বছর বয়সী তরুণরা উদ‍্যোক্তা হচ্ছে। লক্ষাধিক স্টার্টআপ প্রতিবছর চালু হয় আমেরিকায়। —এমন কোন বিষয় নেই যেটা নিয়ে আমেরিকার তরুণরা পড়ে না। গবেষণা করে না। ভাবে না।
-        </p>
-        <p>
-            আমরা কি কখনো এসব শিখবো না? শিখতে চাইবে না? নাকি জীবনভর নিজের ব‍্যার্থতাকে অন‍্যের ষড়যন্ত্র আর চক্রান্ত বলেই মানুষকে শান্ত করে রাখবে?
-        </p>
-        <p>
-            পাশের দেশ ভারত ২৩ টা বিশ্বমানের আইআইটি গড়ে তুলেছে। আমরা সে মানের একটা প্রতিষ্ঠানও গড়তে পারিনি আজো। একটাও না। অথচ এটা ২০২৫ সাল! এগুলো আর কতো বুঝাবো! আর কতো লিখবো!
-        </p>
-        <p>
-            সারা দুনিয়া তার তরুণদের কাজে লাগায় বিশ্বকে নেতৃত্ব দেয়ার জন‍্য। আর আমরা আমাদের তরুণদেরকে দলীয় দাস বানিয়ে রাখি। চিন্তায়, মগজে, কার্যক্রমে!
-        </p>
-    </div>
-    <div class="blog-footer">
-        <div class="blog-author">
-            Posted by Rauful Alam on August 21, 2025
-        </div>
-    </div>
-</div>
+                <div class="blog-content">
+                    <h3>From Hit to Lead: Optimizing Small Molecules for CNS Targets</h3>
+                    <p class="blog-excerpt">A comprehensive guide to medicinal chemistry strategies for developing central nervous system drugs, including DMPK considerations and blood-brain barrier penetration...</p>
+                    <div class="blog-footer">
+                        <div class="blog-author">
+                            <div class="author-photo">RA</div>
+                            <div class="author-info">
+                                <span class="author-name">Dr. Rauful Alam</span>
+                                <span class="blog-date">February 28, 2024</span>
                             </div>
                         </div>
                         <div class="blog-engagement">
@@ -1655,8 +1762,127 @@
             });
         }
 
-        // Initialize blog features when page loads
-        document.addEventListener('DOMContentLoaded', initializeBlogFeatures);
+        // Mobile dropdown functionality
+        function initializeMobileDropdowns() {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            dropdowns.forEach(dropdown => {
+                const dropdownLink = dropdown.querySelector('a');
+                
+                dropdownLink.addEventListener('click', function(e) {
+                    // Only prevent default on mobile
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        
+                        // Close other dropdowns
+                        dropdowns.forEach(otherDropdown => {
+                            if (otherDropdown !== dropdown) {
+                                otherDropdown.classList.remove('active');
+                            }
+                        });
+                        
+                        // Toggle current dropdown
+                        dropdown.classList.toggle('active');
+                    }
+                });
+            });
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    const isDropdownClick = e.target.closest('.dropdown');
+                    if (!isDropdownClick) {
+                        dropdowns.forEach(dropdown => {
+                            dropdown.classList.remove('active');
+                        });
+                    }
+                }
+            });
+
+            // Close dropdowns on window resize
+            window.addEventListener('resize', function() {
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            });
+        }
+
+        // Mobile navigation toggle - Clean version
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeBlogFeatures();
+            
+            // Mobile navigation functionality
+            const navbar = document.getElementById('navbar');
+            const mobileToggle = document.getElementById('mobileNavToggle');
+            const dropdowns = document.querySelectorAll('.dropdown');
+            let mobileNavOpen = false;
+
+            if (mobileToggle) {
+                // Mobile nav toggle button click
+                mobileToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    mobileNavOpen = !mobileNavOpen;
+                    
+                    if (mobileNavOpen) {
+                        navbar.classList.add('visible');
+                        navbar.classList.add('mobile-show');
+                        mobileToggle.classList.add('active');
+                        mobileToggle.innerHTML = '✕';
+                    } else {
+                        navbar.classList.remove('mobile-show');
+                        mobileToggle.classList.remove('active');
+                        mobileToggle.innerHTML = '☰';
+                    }
+                });
+
+                // Close nav when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (mobileNavOpen && !e.target.closest('nav') && !e.target.closest('#mobileNavToggle')) {
+                        mobileNavOpen = false;
+                        navbar.classList.remove('mobile-show');
+                        mobileToggle.classList.remove('active');
+                        mobileToggle.innerHTML = '☰';
+                    }
+                });
+
+                // Handle navigation links
+                document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (mobileNavOpen && !this.closest('.dropdown-content')) {
+                            setTimeout(() => {
+                                mobileNavOpen = false;
+                                navbar.classList.remove('mobile-show');
+                                mobileToggle.classList.remove('active');
+                                mobileToggle.innerHTML = '☰';
+                            }, 300);
+                        }
+                    });
+                });
+
+                // Mobile dropdown functionality
+                dropdowns.forEach(dropdown => {
+                    const dropdownLink = dropdown.querySelector('a');
+                    
+                    dropdownLink.addEventListener('click', function(e) {
+                        if (mobileNavOpen && window.innerWidth <= 768) {
+                            e.preventDefault();
+                            
+                            // Close other dropdowns
+                            dropdowns.forEach(otherDropdown => {
+                                if (otherDropdown !== dropdown) {
+                                    otherDropdown.classList.remove('active');
+                                }
+                            });
+                            
+                            // Toggle current dropdown
+                            dropdown.classList.toggle('active');
+                        }
+                    });
+                });
+            }
+        });
     </script>
 </body>
 </html>
