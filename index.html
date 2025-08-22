@@ -108,10 +108,10 @@
             .timeline-item:nth-child(odd) { left: 0; padding-right: 2rem; } 
             .timeline-item:nth-child(even) { left: 50%; padding-left: 2rem; } 
         }
-        .timeline-dot { position: absolute; top: 0.5rem; left: 50%; transform: translateX(-50%); width: 1rem; height: 1rem; background: linear-gradient(to right, var(--blue-500), var(--purple-600)); border-radius: 9999px; border: 4px solid var(--white); box-shadow: 0 0 10px rgba(0,0,0,0.1); z-index: 10; display: none; }
+        .timeline-dot { position: absolute; top: 1rem; width: 1rem; height: 1rem; background: linear-gradient(to right, var(--blue-500), var(--purple-600)); border-radius: 9999px; border: 4px solid var(--white); box-shadow: 0 0 10px rgba(0,0,0,0.1); z-index: 10; display: none; }
         @media (min-width: 768px) { 
             .timeline-dot { display: block; } 
-            .timeline-item:nth-child(odd) .timeline-dot { right: -0.5rem; left: auto; } 
+            .timeline-item:nth-child(odd) .timeline-dot { right: -0.5rem; } 
             .timeline-item:nth-child(even) .timeline-dot { left: -0.5rem; } 
         }
         .timeline-card { background-color: var(--white); border-radius: 0.75rem; border-left: 4px solid var(--blue-500); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); padding: 1.5rem; transition: all 0.3s ease; }
@@ -155,8 +155,8 @@
         .publication-title { font-weight: 700; color: var(--slate-800); margin-bottom: 0.5rem; }
         .publication-authors { color: var(--blue-600); font-weight: 600; font-size: 0.875rem; margin-bottom: 0.5rem; }
         .publication-journal { color: var(--slate-600); font-size: 0.875rem; font-style: italic; margin-bottom: 1rem; }
-        .publication-button { background: linear-gradient(to right, var(--cyan-500), var(--blue-500)); color: var(--white); padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; text-align: center; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; }
-        .publication-button:hover { background: linear-gradient(to right, var(--cyan-600), var(--blue-600)); }
+        .publication-button { background: linear-gradient(to right, var(--blue-500), var(--purple-500)); color: var(--white); padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; text-align: center; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; transition: all 0.3s ease; }
+        .publication-button:hover { background: linear-gradient(to right, var(--blue-600), var(--purple-600)); }
         
         /* Blog Grid */
         .blog-grid { display: grid; gap: 2rem; grid-template-columns: repeat(1, 1fr); }
@@ -184,7 +184,7 @@
         .social-links { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2); }
         .social-links h3 { font-size: 1.125rem; font-weight: 500; color: var(--blue-100); margin-bottom: 1.5rem; }
         .social-links-container { display: flex; justify-content: center; gap: 2rem; }
-        .social-link { color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; }
+        .social-link { color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; }
         .social-link:hover { color: var(--white); transform: scale(1.2) translateY(-4px); }
         
         /* Scroll to Top Button */
@@ -385,7 +385,7 @@
                                 <svg data-filename="pages/WebsiteCode" data-linenumber="389" data-visual-selector-id="pages/WebsiteCode389" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='389' data-visual-selector-id='pages/WebsiteCode389' d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon data-filename='pages/WebsiteCode' data-linenumber='389' data-visual-selector-id='pages/WebsiteCode389' points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
                             </a>
                             <a data-filename="pages/WebsiteCode" data-linenumber="391" data-visual-selector-id="pages/WebsiteCode391" href="https://scholar.google.com/citations?user=PrrE9dQAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="social-link">
-                                <svg data-filename="pages/WebsiteCode" data-linenumber="392" data-visual-selector-id="pages/WebsiteCode392" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='392' data-visual-selector-id='pages/WebsiteCode392' d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path data-filename='pages/WebsiteCode' data-linenumber='392' data-visual-selector-id='pages/WebsiteCode392' d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path><path data-filename='pages/WebsiteCode' data-linenumber='392' data-visual-selector-id='pages/WebsiteCode392' d="m12 13.99-3.47 1.74a1 1 0 0 1-1.45-1.05l.87-3.88-3-2.5a1 1 0 0 1 .56-1.73h4.03l1.5-3.8a1 1 0 0 1 1.9 0l1.5 3.8h4.03a1 1 0 0 1 .56 1.73l-3 2.5.87 3.88a1 1 0 0 1-1.45 1.05L12 13.99z"></path></svg>
+                                <svg data-filename="pages/WebsiteCode" data-linenumber="392" data-visual-selector-id="pages/WebsiteCode392" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='392' data-visual-selector-id='pages/WebsiteCode392' d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path data-filename='pages/WebsiteCode' data-linenumber='392' data-visual-selector-id='pages/WebsiteCode392' d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path><path data-filename='pages/WebsiteCode' data-linenumber='392' data-visual-selector-id='pages/WebsiteCode392' d="M16 8v4"></path><path data-filename='pages/WebsiteCode' data-linenumber='392' data-visual-selector-id='pages/WebsiteCode392' d="m10 8 2 2 2-2"></path></svg>
                             </a>
                         </div>
                     </div>
@@ -647,7 +647,8 @@
                         "</div>" +
                         "<div data-filename='pages/WebsiteCode' data-linenumber='652' data-visual-selector-id='pages/WebsiteCode652' class='card-content'>" +
                             "<a data-filename='pages/WebsiteCode' data-linenumber='653' data-visual-selector-id='pages/WebsiteCode653' href='" + pub.url + "' target='_blank' rel='noopener noreferrer' class='publication-button'>" +
-                                "View Publication <span data-filename='pages/WebsiteCode' data-linenumber='654' data-visual-selector-id='pages/WebsiteCode654'>🔗</span>" +
+                                "View Publication " +
+                                "<svg data-filename='pages/WebsiteCode' data-linenumber='655' data-visual-selector-id='pages/WebsiteCode655' xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path data-filename='pages/WebsiteCode' data-linenumber='655' data-visual-selector-id='pages/WebsiteCode655' d='M7 7h10v10'></path><path data-filename='pages/WebsiteCode' data-linenumber='655' data-visual-selector-id='pages/WebsiteCode655' d='M7 17 17 7'></path></svg>" +
                             "</a>" +
                         "</div>" +
                     "</div>";
@@ -657,14 +658,15 @@
             function injectBlogPosts() {
                 const container = document.getElementById('blogGrid');
                 blogData.forEach(function(post) {
-                    container.innerHTML += "<div data-filename='pages/WebsiteCode' data-linenumber='664' data-visual-selector-id='pages/WebsiteCode664' class='card blog-card fade-in'>" +
-                        "<div data-filename='pages/WebsiteCode' data-linenumber='665' data-visual-selector-id='pages/WebsiteCode665' class='blog-header " + post.gradient + "'>" +
-                            "<h4 data-filename='pages/WebsiteCode' data-linenumber='666' data-visual-selector-id='pages/WebsiteCode666' class='blog-category'>" + post.category + "</h4>" +
+                    container.innerHTML += "<div data-filename='pages/WebsiteCode' data-linenumber='665' data-visual-selector-id='pages/WebsiteCode665' class='card blog-card fade-in'>" +
+                        "<div data-filename='pages/WebsiteCode' data-linenumber='666' data-visual-selector-id='pages/WebsiteCode666' class='blog-header " + post.gradient + "'>" +
+                            "<h4 data-filename='pages/WebsiteCode' data-linenumber='667' data-visual-selector-id='pages/WebsiteCode667' class='blog-category'>" + post.category + "</h4>" +
                         "</div>" +
-                        "<div data-filename='pages/WebsiteCode' data-linenumber='668' data-visual-selector-id='pages/WebsiteCode668' class='blog-body'>" +
-                            "<h3 data-filename='pages/WebsiteCode' data-linenumber='669' data-visual-selector-id='pages/WebsiteCode669' class='blog-title'>" + post.title + "</h3>" +
-                            "<a data-filename='pages/WebsiteCode' data-linenumber='670' data-visual-selector-id='pages/WebsiteCode670' href='https://rauful-alam.blogspot.com/' target='_blank' rel='noopener noreferrer' class='blog-button'>" +
-                                "Read More <span data-filename='pages/WebsiteCode' data-linenumber='671' data-visual-selector-id='pages/WebsiteCode671'>🔗</span>" +
+                        "<div data-filename='pages/WebsiteCode' data-linenumber='669' data-visual-selector-id='pages/WebsiteCode669' class='blog-body'>" +
+                            "<h3 data-filename='pages/WebsiteCode' data-linenumber='670' data-visual-selector-id='pages/WebsiteCode670' class='blog-title'>" + post.title + "</h3>" +
+                            "<a data-filename='pages/WebsiteCode' data-linenumber='671' data-visual-selector-id='pages/WebsiteCode671' href='https://rauful-alam.blogspot.com/' target='_blank' rel='noopener noreferrer' class='blog-button'>" +
+                                "Read More " +
+                                "<svg data-filename='pages/WebsiteCode' data-linenumber='673' data-visual-selector-id='pages/WebsiteCode673' xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path data-filename='pages/WebsiteCode' data-linenumber='673' data-visual-selector-id='pages/WebsiteCode673' d='M7 7h10v10'></path><path data-filename='pages/WebsiteCode' data-linenumber='673' data-visual-selector-id='pages/WebsiteCode673' d='M7 17 17 7'></path></svg>" +
                             "</a>" +
                         "</div>" +
                     "</div>";
@@ -690,7 +692,7 @@
                 const button = document.createElement('button');
                 button.className = 'nav-button';
                 button.dataset.section = item.id;
-                button.innerHTML = '<span data-filename="pages/WebsiteCode" data-linenumber="697" data-visual-selector-id="pages/WebsiteCode697">' + item.icon + '</span> ' + item.label;
+                button.innerHTML = '<span data-filename="pages/WebsiteCode" data-linenumber="699" data-visual-selector-id="pages/WebsiteCode699">' + item.icon + '</span> ' + item.label;
                 button.onclick = function() {
                     document.getElementById(item.id).scrollIntoView({ behavior: 'smooth' });
                     if (isMobile) closeMobileMenu();
