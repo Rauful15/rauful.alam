@@ -3,7 +3,7 @@
 <head data-filename="pages/WebsiteCode" data-linenumber="7" data-visual-selector-id="pages/WebsiteCode7">
     <meta data-filename="pages/WebsiteCode" data-linenumber="8" data-visual-selector-id="pages/WebsiteCode8" charset="UTF-8">
     <meta data-filename="pages/WebsiteCode" data-linenumber="9" data-visual-selector-id="pages/WebsiteCode9" name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-filename="pages/WebsiteCode" data-linenumber="10" data-visual-selector-id="pages/WebsiteCode10">Dr. Rauful Alam - Medicinal Chemist</title>
+    <title data-filename="pages/WebsiteCode" data-linenumber="10" data-visual-selector-id="pages/WebsiteCode10">Dr. Rauful Alam - Scientist, Teacher, Author</title>
     <script data-filename="pages/WebsiteCode" data-linenumber="11" data-visual-selector-id="pages/WebsiteCode11" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <style data-filename="pages/WebsiteCode" data-linenumber="12" data-visual-selector-id="pages/WebsiteCode12">
         :root {
@@ -11,755 +11,889 @@
             --blue-50: #eff6ff; --blue-100: #dbeafe; --blue-200: #bfdbfe; --blue-300: #93c5fd; --blue-400: #60a5fa; --blue-500: #3b82f6; --blue-600: #2563eb; --blue-700: #1d4ed8; --blue-800: #1e40af; --blue-900: #1e3a8a;
             --purple-50: #faf5ff; --purple-100: #f3e8ff; --purple-200: #e9d5ff; --purple-300: #d8b4fe; --purple-400: #c084fc; --purple-500: #a855f7; --purple-600: #9333ea; --purple-700: #7c3aed; --purple-800: #6b21a8; --purple-900: #581c87;
             --green-50: #f0fdf4; --green-100: #dcfce7; --green-200: #bbf7d0; --green-300: #86efac; --green-400: #4ade80; --green-500: #22c55e; --green-600: #16a34a; --green-700: #15803d; --green-800: #166534; --green-900: #14532d;
-            --cyan-50: #ecfeff; --cyan-100: #cffafe; --cyan-200: #a5f3fc; --cyan-300: #67e8f9; --cyan-400: #22d3ee; --cyan-500: #06b6d4; --cyan-600: #0891b2; --cyan-700: #0e7490; --cyan-800: #155e75; --cyan-900: #164e63;
-            --amber-50: #fffbeb; --amber-100: #fef3c7; --amber-200: #fde68a; --amber-300: #fcd34d; --amber-400: #fbbf24; --amber-500: #f59e0b; --amber-600: #d97706; --amber-700: #b45309; --amber-800: #92400e; --amber-900: #78350f;
-            --orange-50: #fff7ed; --orange-100: #ffedd5; --orange-200: #fed7aa; --orange-300: #fdba74; --orange-400: #fb923c; --orange-500: #f97316; --orange-600: #ea580c; --orange-700: #c2410c; --orange-800: #9a3412; --orange-900: #7c2d12;
-            --red-50: #fef2f2; --red-100: #fee2e2; --red-200: #fecaca; --red-300: #fca5a5; --red-400: #f87171; --red-500: #ef4444; --red-600: #dc2626; --red-700: #b91c1c; --red-800: #991b1b; --red-900: #7f1d1d;
+            --amber-100: #fef3c7; --amber-600: #d97706;
+            --orange-500: #f97316; --red-500: #ef4444;
             --white: #ffffff; --black: #000000;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        body { 
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; 
-            line-height: 1.6; 
-            color: var(--slate-700); 
-            background-color: var(--slate-50); 
-            -webkit-font-smoothing: antialiased; 
-            -moz-osx-font-smoothing: grayscale; 
-        }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: var(--slate-700); background-color: var(--slate-50); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        
-        /* Layout Components */
         .container { max-width: 1152px; margin-left: auto; margin-right: auto; padding-left: 1.5rem; padding-right: 1.5rem; }
-        section { position: relative; overflow: hidden; }
-        
-        /* Header */
-        .header { background-color: var(--slate-900); color: var(--white); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
-        .nav { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.5rem; }
-        .nav-brand { font-size: 1.25rem; font-weight: 700; letter-spacing: 0.05em; }
-        .nav-brand .text-blue { color: var(--blue-400); }
-        .nav-links { display: flex; align-items: center; gap: 1rem; }
-        .nav-link { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.75rem; border-radius: 0.375rem; font-size: 0.875rem; font-weight: 500; text-decoration: none; color: var(--white); transition: background-color 0.2s ease; }
-        .nav-link:hover { background-color: var(--slate-700); }
-        .nav-link.active { background-color: var(--blue-600); }
-        
-        /* Navigation */
-        .floating-nav { position: fixed; top: 2rem; left: 50%; transform: translateX(-50%); z-index: 40; display: none; }
+        section { position: relative; overflow: hidden; padding: 6rem 0; }
+        .hidden { display: none !important; }
+
+        /* Floating Nav */
+        .floating-nav { position: fixed; top: 1rem; left: 50%; transform: translateX(-50%); z-index: 50; display: none; }
         @media (min-width: 768px) { .floating-nav { display: block; } }
-        .floating-nav .nav-content { background-color: rgba(255, 255, 255, 0.9); backdrop-filter: blur(16px); border-radius: 9999px; padding: 0.5rem; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); border: 1px solid rgba(255, 255, 255, 0.2); }
-        .floating-nav .nav-buttons { display: flex; align-items: center; gap: 0.25rem; }
-        .floating-nav .nav-button { border: none; background-color: transparent; border-radius: 9999px; padding: 0.5rem 1rem; cursor: pointer; transition: all 0.3s ease; color: var(--slate-600); font-weight: 500; font-size: 0.875rem; display: flex; align-items: center; gap: 0.5rem; }
-        .floating-nav .nav-button:hover { background-color: var(--blue-50); }
-        .floating-nav .nav-button.active { background-color: var(--blue-600); color: var(--white); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); }
-        
-        /* Mobile Menu */
-        .mobile-menu-button { position: fixed; top: 1.5rem; right: 1.5rem; z-index: 50; width: 3rem; height: 3rem; background-color: var(--blue-600); color: var(--white); border: none; border-radius: 9999px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.5rem; }
-        @media (min-width: 768px) { .mobile-menu-button { display: none; } }
-        .mobile-nav { position: fixed; top: 0; right: 0; height: 100%; width: 16rem; background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(16px); z-index: 50; box-shadow: -10px 0 20px -10px rgba(0,0,0,0.1); transform: translateX(100%); transition: transform 0.3s ease; }
-        .mobile-nav.open { transform: translateX(0); }
-        .mobile-nav-backdrop { position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 40; display: none; }
-        .mobile-nav-backdrop.open { display: block; }
-        .mobile-nav .nav-items { display: flex; flex-direction: column; gap: 0.5rem; padding: 5rem 1.5rem 1.5rem; }
-        .mobile-nav .nav-button { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; border-radius: 0.75rem; transition: all 0.3s ease; font-weight: 500; color: var(--slate-700); background-color: transparent; border: none; text-align: left; width: 100%; cursor: pointer; }
-        .mobile-nav .nav-button.active { background-color: var(--blue-600); color: var(--white); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
-        .mobile-nav .nav-button:hover:not(.active) { background-color: var(--blue-50); }
-        
+        .nav-content { background-color: rgba(255, 255, 255, 0.8); backdrop-filter: blur(16px); border-radius: 9999px; padding: 0.5rem; display: flex; align-items: center; gap: 0.25rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); }
+        .nav-button { all: unset; box-sizing: border-box; display: flex; align-items: center; gap: 0.5rem; border-radius: 9999px; padding: 0.5rem 1rem; cursor: pointer; transition: all 0.3s ease; color: var(--slate-600); font-weight: 500; font-size: 0.875rem; }
+        .nav-button:hover { background-color: var(--blue-50); }
+        .nav-button.active { background-color: var(--blue-600); color: var(--white); }
+        .nav-button svg { width: 1rem; height: 1rem; }
+        .dropdown { position: relative; }
+        .dropdown-content { display: none; position: absolute; top: calc(100% + 0.5rem); left: 50%; transform: translateX(-50%); background-color: rgba(255, 255, 255, 0.9); backdrop-filter: blur(16px); min-width: 200px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); border-radius: 0.75rem; padding: 0.5rem; z-index: 60; }
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-item { all: unset; box-sizing: border-box; display: flex; align-items: center; gap: 0.5rem; width: 100%; padding: 0.5rem 0.75rem; border-radius: 0.5rem; font-size: 0.875rem; cursor: pointer; }
+        .dropdown-item:hover { background-color: var(--blue-50); }
+
         /* Hero Section */
-        #hero { min-height: 100vh; padding: 0; background-color: var(--slate-900); position: relative; display: flex; align-items: center; justify-content: center; }
-        #hero .background { position: absolute; inset: 0; z-index: 0; background: linear-gradient(to bottom right, var(--slate-600), rgba(59, 130, 246, 0.4), rgba(139, 92, 246, 0.4)); background-size: 200% 200%; animation: gradient-pan 20s ease infinite; }
-        #hero .content { position: relative; z-index: 10; text-align: center; max-width: 64rem; margin: 0 auto; padding: 1.5rem; color: var(--white); }
-        #hero .photo { width: 10rem; height: 10rem; margin: 0 auto 2rem; border-radius: 9999px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); border: 4px solid rgba(255,255,255,0.2); overflow: hidden; transition: transform 0.3s ease; }
-        #hero .photo:hover { transform: scale(1.05) rotate(5deg); }
-        #hero .photo img { width: 100%; height: 100%; object-fit: cover; }
-        #hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 1rem; background: linear-gradient(to right, var(--white), var(--blue-200)); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        @media (min-width: 768px) { #hero h1 { font-size: 4.5rem; } }
-        #hero .subtitle { font-size: 1.25rem; margin-bottom: 2rem; color: var(--blue-100); font-weight: 300; }
-        @media (min-width: 768px) { #hero .subtitle { font-size: 1.5rem; } }
-        #hero .description { font-size: 1rem; max-width: 32rem; margin: 0 auto 3rem; line-height: 1.75; color: rgba(255,255,255,0.8); font-weight: 300; }
-        @media (min-width: 768px) { #hero .description { font-size: 1.125rem; } }
-        #hero .cta-button { background-color: var(--white); color: var(--blue-600); font-weight: 600; border-radius: 9999px; padding: 1rem 2rem; font-size: 1.125rem; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; transition: all 0.3s ease; }
-        #hero .cta-button:hover { background-color: var(--blue-50); transform: scale(1.05); }
+        #hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; color: white; background-color: var(--slate-900); padding: 0; }
+        #hero .hero-content { position: relative; z-index: 10; text-align: center; max-width: 896px; margin: auto; padding: 1rem; }
+        #hero .profile-image-wrapper { width: 10rem; height: 10rem; margin: 0 auto 2rem; border-radius: 9999px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); border: 4px solid rgba(255,255,255,0.2); overflow: hidden; }
+        #hero .profile-image { width: 100%; height: 100%; object-fit: cover; }
+        #hero h1 { font-size: 3.75rem; font-weight: 800; letter-spacing: -0.025em; margin-bottom: 1rem; background: linear-gradient(to right, white, var(--blue-200)); -webkit-background-clip: text; color: transparent; }
+        #hero .subtitle { font-size: 1.5rem; color: var(--blue-100); font-weight: 300; margin-bottom: 2rem; }
+        #hero .description { font-size: 1.125rem; max-width: 768px; margin: auto; color: rgba(255,255,255,0.8); line-height: 1.75; margin-bottom: 3rem; }
+        #hero .cta-button { all: unset; background-color: white; color: var(--blue-600); font-weight: 600; border-radius: 9999px; padding: 1rem 2rem; font-size: 1.125rem; display: inline-flex; align-items: center; gap: 0.5rem; transition: background-color 0.3s; }
+        #hero .cta-button:hover { background-color: var(--blue-50); }
+        .animated-gradient { background: linear-gradient(-45deg, var(--slate-600), #2563eb66, #9333ea66); background-size: 400% 400%; animation: gradient-pan 20s ease infinite; position: absolute; inset: 0; z-index: 0; }
+        @keyframes gradient-pan { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
         
-        /* Timeline Sections */
-        .timeline-section { padding: 6rem 1.5rem; }
-        .timeline-section:nth-child(odd) { background-color: var(--slate-50); }
-        .timeline-section:nth-child(even) { background-color: var(--white); }
-        .quote-section { position: relative; max-width: 42rem; margin: 0 auto 5rem; text-align: center; }
-        .quote-mark { position: absolute; top: -2.5rem; left: 50%; transform: translateX(-50%); font-size: 12rem; font-family: serif; color: rgba(203, 213, 225, 0.6); line-height: 1; z-index: 0; }
-        .quote-mark.green { color: rgba(34, 197, 94, 0.4); }
-        .quote-text { position: relative; z-index: 1; font-size: 1.875rem; font-weight: 500; color: var(--slate-700); font-style: italic; line-height: 1.6; }
-        @media (min-width: 768px) { .quote-text { font-size: 2.25rem; } }
-        .quote-author { margin-top: 1.5rem; color: var(--slate-500); font-weight: 500; }
+        /* General Section Styling */
         .section-header { text-align: center; margin-bottom: 4rem; }
-        .section-icon { display: inline-flex; align-items: center; justify-content: center; width: 4rem; height: 4rem; margin-bottom: 1rem; border-radius: 9999px; background: linear-gradient(to bottom right, var(--blue-100), var(--purple-100)); color: var(--blue-600); font-size: 1.5rem; }
-        .section-title { font-size: 2.25rem; font-weight: 700; color: var(--slate-800); margin-bottom: 1rem; }
-        @media (min-width: 768px) { .section-title { font-size: 2.5rem; } }
-        .section-underline { width: 6rem; height: 4px; background: linear-gradient(to right, var(--blue-500), var(--purple-500)); margin: 0 auto; border-radius: 9999px; }
-        .section-underline.green { background: linear-gradient(to right, var(--green-500), var(--cyan-500)); }
-        .section-underline.orange { background: linear-gradient(to right, var(--amber-500), var(--orange-500)); }
-        .section-underline.cyan { background: linear-gradient(to right, var(--cyan-500), var(--blue-500)); }
-        
-        /* Timeline */
-        .timeline-container { position: relative; max-width: 48rem; margin: 0 auto; }
-        .timeline-line { position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--blue-200), var(--purple-200), var(--blue-200)); transform: translateX(-50%); display: none; }
-        @media (min-width: 768px) { .timeline-line { display: block; } }
-        .timeline-item { position: relative; margin-bottom: 3rem; width: 100%; }
-        @media (min-width: 768px) { 
-            .timeline-item { width: 50%; } 
-            .timeline-item:nth-child(odd) { left: 0; padding-right: 2rem; } 
-            .timeline-item:nth-child(even) { left: 50%; padding-left: 2rem; } 
+        .section-header .icon-wrapper { display: inline-flex; align-items: center; justify-content: center; width: 4rem; height: 4rem; margin-bottom: 1rem; border-radius: 9999px; background-image: linear-gradient(to bottom right, var(--blue-100), var(--purple-100)); color: var(--blue-600); }
+        .section-header svg { width: 2rem; height: 2rem; }
+        .section-header h2 { font-size: 2.25rem; font-weight: 700; letter-spacing: -0.025em; color: var(--slate-800); }
+        .section-header .divider { width: 6rem; height: 0.25rem; margin: 1rem auto 0; background-image: linear-gradient(to right, var(--blue-500), var(--purple-500)); border-radius: 9999px; }
+
+        /* About Me Section */
+        #about-me .grid { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
+        @media (min-width: 768px) { #about-me .grid { grid-template-columns: 1fr 1fr; } }
+        #about-me .image-container { position: relative; padding: 0.5rem; border-radius: 0.5rem; background-image: linear-gradient(to bottom right, var(--blue-200), var(--purple-200)); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); }
+        #about-me .image-container img { border-radius: 0.5rem; width: 100%; height: auto; display: block; }
+        #about-me h2 { font-size: 2.25rem; font-weight: 700; color: var(--slate-800); margin-bottom: 1rem; }
+        #about-me .divider { width: 6rem; height: 0.25rem; margin-bottom: 1.5rem; background-image: linear-gradient(to right, var(--blue-500), var(--purple-500)); border-radius: 9999px; }
+        #about-me .description { color: var(--slate-600); line-height: 1.75; margin-bottom: 1.5rem; }
+        #about-me .highlights { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
+        #about-me .highlight { display: flex; align-items: center; gap: 1rem; }
+        #about-me .highlight .icon-bg { padding: 0.75rem; border-radius: 9999px; }
+        #about-me .highlight .icon-bg svg { width: 1.5rem; height: 1.5rem; }
+        #about-me .highlight p { font-weight: 500; color: var(--slate-700); }
+        #about-me .more-button { all: unset; font-size: 1rem; padding: 0.75rem 1.5rem; background-image: linear-gradient(to right, var(--blue-500), var(--purple-600)); color: white; font-weight: 600; border-radius: 0.375rem; display: inline-flex; align-items: center; gap: 0.5rem; cursor: pointer; transition: all 0.3s; }
+        #about-me .more-button:hover { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); }
+
+        /* Timeline Section */
+        #experience, #education { background-color: var(--slate-50); }
+        #education { background-image: url('https://github.com/Rauful15/rauful15.github.io/raw/main/video/education%20background.mp4'); background-size: cover; background-position: center; background-attachment: fixed; }
+        #education::before { content: ''; position: absolute; inset: 0; background-color: rgba(248, 250, 252, 0.85); backdrop-filter: blur(2px); }
+        .quote-box { position: relative; max-width: 768px; margin: 0 auto 5rem; text-align: center; padding: 2.5rem; border-radius: 1rem; }
+        .quote-box.experience-quote { background: none; }
+        .quote-box.education-quote { background: linear-gradient(135deg, rgba(219, 234, 254, 0.7), rgba(233, 213, 255, 0.7)); backdrop-filter: blur(10px); }
+        .quote-box .quote-mark { position: absolute; top: -1.5rem; left: 50%; transform: translateX(-50%); font-family: serif; font-size: 8rem; color: rgba(0,0,0,0.08); line-height: 1; }
+        .quote-box blockquote { position: relative; font-size: 1.5rem; font-style: italic; color: var(--slate-700); }
+        .quote-box footer { margin-top: 1rem; color: var(--slate-500); font-weight: 500; }
+        .timeline-container { position: relative; }
+        .timeline-container .timeline-line { display: none; }
+        @media (min-width: 768px) { .timeline-container .timeline-line { display: block; position: absolute; width: 2px; height: 100%; background: linear-gradient(to bottom, var(--blue-200), var(--purple-200)); top: 0; left: 50%; transform: translateX(-50%); } }
+        .timeline-item { display: flex; justify-content: flex-start; margin-bottom: 2rem; }
+        @media (min-width: 768px) {
+            .timeline-item { width: 50%; padding-right: 2.5rem; }
+            .timeline-item.right { justify-content: flex-end; align-self: flex-end; padding-right: 0; padding-left: 2.5rem; }
         }
-        .timeline-dot { position: absolute; top: 1rem; width: 1rem; height: 1rem; background: linear-gradient(to right, var(--blue-500), var(--purple-600)); border-radius: 9999px; border: 4px solid var(--white); box-shadow: 0 0 10px rgba(0,0,0,0.1); z-index: 10; display: none; }
-        @media (min-width: 768px) { 
-            .timeline-dot { display: block; } 
-            .timeline-item:nth-child(odd) .timeline-dot { right: -0.5rem; } 
-            .timeline-item:nth-child(even) .timeline-dot { left: -0.5rem; } 
+        .timeline-card { background-color: rgba(255,255,255,0.7); backdrop-filter: blur(10px); border-radius: 0.75rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); border-left: 4px solid var(--blue-500); width: 100%; }
+        .timeline-card-header { padding: 1.5rem; }
+        .timeline-card-content { padding: 0 1.5rem 1.5rem; }
+        .timeline-badge { display: inline-block; background-color: var(--slate-100); color: var(--slate-600); padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; margin-bottom: 0.5rem; }
+        .timeline-title { font-size: 1.25rem; font-weight: 700; color: var(--slate-800); }
+        .timeline-subtitle { font-size: 1rem; font-weight: 600; color: var(--purple-600); margin-top: -0.25rem; margin-bottom: 0.5rem; }
+        .timeline-meta { display: flex; align-items: center; gap: 0.75rem; margin-top: 0.75rem; }
+        .timeline-meta img, .timeline-meta .logo-placeholder { width: 2rem; height: 2rem; object-fit: contain; }
+        .timeline-meta .logo-placeholder { background-color: var(--blue-600); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 9999px; font-size: 0.75rem; }
+        .timeline-meta a { color: var(--blue-600); font-weight: 600; text-decoration: none; }
+        .timeline-meta a:hover { text-decoration: underline; }
+        .timeline-details { font-size: 0.875rem; color: var(--slate-500); margin-top: 0.5rem; }
+        .timeline-details a { color: var(--blue-600); }
+        .timeline-button { all: unset; box-sizing: border-box; width: 100%; text-align: center; margin-top: 1rem; background-image: linear-gradient(to right, var(--blue-500), var(--purple-500)); color: white; padding: 0.5rem 1rem; border-radius: 0.375rem; font-weight: 500; cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; }
+        .timeline-button:hover { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); }
+        @media (min-width: 768px) {
+            .timeline-marker { display: flex; position: absolute; left: 50%; transform: translateX(-50%); align-items: center; justify-content: center; width: 2rem; height: 2rem; background-color: white; border-radius: 9999px; border: 2px solid var(--blue-500); }
+            .timeline-marker div { width: 1rem; height: 1rem; background-color: var(--blue-500); border-radius: 9999px; }
         }
-        .timeline-card { background-color: var(--white); border-radius: 0.75rem; border-left: 4px solid var(--blue-500); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); padding: 1.5rem; transition: all 0.3s ease; }
-        .timeline-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); }
-        .timeline-card h3 { font-size: 1.25rem; font-weight: 700; color: var(--slate-800); margin-bottom: 0.5rem; }
-        .timeline-card .company-container { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
-        .timeline-card .company-logo { width: 2rem; height: 2rem; object-fit: contain; }
-        .timeline-card .company { color: var(--blue-600); font-weight: 600; text-decoration: none; flex: 1; }
-        .timeline-card .company:hover { text-decoration: underline; }
-        .timeline-card .details { font-size: 0.875rem; color: var(--slate-600); margin-bottom: 0.5rem; }
-        .timeline-card .details a { color: var(--blue-600); text-decoration: none; }
-        .timeline-card .details a:hover { text-decoration: underline; }
-        .timeline-card .duration { display: inline-block; background-color: var(--blue-50); color: var(--blue-700); padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; margin: 0.5rem 0; font-weight: 500; }
-        .timeline-card .thesis-link { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(to right, var(--blue-500), var(--purple-500)); color: var(--white); padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; font-weight: 500; font-size: 0.875rem; margin-bottom: 1rem; }
-        .timeline-card .thesis-link:hover { background: linear-gradient(to right, var(--blue-600), var(--purple-600)); }
-        .timeline-card ul { list-style: none; padding-left: 0; margin-top: 1rem; }
-        .timeline-card li { position: relative; padding-left: 1.25rem; font-size: 0.875rem; line-height: 1.5; color: var(--slate-700); margin-bottom: 0.5rem; }
-        .timeline-card li::before { content: '✓'; position: absolute; left: 0; color: var(--blue-500); font-weight: bold; }
-        
-        /* Cards */
-        .card { background-color: var(--white); border-radius: 0.75rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.07), 0 4px 6px -2px rgba(0,0,0,0.04); transition: all 0.3s ease; height: 100%; }
-        .card:hover { box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); transform: translateY(-4px); }
-        .card-header { padding: 1.5rem 1.5rem 0; }
-        .card-content { padding: 1.5rem; }
-        .card-title { font-size: 1.25rem; font-weight: 700; color: var(--slate-800); margin-bottom: 1rem; }
-        
-        /* Skills Grid */
-        .skills-grid { display: grid; gap: 2rem; grid-template-columns: repeat(1, 1fr); }
-        @media (min-width: 640px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (min-width: 1024px) { .skills-grid { grid-template-columns: repeat(4, 1fr); } }
-        .skill-icon { padding: 0.75rem; background-color: var(--slate-100); border-radius: 9999px; }
-        .skill-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+
+        /* Skills Section */
+        #skills { background-color: white; }
+        #skills .grid { display: grid; grid-template-columns: repeat(1, 1fr); gap: 2rem; }
+        @media (min-width: 768px) { #skills .grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { #skills .grid { grid-template-columns: repeat(4, 1fr); } }
+        .skill-card { height: 100%; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); border-radius: 0.75rem; transition: all 0.3s; }
+        .skill-card:hover { transform: translateY(-0.25rem); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1); }
+        .skill-card-header { display: flex; align-items: center; gap: 1rem; padding: 1.5rem; }
+        .skill-card-header .icon-bg { padding: 0.75rem; background-color: var(--slate-100); border-radius: 9999px; }
+        .skill-card-header h3 { font-size: 1.25rem; color: var(--slate-800); }
+        .skill-card-content { padding: 0 1.5rem 1.5rem; }
         .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
         .skill-tag { background-color: var(--blue-50); color: var(--blue-700); padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500; }
-        
-        /* Publications Grid */
-        .publications-grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(1, 1fr); }
-        @media (min-width: 768px) { .publications-grid { grid-template-columns: repeat(2, 1fr); } }
-        .publication-card { display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
-        .publication-content { flex-grow: 1; }
-        .publication-title { font-weight: 700; color: var(--slate-800); margin-bottom: 0.5rem; }
-        .publication-authors { color: var(--blue-600); font-weight: 600; font-size: 0.875rem; margin-bottom: 0.5rem; }
-        .publication-journal { color: var(--slate-600); font-size: 0.875rem; font-style: italic; margin-bottom: 1rem; }
-        .publication-button { background: linear-gradient(to right, var(--blue-500), var(--purple-500)); color: var(--white); padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; text-align: center; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; transition: all 0.3s ease; }
-        .publication-button:hover { background: linear-gradient(to right, var(--blue-600), var(--purple-600)); }
-        
-        /* Blog Grid */
-        .blog-grid { display: grid; gap: 2rem; grid-template-columns: repeat(1, 1fr); }
-        @media (min-width: 768px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (min-width: 1024px) { .blog-grid { grid-template-columns: repeat(3, 1fr); } }
-        .blog-card { overflow: hidden; display: flex; flex-direction: column; }
-        .blog-header { position: relative; height: 12rem; display: flex; align-items: flex-end; justify-content: flex-start; color: var(--white); text-align: left; padding: 1.5rem; }
-        .blog-header::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); }
-        .blog-header.gradient-blue { background: linear-gradient(to top right, var(--blue-500), var(--purple-600)); }
-        .blog-header.gradient-green { background: linear-gradient(to top right, var(--green-500), var(--blue-500)); }
-        .blog-header.gradient-orange { background: linear-gradient(to top right, var(--orange-500), var(--red-500)); }
-        .blog-category { position: relative; z-index: 1; font-size: 1.25rem; font-weight: 700; }
-        .blog-body { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
-        .blog-title { font-size: 1.125rem; font-weight: 700; color: var(--slate-800); margin-bottom: 1rem; flex-grow: 1; }
-        .blog-button { border: 1px solid var(--slate-300); background-color: transparent; color: var(--slate-700); padding: 0.5rem 1rem; border-radius: 0.375rem; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; transition: all 0.2s ease; }
-        .blog-button:hover { background-color: var(--slate-50); }
+
+        /* Courses Section */
+        #courses { background-color: white; }
+        #courses .grid { display: grid; grid-template-columns: repeat(1, 1fr); gap: 1.5rem; max-width: 1280px; margin: auto; }
+        @media (min-width: 768px) { #courses .grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1280px) { #courses .grid { grid-template-columns: repeat(4, 1fr); } }
+        .course-card { height: 100%; display: flex; flex-direction: column; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); border-radius: 0.75rem; border-left: 4px solid var(--blue-500); overflow: hidden; transition: all 0.3s; }
+        .course-card:hover { transform: translateY(-0.25rem); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1); }
+        .course-card-header { padding: 1.5rem; padding-bottom: 1rem; }
+        .course-card-content { padding: 0 1.5rem 1.5rem; margin-top: auto; }
+        .course-card h3 { font-size: 1.25rem; font-weight: 700; color: var(--slate-800); margin-bottom: 0.75rem; line-height: 1.3; }
+        .course-card p { color: var(--slate-600); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; }
+        .course-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .course-badge { display: flex; align-items: center; gap: 0.25rem; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; }
+        .course-badge.duration { background-color: var(--blue-50); color: var(--blue-700); }
+        .course-badge.level { background-color: var(--purple-50); color: var(--purple-700); }
+        .course-card-button { all: unset; box-sizing: border-box; width: 100%; text-align: center; background-image: linear-gradient(to right, var(--blue-500), var(--purple-500)); color: white; padding: 0.6rem 1rem; border-radius: 0.375rem; font-size: 0.875rem; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+        .course-card-button:hover { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); }
+
+        /* Publications Section */
+        #publications { background-color: var(--slate-50); }
+        #publications .grid { display: grid; grid-template-columns: repeat(1, 1fr); gap: 2rem; }
+        @media (min-width: 768px) { #publications .grid { grid-template-columns: repeat(2, 1fr); } }
+        .publication-card { height: 100%; display: flex; flex-direction: column; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); border-radius: 0.75rem; transition: all 0.3s; }
+        .publication-card:hover { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1); }
+        .publication-card-content { display: flex; align-items: flex-start; gap: 1.25rem; padding: 1.5rem; height: 100%; }
+        .publication-card img { width: 6rem; height: 8rem; object-fit: cover; border-radius: 0.375rem; flex-shrink: 0; box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px -1px rgba(0,0,0,0.1); }
+        .publication-card .text-content { display: flex; flex-direction: column; flex-grow: 1; height: 100%; }
+        .publication-card h3 { font-size: 1.125rem; font-weight: 700; color: var(--slate-800); margin-bottom: 0.5rem; line-height: 1.4; }
+        .publication-card .authors { font-size: 0.875rem; color: var(--blue-600); font-weight: 500; margin-bottom: 0.25rem; }
+        .publication-card .journal { font-size: 0.875rem; color: var(--slate-500); font-style: italic; }
+        .publication-card .view-button { all: unset; box-sizing: border-box; width: 100%; text-align: center; margin-top: auto; background-image: linear-gradient(to right, var(--blue-500), var(--purple-500)); color: white; padding: 0.5rem 1rem; border-radius: 0.375rem; font-weight: 500; transition: all 0.3s; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; }
+        .publication-card .view-button:hover { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); }
+        #publications .more-pubs-container { text-align: center; margin-top: 4rem; }
+        #publications .more-pubs-button { all: unset; font-size: 1rem; padding: 0.75rem 1.5rem; background-image: linear-gradient(to right, var(--blue-500), var(--purple-600)); color: white; font-weight: 600; border-radius: 0.375rem; display: inline-flex; align-items: center; gap: 0.5rem; cursor: pointer; transition: all 0.3s; }
+        #publications .more-pubs-button:hover { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); }
+
+        /* Blog Section */
+        #blog { background-color: white; }
+        #blog .grid { display: grid; grid-template-columns: repeat(1, 1fr); gap: 2rem; }
+        @media (min-width: 768px) { #blog .grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { #blog .grid { grid-template-columns: repeat(3, 1fr); } }
+        .blog-card { height: 100%; display: flex; flex-direction: column; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); border-radius: 0.75rem; overflow: hidden; transition: all 0.3s; }
+        .blog-card:hover { transform: translateY(-0.25rem); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1); }
+        .blog-card-header { position: relative; height: 12rem; display: flex; align-items: flex-end; justify-content: flex-start; color: white; padding: 1.5rem; background-image: linear-gradient(to top right, var(--blue-500), var(--purple-600)); }
+        .blog-card-header.green { background-image: linear-gradient(to top right, var(--green-500), var(--blue-500)); }
+        .blog-card-header.orange { background-image: linear-gradient(to top right, var(--orange-500), var(--red-500)); }
+        .blog-card-header div { position: relative; z-index: 2; }
+        .blog-card-header::after { content: ''; position: absolute; inset: 0; background-color: rgba(0,0,0,0.2); }
+        .blog-card-header h4 { font-size: 1.25rem; font-weight: 700; }
+        .blog-card-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+        .blog-card-content h3 { font-size: 1.125rem; font-weight: 700; color: var(--slate-800); margin-bottom: 1rem; flex-grow: 1; }
+        .blog-card-button { all: unset; box-sizing: border-box; width: 100%; text-align: center; border: 1px solid var(--slate-300); color: var(--slate-700); padding: 0.5rem 1rem; border-radius: 0.375rem; font-weight: 500; cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; }
+        .blog-card-button:hover { background-color: var(--slate-100); }
         
         /* Contact Section */
-        #contact { background-color: var(--slate-900); color: var(--white); }
-        .contact-cta { background: linear-gradient(to bottom right, var(--blue-600), var(--purple-700)); border-radius: 1.5rem; padding: 3rem; text-align: center; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); }
-        .contact-cta h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; }
-        .contact-cta p { color: var(--blue-100); margin-bottom: 2rem; max-width: 48rem; margin-left: auto; margin-right: auto; font-size: 1.125rem; }
-        .contact-button { background-color: var(--white); color: var(--blue-600); padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.125rem; transition: all 0.2s ease; }
-        .contact-button:hover { background-color: var(--blue-50); }
-        .social-links { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2); }
-        .social-links h3 { font-size: 1.125rem; font-weight: 500; color: var(--blue-100); margin-bottom: 1.5rem; }
-        .social-links-container { display: flex; justify-content: center; gap: 2rem; }
-        .social-link { color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; }
-        .social-link:hover { color: var(--white); transform: scale(1.2) translateY(-4px); }
-        
+        #contact { background-color: var(--slate-900); color: white; }
+        #contact .content-wrapper { background-image: linear-gradient(to bottom right, var(--blue-600), var(--purple-700)); border-radius: 1rem; padding: 2rem 1rem; text-align: center; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); }
+        @media (min-width: 768px) { #contact .content-wrapper { padding: 3rem; } }
+        #contact h2 { font-size: 2.25rem; font-weight: 700; margin-bottom: 1rem; }
+        #contact p { max-width: 768px; margin: 0 auto 2rem; font-size: 1.125rem; color: var(--blue-100); }
+        #contact .contact-button { all: unset; background-color: white; color: var(--blue-600); font-weight: 600; border-radius: 0.375rem; padding: 0.75rem 1.5rem; font-size: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; cursor: pointer; transition: background-color 0.3s; }
+        #contact .contact-button:hover { background-color: var(--blue-100); }
+        #contact .divider { margin: 3rem auto; border-top: 1px solid rgba(255,255,255,0.2); width: 100%; }
+        #contact h3 { font-size: 1rem; font-weight: 500; color: var(--blue-100); margin-bottom: 1.5rem; }
+        #contact .social-links { display: flex; justify-content: center; gap: 2rem; }
+        #contact .social-links a { color: rgba(255,255,255,0.8); transition: all 0.3s; }
+        #contact .social-links a:hover { color: white; transform: scale(1.2); }
+        #contact .social-links svg { width: 1.5rem; height: 1.5rem; }
+
         /* Scroll to Top Button */
-        .scroll-top-button { position: fixed; bottom: 2rem; right: 2rem; width: 3.5rem; height: 3.5rem; background: linear-gradient(to right, var(--blue-500), var(--purple-600)); color: var(--white); border-radius: 9999px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); z-index: 50; display: flex; align-items: center; justify-content: center; cursor: pointer; border: none; opacity: 0; transform: scale(0); transition: opacity 0.3s ease, transform 0.3s ease; font-size: 1.25rem; font-weight: bold; }
-        .scroll-top-button.visible { opacity: 1; transform: scale(1); }
+        .scroll-top-btn { position: fixed; bottom: 2rem; right: 2rem; z-index: 50; all: unset; width: 3rem; height: 3rem; border-radius: 9999px; background-image: linear-gradient(to bottom right, var(--blue-500), var(--purple-600)); color: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); cursor: pointer; transition: opacity 0.3s, transform 0.3s; }
+        .scroll-top-btn:hover { background-image: linear-gradient(to bottom right, var(--blue-600), var(--purple-700)); }
         
-        /* Animations */
-        @keyframes gradient-pan { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links { gap: 0.5rem; }
-            .nav-link { padding: 0.5rem; font-size: 0.75rem; }
-            .nav-link span { display: none; }
-            #hero h1 { font-size: 2.5rem; }
-            #hero .subtitle { font-size: 1.125rem; }
-            .section-title { font-size: 1.875rem; }
-            .quote-text { font-size: 1.5rem; }
-            .contact-cta { padding: 2rem; }
-            .contact-cta h2 { font-size: 2rem; }
-        }
+        /* Modal Styles */
+        .modal-backdrop { position: fixed; inset: 0; background-color: rgba(0,0,0,0.6); backdrop-filter: blur(4px); z-index: 100; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+        .modal-content { background-color: white; border-radius: 1rem; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); max-width: 600px; width: 100%; max-height: 90vh; overflow-y: auto; }
+        .modal-header { display: flex; align-items: flex-start; justify-content: space-between; padding: 1.5rem; border-bottom: 1px solid var(--slate-200); }
+        .modal-title { font-size: 1.5rem; font-weight: 700; color: var(--slate-800); }
+        .modal-description { color: var(--slate-600); margin-top: 0.5rem; }
+        .modal-close-btn { all: unset; cursor: pointer; color: var(--slate-400); }
+        .modal-close-btn:hover { color: var(--slate-600); }
+        .modal-body { padding: 1.5rem; }
+        .modal-body ul { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+        .modal-body li { display: flex; align-items: flex-start; gap: 0.75rem; }
+        .modal-body li svg { color: var(--blue-500); flex-shrink: 0; margin-top: 0.25rem; }
+        .modal-body li span { color: var(--slate-700); }
+        .modal-footer { padding: 1rem 1.5rem; text-align: right; border-top: 1px solid var(--slate-200); }
+        .modal-footer button { all: unset; background-color: var(--slate-100); color: var(--slate-800); padding: 0.5rem 1rem; border-radius: 0.375rem; cursor: pointer; }
+        .modal-footer button:hover { background-color: var(--slate-200); }
     </style>
 </head>
-<body data-filename="pages/WebsiteCode" data-linenumber="217" data-visual-selector-id="pages/WebsiteCode217">
-
-    <!-- Header -->
-    <header data-filename="pages/WebsiteCode" data-linenumber="220" data-visual-selector-id="pages/WebsiteCode220" class="header">
-        <nav data-filename="pages/WebsiteCode" data-linenumber="221" data-visual-selector-id="pages/WebsiteCode221" class="nav container">
-            <div data-filename="pages/WebsiteCode" data-linenumber="222" data-visual-selector-id="pages/WebsiteCode222" class="nav-brand">
-                <span data-filename="pages/WebsiteCode" data-linenumber="223" data-visual-selector-id="pages/WebsiteCode223" class="text-blue">Portfolio</span> Builder
-            </div>
-            <div data-filename="pages/WebsiteCode" data-linenumber="225" data-visual-selector-id="pages/WebsiteCode225" class="nav-links">
-                <a data-filename="pages/WebsiteCode" data-linenumber="226" data-visual-selector-id="pages/WebsiteCode226" href="#hero" class="nav-link active">
-                    <span data-filename="pages/WebsiteCode" data-linenumber="227" data-visual-selector-id="pages/WebsiteCode227">👁</span> <span data-filename="pages/WebsiteCode" data-linenumber="227" data-visual-selector-id="pages/WebsiteCode227">Live Preview</span>
-                </a>
-                <a data-filename="pages/WebsiteCode" data-linenumber="229" data-visual-selector-id="pages/WebsiteCode229" href="#" class="nav-link">
-                    <span data-filename="pages/WebsiteCode" data-linenumber="230" data-visual-selector-id="pages/WebsiteCode230">💻</span> <span data-filename="pages/WebsiteCode" data-linenumber="230" data-visual-selector-id="pages/WebsiteCode230">Get HTML Code</span>
-                </a>
-            </div>
-        </nav>
-    </header>
+<body data-filename="pages/WebsiteCode" data-linenumber="222" data-visual-selector-id="pages/WebsiteCode222">
 
     <!-- Floating Navigation -->
-    <nav data-filename="pages/WebsiteCode" data-linenumber="237" data-visual-selector-id="pages/WebsiteCode237" class="floating-nav" id="desktopNav">
-        <div data-filename="pages/WebsiteCode" data-linenumber="238" data-visual-selector-id="pages/WebsiteCode238" class="nav-content">
-            <div data-filename="pages/WebsiteCode" data-linenumber="239" data-visual-selector-id="pages/WebsiteCode239" class="nav-buttons" id="desktopNavButtons">
-                <!-- Nav buttons will be injected here -->
+    <nav data-filename="pages/WebsiteCode" data-linenumber="225" data-visual-selector-id="pages/WebsiteCode225" class="floating-nav" id="mainNav">
+        <div data-filename="pages/WebsiteCode" data-linenumber="226" data-visual-selector-id="pages/WebsiteCode226" class="nav-content">
+            <a data-filename="pages/WebsiteCode" data-linenumber="227" data-visual-selector-id="pages/WebsiteCode227" href="#hero" class="nav-button active">
+                <svg data-filename="pages/WebsiteCode" data-linenumber="228" data-visual-selector-id="pages/WebsiteCode228" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='228' data-visual-selector-id='pages/WebsiteCode228' d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline data-filename='pages/WebsiteCode' data-linenumber='228' data-visual-selector-id='pages/WebsiteCode228' points="9 22 9 12 15 12 15 22"/></svg>
+                <span data-filename="pages/WebsiteCode" data-linenumber="229" data-visual-selector-id="pages/WebsiteCode229">Home</span>
+            </a>
+            <div data-filename="pages/WebsiteCode" data-linenumber="231" data-visual-selector-id="pages/WebsiteCode231" class="dropdown">
+                <button data-filename="pages/WebsiteCode" data-linenumber="232" data-visual-selector-id="pages/WebsiteCode232" class="nav-button">
+                    <svg data-filename="pages/WebsiteCode" data-linenumber="233" data-visual-selector-id="pages/WebsiteCode233" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect data-filename='pages/WebsiteCode' data-linenumber='233' data-visual-selector-id='pages/WebsiteCode233' width="20" height="14" x="2" y="7" rx="2" ry="2"/><path data-filename='pages/WebsiteCode' data-linenumber='233' data-visual-selector-id='pages/WebsiteCode233' d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                    <span data-filename="pages/WebsiteCode" data-linenumber="234" data-visual-selector-id="pages/WebsiteCode234">My Journey</span>
+                    <svg data-filename="pages/WebsiteCode" data-linenumber="235" data-visual-selector-id="pages/WebsiteCode235" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='235' data-visual-selector-id='pages/WebsiteCode235' d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div data-filename="pages/WebsiteCode" data-linenumber="237" data-visual-selector-id="pages/WebsiteCode237" class="dropdown-content">
+                    <a data-filename="pages/WebsiteCode" data-linenumber="238" data-visual-selector-id="pages/WebsiteCode238" href="#about-me" class="dropdown-item">About Me</a>
+                    <a data-filename="pages/WebsiteCode" data-linenumber="239" data-visual-selector-id="pages/WebsiteCode239" href="#experience" class="dropdown-item">Professional Journey</a>
+                    <a data-filename="pages/WebsiteCode" data-linenumber="240" data-visual-selector-id="pages/WebsiteCode240" href="#education" class="dropdown-item">Education</a>
+                    <a data-filename="pages/WebsiteCode" data-linenumber="241" data-visual-selector-id="pages/WebsiteCode241" href="#publications" class="dropdown-item">Publications</a>
+                    <a data-filename="pages/WebsiteCode" data-linenumber="242" data-visual-selector-id="pages/WebsiteCode242" href="#skills" class="dropdown-item">Skills</a>
+                    <a data-filename="pages/WebsiteCode" data-linenumber="243" data-visual-selector-id="pages/WebsiteCode243" href="#" class="dropdown-item" id="cvLink">Complete CV</a>
+                </div>
             </div>
-        </div>
-    </nav>
-
-    <!-- Mobile Menu -->
-    <button data-filename="pages/WebsiteCode" data-linenumber="246" data-visual-selector-id="pages/WebsiteCode246" class="mobile-menu-button" id="mobileMenuButton">☰</button>
-    <div data-filename="pages/WebsiteCode" data-linenumber="247" data-visual-selector-id="pages/WebsiteCode247" class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
-    <nav data-filename="pages/WebsiteCode" data-linenumber="248" data-visual-selector-id="pages/WebsiteCode248" class="mobile-nav" id="mobileNav">
-        <div data-filename="pages/WebsiteCode" data-linenumber="249" data-visual-selector-id="pages/WebsiteCode249" class="nav-items" id="mobileNavItems">
-            <!-- Mobile nav buttons will be injected here -->
+            <a data-filename="pages/WebsiteCode" data-linenumber="246" data-visual-selector-id="pages/WebsiteCode246" href="#courses" class="nav-button">
+                 <svg data-filename="pages/WebsiteCode" data-linenumber="247" data-visual-selector-id="pages/WebsiteCode247" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='247' data-visual-selector-id='pages/WebsiteCode247' d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle data-filename='pages/WebsiteCode' data-linenumber='247' data-visual-selector-id='pages/WebsiteCode247' cx="9" cy="7" r="4"/><path data-filename='pages/WebsiteCode' data-linenumber='247' data-visual-selector-id='pages/WebsiteCode247' d="M22 21v-2a4 4 0 0 0-3-3.87"/><path data-filename='pages/WebsiteCode' data-linenumber='247' data-visual-selector-id='pages/WebsiteCode247' d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <span data-filename="pages/WebsiteCode" data-linenumber="248" data-visual-selector-id="pages/WebsiteCode248">Courses</span>
+            </a>
+            <a data-filename="pages/WebsiteCode" data-linenumber="250" data-visual-selector-id="pages/WebsiteCode250" href="#blog" class="nav-button">
+                <svg data-filename="pages/WebsiteCode" data-linenumber="251" data-visual-selector-id="pages/WebsiteCode251" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='251' data-visual-selector-id='pages/WebsiteCode251' d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                <span data-filename="pages/WebsiteCode" data-linenumber="252" data-visual-selector-id="pages/WebsiteCode252">Blog</span>
+            </a>
+            <a data-filename="pages/WebsiteCode" data-linenumber="254" data-visual-selector-id="pages/WebsiteCode254" href="#contact" class="nav-button">
+                <svg data-filename="pages/WebsiteCode" data-linenumber="255" data-visual-selector-id="pages/WebsiteCode255" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect data-filename='pages/WebsiteCode' data-linenumber='255' data-visual-selector-id='pages/WebsiteCode255' width="20" height="16" x="2" y="4" rx="2"/><path data-filename='pages/WebsiteCode' data-linenumber='255' data-visual-selector-id='pages/WebsiteCode255' d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                <span data-filename="pages/WebsiteCode" data-linenumber="256" data-visual-selector-id="pages/WebsiteCode256">Contact</span>
+            </a>
         </div>
     </nav>
     
-    <main data-filename="pages/WebsiteCode" data-linenumber="254" data-visual-selector-id="pages/WebsiteCode254">
+    <main data-filename="pages/WebsiteCode" data-linenumber="261" data-visual-selector-id="pages/WebsiteCode261">
         <!-- Hero Section -->
-        <section data-filename="pages/WebsiteCode" data-linenumber="256" data-visual-selector-id="pages/WebsiteCode256" id="hero">
-            <div data-filename="pages/WebsiteCode" data-linenumber="257" data-visual-selector-id="pages/WebsiteCode257" class="background"></div>
-            <canvas data-filename="pages/WebsiteCode" data-linenumber="258" data-visual-selector-id="pages/WebsiteCode258" id="bg-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></canvas>
-            <div data-filename="pages/WebsiteCode" data-linenumber="259" data-visual-selector-id="pages/WebsiteCode259" class="content">
-                <div data-filename="pages/WebsiteCode" data-linenumber="260" data-visual-selector-id="pages/WebsiteCode260" class="photo">
-                    <img data-filename="pages/WebsiteCode" data-linenumber="261" data-visual-selector-id="pages/WebsiteCode261" src="https://raw.githubusercontent.com/Rauful15/rauful.alam/main/Photo_RA.jpg" alt="Dr. Rauful Alam">
+        <section data-filename="pages/WebsiteCode" data-linenumber="263" data-visual-selector-id="pages/WebsiteCode263" id="hero">
+            <div data-filename="pages/WebsiteCode" data-linenumber="264" data-visual-selector-id="pages/WebsiteCode264" id="molecule-animation-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></div>
+            <div data-filename="pages/WebsiteCode" data-linenumber="265" data-visual-selector-id="pages/WebsiteCode265" class="animated-gradient"></div>
+            <div data-filename="pages/WebsiteCode" data-linenumber="266" data-visual-selector-id="pages/WebsiteCode266" class="hero-content">
+                <div data-filename="pages/WebsiteCode" data-linenumber="267" data-visual-selector-id="pages/WebsiteCode267" class="profile-image-wrapper">
+                    <img data-filename="pages/WebsiteCode" data-linenumber="268" data-visual-selector-id="pages/WebsiteCode268" src="https://raw.githubusercontent.com/Rauful15/rauful15.github.io/main/images/Photo_RA.jpg" alt="Dr. Rauful Alam" class="profile-image">
                 </div>
-                <h1 data-filename="pages/WebsiteCode" data-linenumber="263" data-visual-selector-id="pages/WebsiteCode263">Dr. Rauful Alam</h1>
-                <p data-filename="pages/WebsiteCode" data-linenumber="264" data-visual-selector-id="pages/WebsiteCode264" class="subtitle">Medicinal Chemist & Drug Discovery Innovator</p>
-                <p data-filename="pages/WebsiteCode" data-linenumber="265" data-visual-selector-id="pages/WebsiteCode265" class="description">Accomplished chemist with a Ph.D. in Organic Chemistry, specializing in designing and synthesizing small molecules for CNS drug discovery through innovative RNA splicing technology.</p>
-                <button data-filename="pages/WebsiteCode" data-linenumber="266" data-visual-selector-id="pages/WebsiteCode266" class="cta-button" onclick="document.getElementById('experience').scrollIntoView({ behavior: 'smooth' })">
-                    Explore My Work <span data-filename="pages/WebsiteCode" data-linenumber="267" data-visual-selector-id="pages/WebsiteCode267">⬇</span>
-                </button>
+                <h1 data-filename="pages/WebsiteCode" data-linenumber="270" data-visual-selector-id="pages/WebsiteCode270">Dr. Rauful Alam</h1>
+                <p data-filename="pages/WebsiteCode" data-linenumber="271" data-visual-selector-id="pages/WebsiteCode271" class="subtitle">Scientist | Teacher | Author</p>
+                <p data-filename="pages/WebsiteCode" data-linenumber="272" data-visual-selector-id="pages/WebsiteCode272" class="description">An expert medicinal chemist with a Ph.D. in Organic Chemistry, driving pre-clinical drug discovery research. Passionately advocating for the advancement of education and research culture in Bangladesh.</p>
+                <a data-filename="pages/WebsiteCode" data-linenumber="273" data-visual-selector-id="pages/WebsiteCode273" href="#experience" class="cta-button">
+                    <span data-filename="pages/WebsiteCode" data-linenumber="274" data-visual-selector-id="pages/WebsiteCode274">Explore My Work</span>
+                    <svg data-filename="pages/WebsiteCode" data-linenumber="275" data-visual-selector-id="pages/WebsiteCode275" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='275' data-visual-selector-id='pages/WebsiteCode275' d="M12 5v14"/><path data-filename='pages/WebsiteCode' data-linenumber='275' data-visual-selector-id='pages/WebsiteCode275' d="m19 12-7 7-7-7"/></svg>
+                </a>
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <section data-filename="pages/WebsiteCode" data-linenumber="273" data-visual-selector-id="pages/WebsiteCode273" id="experience" class="timeline-section">
-            <div data-filename="pages/WebsiteCode" data-linenumber="274" data-visual-selector-id="pages/WebsiteCode274" class="container">
-                <div data-filename="pages/WebsiteCode" data-linenumber="275" data-visual-selector-id="pages/WebsiteCode275" class="quote-section fade-in">
-                    <div data-filename="pages/WebsiteCode" data-linenumber="276" data-visual-selector-id="pages/WebsiteCode276" class="quote-mark">"</div>
-                    <blockquote data-filename="pages/WebsiteCode" data-linenumber="277" data-visual-selector-id="pages/WebsiteCode277" class="quote-text">
-                        A ship in harbor is safe, but that is not what ships are built for
-                    </blockquote>
-                    <p data-filename="pages/WebsiteCode" data-linenumber="280" data-visual-selector-id="pages/WebsiteCode280" class="quote-author">— Unknown</p>
+        <!-- About Me Section -->
+        <section data-filename="pages/WebsiteCode" data-linenumber="281" data-visual-selector-id="pages/WebsiteCode281" id="about-me">
+            <div data-filename="pages/WebsiteCode" data-linenumber="282" data-visual-selector-id="pages/WebsiteCode282" class="container">
+                <div data-filename="pages/WebsiteCode" data-linenumber="283" data-visual-selector-id="pages/WebsiteCode283" class="grid">
+                    <div data-filename="pages/WebsiteCode" data-linenumber="284" data-visual-selector-id="pages/WebsiteCode284">
+                        <div data-filename="pages/WebsiteCode" data-linenumber="285" data-visual-selector-id="pages/WebsiteCode285" class="image-container">
+                            <img data-filename="pages/WebsiteCode" data-linenumber="286" data-visual-selector-id="pages/WebsiteCode286" src="https://raw.githubusercontent.com/Rauful15/rauful15.github.io/main/images/Photo_RA.jpg" alt="Dr. Rauful Alam">
+                        </div>
+                    </div>
+                    <div data-filename="pages/WebsiteCode" data-linenumber="289" data-visual-selector-id="pages/WebsiteCode289">
+                        <h2 data-filename="pages/WebsiteCode" data-linenumber="290" data-visual-selector-id="pages/WebsiteCode290">About Me</h2>
+                        <div data-filename="pages/WebsiteCode" data-linenumber="291" data-visual-selector-id="pages/WebsiteCode291" class="divider"></div>
+                        <p data-filename="pages/WebsiteCode" data-linenumber="292" data-visual-selector-id="pages/WebsiteCode292" class="description">I am a dedicated medicinal chemist with a Ph.D. in Organic Chemistry, deeply passionate about driving pre-clinical drug discovery research. My scientific journey is paralleled by a commitment to social activism, where I actively work towards reforming and enhancing the education and research landscape in Bangladesh.</p>
+                        <div data-filename="pages/WebsiteCode" data-linenumber="293" data-visual-selector-id="pages/WebsiteCode293" class="highlights">
+                            <div data-filename="pages/WebsiteCode" data-linenumber="294" data-visual-selector-id="pages/WebsiteCode294" class="highlight">
+                                <div data-filename="pages/WebsiteCode" data-linenumber="295" data-visual-selector-id="pages/WebsiteCode295" class="icon-bg" style="background-color: var(--blue-100);"><svg data-filename='pages/WebsiteCode' data-linenumber='295' data-visual-selector-id='pages/WebsiteCode295' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='295' data-visual-selector-id='pages/WebsiteCode295' d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline data-filename='pages/WebsiteCode' data-linenumber='295' data-visual-selector-id='pages/WebsiteCode295' points="14 2 14 8 20 8"/><line data-filename='pages/WebsiteCode' data-linenumber='295' data-visual-selector-id='pages/WebsiteCode295' x1="12" x2="12" y1="18" y2="12"/><line data-filename='pages/WebsiteCode' data-linenumber='295' data-visual-selector-id='pages/WebsiteCode295' x1="9" x2="15" y1="15" y2="15"/></svg></div>
+                                <p data-filename="pages/WebsiteCode" data-linenumber="296" data-visual-selector-id="pages/WebsiteCode296">Innovating at the frontier of drug discovery to improve human health.</p>
+                            </div>
+                            <div data-filename="pages/WebsiteCode" data-linenumber="298" data-visual-selector-id="pages/WebsiteCode298" class="highlight">
+                                <div data-filename="pages/WebsiteCode" data-linenumber="299" data-visual-selector-id="pages/WebsiteCode299" class="icon-bg" style="background-color: var(--purple-100);"><svg data-filename='pages/WebsiteCode' data-linenumber='299' data-visual-selector-id='pages/WebsiteCode299' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='299' data-visual-selector-id='pages/WebsiteCode299' d="M22 10v6M2 10v6"/><path data-filename='pages/WebsiteCode' data-linenumber='299' data-visual-selector-id='pages/WebsiteCode299' d="M12 2v2"/><path data-filename='pages/WebsiteCode' data-linenumber='299' data-visual-selector-id='pages/WebsiteCode299' d="M12 20v2"/><path data-filename='pages/WebsiteCode' data-linenumber='299' data-visual-selector-id='pages/WebsiteCode299' d="m4.93 4.93 1.41 1.41"/><path data-filename='pages/WebsiteCode' data-linenumber='299' data-visual-selector-id='pages/WebsiteCode299' d="m17.66 17.66 1.41 1.41"/><path data-filename='pages/WebsiteCode' data-linenumber='299' data-visual-selector-id='pages/WebsiteCode299' d="M2 12h2"/><path data-filename='pages/WebsiteCode' data-linenumber='299' data-visual-selector-id='pages/WebsiteCode299' d="M20 12h2"/><path data-filename='pages/WebsiteCode' data-linenumber='299' data-visual-selector-id='pages/WebsiteCode299' d="m4.93 19.07 1.41-1.41"/><path data-filename='pages/WebsiteCode' data-linenumber='299' data-visual-selector-id='pages/WebsiteCode299' d="m17.66 6.34 1.41-1.41"/></svg></div>
+                                <p data-filename="pages/WebsiteCode" data-linenumber="300" data-visual-selector-id="pages/WebsiteCode300">Championing educational reform and fostering research culture.</p>
+                            </div>
+                            <div data-filename="pages/WebsiteCode" data-linenumber="302" data-visual-selector-id="pages/WebsiteCode302" class="highlight">
+                                <div data-filename="pages/WebsiteCode" data-linenumber="303" data-visual-selector-id="pages/WebsiteCode303" class="icon-bg" style="background-color: var(--green-100);"><svg data-filename='pages/WebsiteCode' data-linenumber='303' data-visual-selector-id='pages/WebsiteCode303' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='303' data-visual-selector-id='pages/WebsiteCode303' d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div>
+                                <p data-filename="pages/WebsiteCode" data-linenumber="304" data-visual-selector-id="pages/WebsiteCode304">Bridging the gap between scientific advancement and societal impact.</p>
+                            </div>
+                        </div>
+                        <button data-filename="pages/WebsiteCode" data-linenumber="307" data-visual-selector-id="pages/WebsiteCode307" class="more-button" onclick="window.open('about.html', '_blank')">
+                            <span data-filename="pages/WebsiteCode" data-linenumber="308" data-visual-selector-id="pages/WebsiteCode308">Learn More</span>
+                            <svg data-filename="pages/WebsiteCode" data-linenumber="309" data-visual-selector-id="pages/WebsiteCode309" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='309' data-visual-selector-id='pages/WebsiteCode309' d="M5 12h14"/><path data-filename='pages/WebsiteCode' data-linenumber='309' data-visual-selector-id='pages/WebsiteCode309' d="m12 5 7 7-7 7"/></svg>
+                        </button>
+                    </div>
                 </div>
-                
-                <div data-filename="pages/WebsiteCode" data-linenumber="283" data-visual-selector-id="pages/WebsiteCode283" class="section-header">
-                    <div data-filename="pages/WebsiteCode" data-linenumber="284" data-visual-selector-id="pages/WebsiteCode284" class="section-icon">🔬</div>
-                    <h2 data-filename="pages/WebsiteCode" data-linenumber="285" data-visual-selector-id="pages/WebsiteCode285" class="section-title">Professional Journey</h2>
-                    <div data-filename="pages/WebsiteCode" data-linenumber="286" data-visual-selector-id="pages/WebsiteCode286" class="section-underline"></div>
+            </div>
+        </section>
+
+        <!-- Professional Journey Section -->
+        <section data-filename="pages/WebsiteCode" data-linenumber="317" data-visual-selector-id="pages/WebsiteCode317" id="experience">
+            <div data-filename="pages/WebsiteCode" data-linenumber="318" data-visual-selector-id="pages/WebsiteCode318" class="container">
+                <div data-filename="pages/WebsiteCode" data-linenumber="319" data-visual-selector-id="pages/WebsiteCode319" class="section-header">
+                     <div data-filename="pages/WebsiteCode" data-linenumber="320" data-visual-selector-id="pages/WebsiteCode320" class="icon-wrapper"><svg data-filename='pages/WebsiteCode' data-linenumber='320' data-visual-selector-id='pages/WebsiteCode320' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='320' data-visual-selector-id='pages/WebsiteCode320' d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline data-filename='pages/WebsiteCode' data-linenumber='320' data-visual-selector-id='pages/WebsiteCode320' points="14 2 14 8 20 8"/><line data-filename='pages/WebsiteCode' data-linenumber='320' data-visual-selector-id='pages/WebsiteCode320' x1="12" x2="12" y1="18" y2="12"/><line data-filename='pages/WebsiteCode' data-linenumber='320' data-visual-selector-id='pages/WebsiteCode320' x1="9" x2="15" y1="15" y2="15"/></svg></div>
+                    <h2 data-filename="pages/WebsiteCode" data-linenumber="321" data-visual-selector-id="pages/WebsiteCode321">Professional Journey</h2>
+                    <div data-filename="pages/WebsiteCode" data-linenumber="322" data-visual-selector-id="pages/WebsiteCode322" class="divider"></div>
                 </div>
-                
-                <div data-filename="pages/WebsiteCode" data-linenumber="289" data-visual-selector-id="pages/WebsiteCode289" class="timeline-container">
-                    <div data-filename="pages/WebsiteCode" data-linenumber="290" data-visual-selector-id="pages/WebsiteCode290" class="timeline-line"></div>
-                    <div data-filename="pages/WebsiteCode" data-linenumber="291" data-visual-selector-id="pages/WebsiteCode291" id="experienceTimeline">
-                        <!-- Timeline items will be injected here -->
+                <div data-filename="pages/WebsiteCode" data-linenumber="324" data-visual-selector-id="pages/WebsiteCode324" class="quote-box experience-quote">
+                    <div data-filename="pages/WebsiteCode" data-linenumber="325" data-visual-selector-id="pages/WebsiteCode325" class="quote-mark">“</div>
+                    <blockquote data-filename="pages/WebsiteCode" data-linenumber="326" data-visual-selector-id="pages/WebsiteCode326">A ship in harbor is safe, but that is not what ships are built for.</blockquote>
+                    <footer data-filename="pages/WebsiteCode" data-linenumber="327" data-visual-selector-id="pages/WebsiteCode327">— John A. Shedd</footer>
+                </div>
+                <div data-filename="pages/WebsiteCode" data-linenumber="329" data-visual-selector-id="pages/WebsiteCode329" class="timeline-container">
+                    <div data-filename="pages/WebsiteCode" data-linenumber="330" data-visual-selector-id="pages/WebsiteCode330" class="timeline-line"></div>
+                    <div data-filename="pages/WebsiteCode" data-linenumber="331" data-visual-selector-id="pages/WebsiteCode331" style="display: flex; flex-direction: column; align-items: center;">
+                        
+                        <!-- Staff Scientist -->
+                        <div data-filename="pages/WebsiteCode" data-linenumber="334" data-visual-selector-id="pages/WebsiteCode334" class="timeline-item">
+                            <div data-filename="pages/WebsiteCode" data-linenumber="335" data-visual-selector-id="pages/WebsiteCode335" class="timeline-marker" style="top: 1rem;"><div data-filename="pages/WebsiteCode" data-linenumber="335" data-visual-selector-id="pages/WebsiteCode335"></div></div>
+                            <div data-filename="pages/WebsiteCode" data-linenumber="336" data-visual-selector-id="pages/WebsiteCode336" class="timeline-card">
+                                <div data-filename="pages/WebsiteCode" data-linenumber="337" data-visual-selector-id="pages/WebsiteCode337" class="timeline-card-header">
+                                    <span data-filename="pages/WebsiteCode" data-linenumber="338" data-visual-selector-id="pages/WebsiteCode338" class="timeline-badge">September 2025 - Present</span>
+                                    <h3 data-filename="pages/WebsiteCode" data-linenumber="339" data-visual-selector-id="pages/WebsiteCode339" class="timeline-title">Staff Scientist (Medicinal Chemistry)</h3>
+                                    <div data-filename="pages/WebsiteCode" data-linenumber="340" data-visual-selector-id="pages/WebsiteCode340" class="timeline-meta">
+                                        <img data-filename="pages/WebsiteCode" data-linenumber="341" data-visual-selector-id="pages/WebsiteCode341" src="https://upload.wikimedia.org/wikipedia/en/thumb/7/79/University_of_Chicago_shield.svg/150px-University_of_Chicago_shield.svg.png" alt="University of Chicago Logo">
+                                        <a data-filename="pages/WebsiteCode" data-linenumber="342" data-visual-selector-id="pages/WebsiteCode342" href="https://www.uchicago.edu/" target="_blank" rel="noopener noreferrer">Center for Chemical Biology and Therapeutics (CCBT), University of Chicago</a>
+                                    </div>
+                                </div>
+                                <div data-filename="pages/WebsiteCode" data-linenumber="345" data-visual-selector-id="pages/WebsiteCode345" class="timeline-card-content">
+                                    <button data-filename="pages/WebsiteCode" data-linenumber="346" data-visual-selector-id="pages/WebsiteCode346" class="timeline-button" data-modal-target="contributionModal" data-contributions="Leading innovative research in medicinal chemistry focusing on novel therapeutic targets.|Developing cutting-edge methodologies for drug discovery and optimization.|Collaborating with cross-functional teams to advance promising compounds through preclinical development.">Key Contributions</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Principal Scientist -->
+                        <div data-filename="pages/WebsiteCode" data-linenumber="352" data-visual-selector-id="pages/WebsiteCode352" class="timeline-item right">
+                            <div data-filename="pages/WebsiteCode" data-linenumber="353" data-visual-selector-id="pages/WebsiteCode353" class="timeline-marker" style="top: 13rem;"><div data-filename="pages/WebsiteCode" data-linenumber="353" data-visual-selector-id="pages/WebsiteCode353"></div></div>
+                            <div data-filename="pages/WebsiteCode" data-linenumber="354" data-visual-selector-id="pages/WebsiteCode354" class="timeline-card">
+                                <div data-filename="pages/WebsiteCode" data-linenumber="355" data-visual-selector-id="pages/WebsiteCode355" class="timeline-card-header">
+                                    <span data-filename="pages/WebsiteCode" data-linenumber="356" data-visual-selector-id="pages/WebsiteCode356" class="timeline-badge">September 2023 - May 2024</span>
+                                    <h3 data-filename="pages/WebsiteCode" data-linenumber="357" data-visual-selector-id="pages/WebsiteCode357" class="timeline-title">Principal Scientist</h3>
+                                    <p data-filename="pages/WebsiteCode" data-linenumber="358" data-visual-selector-id="pages/WebsiteCode358" class="timeline-subtitle">Pre-clinical drug discovery</p>
+                                    <div data-filename="pages/WebsiteCode" data-linenumber="359" data-visual-selector-id="pages/WebsiteCode359" class="timeline-meta">
+                                        <div data-filename="pages/WebsiteCode" data-linenumber="360" data-visual-selector-id="pages/WebsiteCode360" class="logo-placeholder">PTC</div>
+                                        <a data-filename="pages/WebsiteCode" data-linenumber="361" data-visual-selector-id="pages/WebsiteCode361" href="https://www.ptcbio.com/" target="_blank" rel="noopener noreferrer">PTC Therapeutics, NJ</a>
+                                    </div>
+                                </div>
+                                <div data-filename="pages/WebsiteCode" data-linenumber="364" data-visual-selector-id="pages/WebsiteCode364" class="timeline-card-content">
+                                    <button data-filename="pages/WebsiteCode" data-linenumber="365" data-visual-selector-id="pages/WebsiteCode365" class="timeline-button" data-modal-target="contributionModal" data-contributions="Led a multidisciplinary team in the hit-to-lead optimization phase for novel small molecule inhibitors.|Designed and synthesized key compounds that demonstrated significant in-vivo efficacy.|Contributed to the intellectual property portfolio with two patent applications.">Key Contributions</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Senior Scientist -->
+                        <div data-filename="pages/WebsiteCode" data-linenumber="371" data-visual-selector-id="pages/WebsiteCode371" class="timeline-item">
+                            <div data-filename="pages/WebsiteCode" data-linenumber="372" data-visual-selector-id="pages/WebsiteCode372" class="timeline-marker" style="top: 27rem;"><div data-filename="pages/WebsiteCode" data-linenumber="372" data-visual-selector-id="pages/WebsiteCode372"></div></div>
+                            <div data-filename="pages/WebsiteCode" data-linenumber="373" data-visual-selector-id="pages/WebsiteCode373" class="timeline-card">
+                                <div data-filename="pages/WebsiteCode" data-linenumber="374" data-visual-selector-id="pages/WebsiteCode374" class="timeline-card-header">
+                                    <span data-filename="pages/WebsiteCode" data-linenumber="375" data-visual-selector-id="pages/WebsiteCode375" class="timeline-badge">March 2020 - August 2023</span>
+                                    <h3 data-filename="pages/WebsiteCode" data-linenumber="376" data-visual-selector-id="pages/WebsiteCode376" class="timeline-title">Senior Scientist</h3>
+                                    <p data-filename="pages/WebsiteCode" data-linenumber="377" data-visual-selector-id="pages/WebsiteCode377" class="timeline-subtitle">Pre-clinical drug discovery</p>
+                                    <div data-filename="pages/WebsiteCode" data-linenumber="378" data-visual-selector-id="pages/WebsiteCode378" class="timeline-meta">
+                                        <div data-filename="pages/WebsiteCode" data-linenumber="379" data-visual-selector-id="pages/WebsiteCode379" class="logo-placeholder">PTC</div>
+                                        <a data-filename="pages/WebsiteCode" data-linenumber="380" data-visual-selector-id="pages/WebsiteCode380" href="https://www.ptcbio.com/" target="_blank" rel="noopener noreferrer">PTC Therapeutics, NJ</a>
+                                    </div>
+                                </div>
+                                <div data-filename="pages/WebsiteCode" data-linenumber="383" data-visual-selector-id="pages/WebsiteCode383" class="timeline-card-content">
+                                    <button data-filename="pages/WebsiteCode" data-linenumber="384" data-visual-selector-id="pages/WebsiteCode384" class="timeline-button" data-modal-target="contributionModal" data-contributions="Advanced multiple drug discovery programs targeting RNA splicing modulation.|Established and validated novel assays for compound screening.|Mentored junior scientists, fostering a culture of innovation and collaboration.">Key Contributions</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Scientist-II -->
+                        <div data-filename="pages/WebsiteCode" data-linenumber="390" data-visual-selector-id="pages/WebsiteCode390" class="timeline-item right">
+                            <div data-filename="pages/WebsiteCode" data-linenumber="391" data-visual-selector-id="pages/WebsiteCode391" class="timeline-marker" style="top: 41rem;"><div data-filename="pages/WebsiteCode" data-linenumber="391" data-visual-selector-id="pages/WebsiteCode391"></div></div>
+                            <div data-filename="pages/WebsiteCode" data-linenumber="392" data-visual-selector-id="pages/WebsiteCode392" class="timeline-card">
+                                <div data-filename="pages/WebsiteCode" data-linenumber="393" data-visual-selector-id="pages/WebsiteCode393" class="timeline-card-header">
+                                    <span data-filename="pages/WebsiteCode" data-linenumber="394" data-visual-selector-id="pages/WebsiteCode394" class="timeline-badge">April 2018 - February 2020</span>
+                                    <h3 data-filename="pages/WebsiteCode" data-linenumber="395" data-visual-selector-id="pages/WebsiteCode395" class="timeline-title">Scientist-II</h3>
+                                    <p data-filename="pages/WebsiteCode" data-linenumber="396" data-visual-selector-id="pages/WebsiteCode396" class="timeline-subtitle">Pre-clinical drug discovery</p>
+                                    <div data-filename="pages/WebsiteCode" data-linenumber="397" data-visual-selector-id="pages/WebsiteCode397" class="timeline-meta">
+                                        <div data-filename="pages/WebsiteCode" data-linenumber="398" data-visual-selector-id="pages/WebsiteCode398" class="logo-placeholder">PTC</div>
+                                        <a data-filename="pages/WebsiteCode" data-linenumber="399" data-visual-selector-id="pages/WebsiteCode399" href="https://www.ptcbio.com/" target="_blank" rel="noopener noreferrer">PTC Therapeutics, NJ</a>
+                                    </div>
+                                </div>
+                                <div data-filename="pages/WebsiteCode" data-linenumber="402" data-visual-selector-id="pages/WebsiteCode402" class="timeline-card-content">
+                                    <button data-filename="pages/WebsiteCode" data-linenumber="403" data-visual-selector-id="pages/WebsiteCode403" class="timeline-button" data-modal-target="contributionModal" data-contributions="Synthesized and characterized novel small molecules for Huntington's disease research.|Optimized synthetic routes to enable large-scale compound production for pre-clinical studies.|Analyzed structure-activity relationships (SAR) to guide medicinal chemistry efforts.">Key Contributions</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Postdoctoral Research Associate -->
+                        <div data-filename="pages/WebsiteCode" data-linenumber="409" data-visual-selector-id="pages/WebsiteCode409" class="timeline-item">
+                             <div data-filename="pages/WebsiteCode" data-linenumber="410" data-visual-selector-id="pages/WebsiteCode410" class="timeline-marker" style="top: 55rem;"><div data-filename="pages/WebsiteCode" data-linenumber="410" data-visual-selector-id="pages/WebsiteCode410"></div></div>
+                            <div data-filename="pages/WebsiteCode" data-linenumber="411" data-visual-selector-id="pages/WebsiteCode411" class="timeline-card">
+                                <div data-filename="pages/WebsiteCode" data-linenumber="412" data-visual-selector-id="pages/WebsiteCode412" class="timeline-card-header">
+                                    <span data-filename="pages/WebsiteCode" data-linenumber="413" data-visual-selector-id="pages/WebsiteCode413" class="timeline-badge">September 2016 - March 2018</span>
+                                    <h3 data-filename="pages/WebsiteCode" data-linenumber="414" data-visual-selector-id="pages/WebsiteCode414" class="timeline-title">Postdoctoral Research Associate</h3>
+                                    <div data-filename="pages/WebsiteCode" data-linenumber="415" data-visual-selector-id="pages/WebsiteCode415" class="timeline-meta">
+                                        <img data-filename="pages/WebsiteCode" data-linenumber="416" data-visual-selector-id="pages/WebsiteCode416" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/UPenn_shield_with_banner.svg/150px-UPenn_shield_with_banner.svg.png" alt="University of Pennsylvania Logo">
+                                        <a data-filename="pages/WebsiteCode" data-linenumber="417" data-visual-selector-id="pages/WebsiteCode417" href="https://www.upenn.edu/" target="_blank" rel="noopener noreferrer">University of Pennsylvania, Philadelphia</a>
+                                    </div>
+                                    <p data-filename="pages/WebsiteCode" data-linenumber="419" data-visual-selector-id="pages/WebsiteCode419" class="timeline-details">Supervisor: <a data-filename='pages/WebsiteCode' data-linenumber='419' data-visual-selector-id='pages/WebsiteCode419' href="https://scholar.google.com/citations?user=N2yeDaoAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Prof. Gary A Molander</a></p>
+                                </div>
+                                <div data-filename="pages/WebsiteCode" data-linenumber="421" data-visual-selector-id="pages/WebsiteCode421" class="timeline-card-content">
+                                    <button data-filename="pages/WebsiteCode" data-linenumber="422" data-visual-selector-id="pages/WebsiteCode422" class="timeline-button" data-modal-target="contributionModal" data-contributions="Pioneered novel photoredox catalysis methodologies for C-N bond formation.|Published high-impact research in leading chemistry journals.|Mentored graduate students and contributed to grant proposal writing.">Key Contributions</button>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Education Section -->
-        <section data-filename="pages/WebsiteCode" data-linenumber="299" data-visual-selector-id="pages/WebsiteCode299" id="education" class="timeline-section">
-            <div data-filename="pages/WebsiteCode" data-linenumber="300" data-visual-selector-id="pages/WebsiteCode300" class="container">
-                <div data-filename="pages/WebsiteCode" data-linenumber="301" data-visual-selector-id="pages/WebsiteCode301" class="quote-section fade-in">
-                    <div data-filename="pages/WebsiteCode" data-linenumber="302" data-visual-selector-id="pages/WebsiteCode302" class="quote-mark green">"</div>
-                    <blockquote data-filename="pages/WebsiteCode" data-linenumber="303" data-visual-selector-id="pages/WebsiteCode303" class="quote-text">
-                        True education sets you apart from others; it doesn't just make you wealthier
-                    </blockquote>
+        <section data-filename="pages/WebsiteCode" data-linenumber="433" data-visual-selector-id="pages/WebsiteCode433" id="education">
+            <div data-filename="pages/WebsiteCode" data-linenumber="434" data-visual-selector-id="pages/WebsiteCode434" class="container" style="position: relative; z-index: 2;">
+                <div data-filename="pages/WebsiteCode" data-linenumber="435" data-visual-selector-id="pages/WebsiteCode435" class="section-header">
+                     <div data-filename="pages/WebsiteCode" data-linenumber="436" data-visual-selector-id="pages/WebsiteCode436" class="icon-wrapper"><svg data-filename='pages/WebsiteCode' data-linenumber='436' data-visual-selector-id='pages/WebsiteCode436' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='436' data-visual-selector-id='pages/WebsiteCode436' d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.084a1 1 0 0 0 0 1.838l8.57 3.908a2 2 0 0 0 1.66 0z"/><path data-filename='pages/WebsiteCode' data-linenumber='436' data-visual-selector-id='pages/WebsiteCode436' d="M22 10v6"/><path data-filename='pages/WebsiteCode' data-linenumber='436' data-visual-selector-id='pages/WebsiteCode436' d="M6 12.5V16a6 6 0 0 0 12 0v-3.5"/><path data-filename='pages/WebsiteCode' data-linenumber='436' data-visual-selector-id='pages/WebsiteCode436' d="M6 12.5a1 1 0 0 0-1 1V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a1 1 0 0 0-1-1"/></svg></div>
+                    <h2 data-filename="pages/WebsiteCode" data-linenumber="437" data-visual-selector-id="pages/WebsiteCode437">Education</h2>
+                    <div data-filename="pages/WebsiteCode" data-linenumber="438" data-visual-selector-id="pages/WebsiteCode438" class="divider"></div>
                 </div>
-                
-                <div data-filename="pages/WebsiteCode" data-linenumber="308" data-visual-selector-id="pages/WebsiteCode308" class="section-header">
-                    <div data-filename="pages/WebsiteCode" data-linenumber="309" data-visual-selector-id="pages/WebsiteCode309" class="section-icon">🎓</div>
-                    <h2 data-filename="pages/WebsiteCode" data-linenumber="310" data-visual-selector-id="pages/WebsiteCode310" class="section-title">Education</h2>
-                    <div data-filename="pages/WebsiteCode" data-linenumber="311" data-visual-selector-id="pages/WebsiteCode311" class="section-underline green"></div>
+                <div data-filename="pages/WebsiteCode" data-linenumber="440" data-visual-selector-id="pages/WebsiteCode440" class="quote-box education-quote">
+                    <div data-filename="pages/WebsiteCode" data-linenumber="441" data-visual-selector-id="pages/WebsiteCode441" class="quote-mark">“</div>
+                    <blockquote data-filename="pages/WebsiteCode" data-linenumber="442" data-visual-selector-id="pages/WebsiteCode442">True education sets you apart from others; it doesn't just make you wealthier.</blockquote>
                 </div>
-                
-                <div data-filename="pages/WebsiteCode" data-linenumber="314" data-visual-selector-id="pages/WebsiteCode314" class="timeline-container">
-                    <div data-filename="pages/WebsiteCode" data-linenumber="315" data-visual-selector-id="pages/WebsiteCode315" class="timeline-line"></div>
-                    <div data-filename="pages/WebsiteCode" data-linenumber="316" data-visual-selector-id="pages/WebsiteCode316" id="educationTimeline">
-                        <!-- Timeline items will be injected here -->
+                <div data-filename="pages/WebsiteCode" data-linenumber="444" data-visual-selector-id="pages/WebsiteCode444" class="timeline-container">
+                    <div data-filename="pages/WebsiteCode" data-linenumber="445" data-visual-selector-id="pages/WebsiteCode445" class="timeline-line"></div>
+                     <div data-filename="pages/WebsiteCode" data-linenumber="446" data-visual-selector-id="pages/WebsiteCode446" style="display: flex; flex-direction: column; align-items: center;">
+                        
+                        <!-- PhD -->
+                        <div data-filename="pages/WebsiteCode" data-linenumber="449" data-visual-selector-id="pages/WebsiteCode449" class="timeline-item right" style="align-self: center;">
+                             <div data-filename="pages/WebsiteCode" data-linenumber="450" data-visual-selector-id="pages/WebsiteCode450" class="timeline-marker" style="top: 1rem;"><div data-filename="pages/WebsiteCode" data-linenumber="450" data-visual-selector-id="pages/WebsiteCode450"></div></div>
+                            <div data-filename="pages/WebsiteCode" data-linenumber="451" data-visual-selector-id="pages/WebsiteCode451" class="timeline-card">
+                                <div data-filename="pages/WebsiteCode" data-linenumber="452" data-visual-selector-id="pages/WebsiteCode452" class="timeline-card-header">
+                                    <span data-filename="pages/WebsiteCode" data-linenumber="453" data-visual-selector-id="pages/WebsiteCode453" class="timeline-badge">January 2012 - March 2016</span>
+                                    <h3 data-filename="pages/WebsiteCode" data-linenumber="454" data-visual-selector-id="pages/WebsiteCode454" class="timeline-title">PhD in Organic Chemistry</h3>
+                                    <div data-filename="pages/WebsiteCode" data-linenumber="455" data-visual-selector-id="pages/WebsiteCode455" class="timeline-meta">
+                                        <img data-filename="pages/WebsiteCode" data-linenumber="456" data-visual-selector-id="pages/WebsiteCode456" src="https://raw.githubusercontent.com/Rauful15/rauful15.github.io/main/images/Stockholm%20Univ%20Logo.png" alt="Stockholm University Logo">
+                                        <a data-filename="pages/WebsiteCode" data-linenumber="457" data-visual-selector-id="pages/WebsiteCode457" href="https://www.su.se/english/" target="_blank" rel="noopener noreferrer">Stockholm University, Sweden</a>
+                                    </div>
+                                    <p data-filename="pages/WebsiteCode" data-linenumber="459" data-visual-selector-id="pages/WebsiteCode459" class="timeline-details">Advisor: <a data-filename='pages/WebsiteCode' data-linenumber='459' data-visual-selector-id='pages/WebsiteCode459' href="https://www.organ.su.se/ks/" target="_blank" rel="noopener noreferrer">Prof. Kálmán J. Szabó</a></p>
+                                    <p data-filename="pages/WebsiteCode" data-linenumber="460" data-visual-selector-id="pages/WebsiteCode460" class="timeline-details">PhD Examiner: <a data-filename='pages/WebsiteCode' data-linenumber='460' data-visual-selector-id='pages/WebsiteCode460' href="https://www.chm.bris.ac.uk/org/aggarwal/vka.php" target="_blank" rel="noopener noreferrer">Prof. Varinder K Aggarwal (Bristol University, UK)</a></p>
+                                </div>
+                                <div data-filename="pages/WebsiteCode" data-linenumber="462" data-visual-selector-id="pages/WebsiteCode462" class="timeline-card-content">
+                                    <a data-filename="pages/WebsiteCode" data-linenumber="463" data-visual-selector-id="pages/WebsiteCode463" href="https://su.diva-portal.org/smash/record.jsf?pid=diva2%3A861175&dswid=-7288" target="_blank" rel="noopener noreferrer" class="timeline-button">Read Full PhD Thesis</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MS -->
+                         <div data-filename="pages/WebsiteCode" data-linenumber="469" data-visual-selector-id="pages/WebsiteCode469" class="timeline-item" style="align-self: center;">
+                            <div data-filename="pages/WebsiteCode" data-linenumber="470" data-visual-selector-id="pages/WebsiteCode470" class="timeline-card">
+                                <div data-filename="pages/WebsiteCode" data-linenumber="471" data-visual-selector-id="pages/WebsiteCode471" class="timeline-card-header">
+                                    <span data-filename="pages/WebsiteCode" data-linenumber="472" data-visual-selector-id="pages/WebsiteCode472" class="timeline-badge">September 2010 - December 2011</span>
+                                    <h3 data-filename="pages/WebsiteCode" data-linenumber="473" data-visual-selector-id="pages/WebsiteCode473" class="timeline-title">MS in Organic Chemistry</h3>
+                                    <div data-filename="pages/WebsiteCode" data-linenumber="474" data-visual-selector-id="pages/WebsiteCode474" class="timeline-meta">
+                                        <img data-filename="pages/WebsiteCode" data-linenumber="475" data-visual-selector-id="pages/WebsiteCode475" src="https://raw.githubusercontent.com/Rauful15/rauful15.github.io/main/images/Stockholm%20Univ%20Logo.png" alt="Stockholm University Logo">
+                                        <a data-filename="pages/WebsiteCode" data-linenumber="476" data-visual-selector-id="pages/WebsiteCode476" href="https://www.su.se/english/" target="_blank" rel="noopener noreferrer">Stockholm University, Sweden</a>
+                                    </div>
+                                    <p data-filename="pages/WebsiteCode" data-linenumber="478" data-visual-selector-id="pages/WebsiteCode478" class="timeline-details">Thesis Advisor: <a data-filename='pages/WebsiteCode' data-linenumber='478' data-visual-selector-id='pages/WebsiteCode478' href="https://www.organ.su.se/ks/" target="_blank" rel="noopener noreferrer">Prof. Kálmán J. Szabó</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- BSc -->
+                        <div data-filename="pages/WebsiteCode" data-linenumber="484" data-visual-selector-id="pages/WebsiteCode484" class="timeline-item right" style="align-self: center;">
+                             <div data-filename="pages/WebsiteCode" data-linenumber="485" data-visual-selector-id="pages/WebsiteCode485" class="timeline-card">
+                                <div data-filename="pages/WebsiteCode" data-linenumber="486" data-visual-selector-id="pages/WebsiteCode486" class="timeline-card-header">
+                                    <span data-filename="pages/WebsiteCode" data-linenumber="487" data-visual-selector-id="pages/WebsiteCode487" class="timeline-badge">May 2004 - December 2008</span>
+                                    <h3 data-filename="pages/WebsiteCode" data-linenumber="488" data-visual-selector-id="pages/WebsiteCode488" class="timeline-title">BSc (Honors) in Chemistry</h3>
+                                    <div data-filename="pages/WebsiteCode" data-linenumber="489" data-visual-selector-id="pages/WebsiteCode489" class="timeline-meta">
+                                        <img data-filename="pages/WebsiteCode" data-linenumber="490" data-visual-selector-id="pages/WebsiteCode490" src="https://github.com/Rauful15/rauful15.github.io/raw/main/images/Univ%20of%20Chittagong%20logo.png" alt="University of Chittagong Logo">
+                                        <a data-filename="pages/WebsiteCode" data-linenumber="491" data-visual-selector-id="pages/WebsiteCode491" href="https://cu.ac.bd/" target="_blank" rel="noopener noreferrer">University of Chittagong, Bangladesh</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Skills Section -->
-        <section data-filename="pages/WebsiteCode" data-linenumber="324" data-visual-selector-id="pages/WebsiteCode324" id="skills" class="timeline-section">
-            <div data-filename="pages/WebsiteCode" data-linenumber="325" data-visual-selector-id="pages/WebsiteCode325" class="container">
-                <div data-filename="pages/WebsiteCode" data-linenumber="326" data-visual-selector-id="pages/WebsiteCode326" class="section-header">
-                    <div data-filename="pages/WebsiteCode" data-linenumber="327" data-visual-selector-id="pages/WebsiteCode327" class="section-icon">🛠️</div>
-                    <h2 data-filename="pages/WebsiteCode" data-linenumber="328" data-visual-selector-id="pages/WebsiteCode328" class="section-title">Core Competencies</h2>
-                    <div data-filename="pages/WebsiteCode" data-linenumber="329" data-visual-selector-id="pages/WebsiteCode329" class="section-underline orange"></div>
+        <section data-filename="pages/WebsiteCode" data-linenumber="503" data-visual-selector-id="pages/WebsiteCode503" id="skills">
+            <div data-filename="pages/WebsiteCode" data-linenumber="504" data-visual-selector-id="pages/WebsiteCode504" class="container">
+                <div data-filename="pages/WebsiteCode" data-linenumber="505" data-visual-selector-id="pages/WebsiteCode505" class="section-header">
+                    <h2 data-filename="pages/WebsiteCode" data-linenumber="506" data-visual-selector-id="pages/WebsiteCode506">Core Competencies</h2>
+                    <div data-filename="pages/WebsiteCode" data-linenumber="507" data-visual-selector-id="pages/WebsiteCode507" class="divider"></div>
                 </div>
-                
-                <div data-filename="pages/WebsiteCode" data-linenumber="332" data-visual-selector-id="pages/WebsiteCode332" class="skills-grid" id="skillsGrid">
-                    <!-- Skills will be injected here -->
-                </div>
-            </div>
-        </section>
-        
-        <!-- Publications Section -->
-        <section data-filename="pages/WebsiteCode" data-linenumber="339" data-visual-selector-id="pages/WebsiteCode339" id="publications" class="timeline-section">
-            <div data-filename="pages/WebsiteCode" data-linenumber="340" data-visual-selector-id="pages/WebsiteCode340" class="container">
-                <div data-filename="pages/WebsiteCode" data-linenumber="341" data-visual-selector-id="pages/WebsiteCode341" class="section-header">
-                    <div data-filename="pages/WebsiteCode" data-linenumber="342" data-visual-selector-id="pages/WebsiteCode342" class="section-icon">📖</div>
-                    <h2 data-filename="pages/WebsiteCode" data-linenumber="343" data-visual-selector-id="pages/WebsiteCode343" class="section-title">Publications & Patents</h2>
-                    <div data-filename="pages/WebsiteCode" data-linenumber="344" data-visual-selector-id="pages/WebsiteCode344" class="section-underline cyan"></div>
-                </div>
-                
-                <div data-filename="pages/WebsiteCode" data-linenumber="347" data-visual-selector-id="pages/WebsiteCode347" class="publications-grid" id="publicationsGrid">
-                    <!-- Publications will be injected here -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Blog Section -->
-        <section data-filename="pages/WebsiteCode" data-linenumber="354" data-visual-selector-id="pages/WebsiteCode354" id="blog" class="timeline-section">
-            <div data-filename="pages/WebsiteCode" data-linenumber="355" data-visual-selector-id="pages/WebsiteCode355" class="container">
-                <div data-filename="pages/WebsiteCode" data-linenumber="356" data-visual-selector-id="pages/WebsiteCode356" class="section-header">
-                    <div data-filename="pages/WebsiteCode" data-linenumber="357" data-visual-selector-id="pages/WebsiteCode357" class="section-icon">✍️</div>
-                    <h2 data-filename="pages/WebsiteCode" data-linenumber="358" data-visual-selector-id="pages/WebsiteCode358" class="section-title">Latest Insights</h2>
-                    <div data-filename="pages/WebsiteCode" data-linenumber="359" data-visual-selector-id="pages/WebsiteCode359" class="section-underline"></div>
-                </div>
-                
-                <div data-filename="pages/WebsiteCode" data-linenumber="362" data-visual-selector-id="pages/WebsiteCode362" class="blog-grid" id="blogGrid">
-                    <!-- Blog posts will be injected here -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section data-filename="pages/WebsiteCode" data-linenumber="369" data-visual-selector-id="pages/WebsiteCode369" id="contact" class="timeline-section">
-            <div data-filename="pages/WebsiteCode" data-linenumber="370" data-visual-selector-id="pages/WebsiteCode370" class="container">
-                <div data-filename="pages/WebsiteCode" data-linenumber="371" data-visual-selector-id="pages/WebsiteCode371" class="contact-cta">
-                    <h2 data-filename="pages/WebsiteCode" data-linenumber="372" data-visual-selector-id="pages/WebsiteCode372">Let's Collaborate</h2>
-                    <p data-filename="pages/WebsiteCode" data-linenumber="373" data-visual-selector-id="pages/WebsiteCode373">I am always open to meaningful conversations that can advance the field of medicinal chemistry. Whether you're interested in drug discovery partnerships, consulting opportunities, or academic collaborations, I'd love to hear from you.</p>
-                    <div data-filename="pages/WebsiteCode" data-linenumber="374" data-visual-selector-id="pages/WebsiteCode374">
-                        <a data-filename="pages/WebsiteCode" data-linenumber="375" data-visual-selector-id="pages/WebsiteCode375" href="mailto:rauful.alam15@gmail.com" class="contact-button">
-                            📧 Start a Conversation
-                        </a>
+                <div data-filename="pages/WebsiteCode" data-linenumber="509" data-visual-selector-id="pages/WebsiteCode509" class="grid">
+                    <div data-filename="pages/WebsiteCode" data-linenumber="510" data-visual-selector-id="pages/WebsiteCode510" class="skill-card">
+                        <div data-filename="pages/WebsiteCode" data-linenumber="511" data-visual-selector-id="pages/WebsiteCode511" class="skill-card-header">
+                            <div data-filename="pages/WebsiteCode" data-linenumber="512" data-visual-selector-id="pages/WebsiteCode512" class="icon-bg"><svg data-filename='pages/WebsiteCode' data-linenumber='512' data-visual-selector-id='pages/WebsiteCode512' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='512' data-visual-selector-id='pages/WebsiteCode512' d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline data-filename='pages/WebsiteCode' data-linenumber='512' data-visual-selector-id='pages/WebsiteCode512' points="14 2 14 8 20 8"/><line data-filename='pages/WebsiteCode' data-linenumber='512' data-visual-selector-id='pages/WebsiteCode512' x1="12" x2="12" y1="18" y2="12"/><line data-filename='pages/WebsiteCode' data-linenumber='512' data-visual-selector-id='pages/WebsiteCode512' x1="9" x2="15" y1="15" y2="15"/></svg></div>
+                            <h3 data-filename="pages/WebsiteCode" data-linenumber="513" data-visual-selector-id="pages/WebsiteCode513">Chemistry Expertise</h3>
+                        </div>
+                        <div data-filename="pages/WebsiteCode" data-linenumber="515" data-visual-selector-id="pages/WebsiteCode515" class="skill-card-content">
+                            <div data-filename="pages/WebsiteCode" data-linenumber="516" data-visual-selector-id="pages/WebsiteCode516" class="skill-tags">
+                                <span data-filename="pages/WebsiteCode" data-linenumber="517" data-visual-selector-id="pages/WebsiteCode517" class="skill-tag">Organic Synthesis</span><span data-filename="pages/WebsiteCode" data-linenumber="517" data-visual-selector-id="pages/WebsiteCode517" class="skill-tag">Medicinal Chemistry</span><span data-filename="pages/WebsiteCode" data-linenumber="517" data-visual-selector-id="pages/WebsiteCode517" class="skill-tag">Asymmetric Catalysis</span><span data-filename="pages/WebsiteCode" data-linenumber="517" data-visual-selector-id="pages/WebsiteCode517" class="skill-tag">Photoredox Chemistry</span><span data-filename="pages/WebsiteCode" data-linenumber="517" data-visual-selector-id="pages/WebsiteCode517" class="skill-tag">Multi-step Synthesis</span><span data-filename="pages/WebsiteCode" data-linenumber="517" data-visual-selector-id="pages/WebsiteCode517" class="skill-tag">Purification (HPLC, SFC)</span>
+                            </div>
+                        </div>
                     </div>
-                    <div data-filename="pages/WebsiteCode" data-linenumber="379" data-visual-selector-id="pages/WebsiteCode379" class="social-links">
-                        <h3 data-filename="pages/WebsiteCode" data-linenumber="380" data-visual-selector-id="pages/WebsiteCode380">Find me on social media</h3>
-                        <div data-filename="pages/WebsiteCode" data-linenumber="381" data-visual-selector-id="pages/WebsiteCode381" class="social-links-container">
-                            <a data-filename="pages/WebsiteCode" data-linenumber="382" data-visual-selector-id="pages/WebsiteCode382" href="https://www.linkedin.com/in/rauful-alam-phd-12536365/" target="_blank" rel="noopener noreferrer" class="social-link">
-                                <svg data-filename="pages/WebsiteCode" data-linenumber="383" data-visual-selector-id="pages/WebsiteCode383" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='383' data-visual-selector-id='pages/WebsiteCode383' d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect data-filename='pages/WebsiteCode' data-linenumber='383' data-visual-selector-id='pages/WebsiteCode383' x="2" y="9" width="4" height="12"></rect><circle data-filename='pages/WebsiteCode' data-linenumber='383' data-visual-selector-id='pages/WebsiteCode383' cx="4" cy="4" r="2"></circle></svg>
-                            </a>
-                            <a data-filename="pages/WebsiteCode" data-linenumber="385" data-visual-selector-id="pages/WebsiteCode385" href="https://www.facebook.com/rauful.alam15" target="_blank" rel="noopener noreferrer" class="social-link">
-                                <svg data-filename="pages/WebsiteCode" data-linenumber="386" data-visual-selector-id="pages/WebsiteCode386" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='386' data-visual-selector-id='pages/WebsiteCode386' d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                            </a>
-                            <a data-filename="pages/WebsiteCode" data-linenumber="388" data-visual-selector-id="pages/WebsiteCode388" href="https://www.youtube.com/@raufulalam9197" target="_blank" rel="noopener noreferrer" class="social-link">
-                                <svg data-filename="pages/WebsiteCode" data-linenumber="389" data-visual-selector-id="pages/WebsiteCode389" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='389' data-visual-selector-id='pages/WebsiteCode389' d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon data-filename='pages/WebsiteCode' data-linenumber='389' data-visual-selector-id='pages/WebsiteCode389' points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
-                            </a>
-                            <a data-filename="pages/WebsiteCode" data-linenumber="391" data-visual-selector-id="pages/WebsiteCode391" href="https://scholar.google.com/citations?user=PrrE9dQAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="social-link">
-                                <svg data-filename="pages/WebsiteCode" data-linenumber="392" data-visual-selector-id="pages/WebsiteCode392" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='392' data-visual-selector-id='pages/WebsiteCode392' d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path data-filename='pages/WebsiteCode' data-linenumber='392' data-visual-selector-id='pages/WebsiteCode392' d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path><path data-filename='pages/WebsiteCode' data-linenumber='392' data-visual-selector-id='pages/WebsiteCode392' d="M16 8v4"></path><path data-filename='pages/WebsiteCode' data-linenumber='392' data-visual-selector-id='pages/WebsiteCode392' d="m10 8 2 2 2-2"></path></svg>
-                            </a>
+                    <div data-filename="pages/WebsiteCode" data-linenumber="521" data-visual-selector-id="pages/WebsiteCode521" class="skill-card">
+                        <div data-filename="pages/WebsiteCode" data-linenumber="522" data-visual-selector-id="pages/WebsiteCode522" class="skill-card-header">
+                            <div data-filename="pages/WebsiteCode" data-linenumber="523" data-visual-selector-id="pages/WebsiteCode523" class="icon-bg"><svg data-filename='pages/WebsiteCode' data-linenumber='523' data-visual-selector-id='pages/WebsiteCode523' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><flask-conical/><path data-filename='pages/WebsiteCode' data-linenumber='523' data-visual-selector-id='pages/WebsiteCode523' d="M10 10 4.2 15.8"/><path data-filename='pages/WebsiteCode' data-linenumber='523' data-visual-selector-id='pages/WebsiteCode523' d="M13.4 13.4 19.2 7.6"/></svg></div>
+                            <h3 data-filename="pages/WebsiteCode" data-linenumber="524" data-visual-selector-id="pages/WebsiteCode524">Drug Discovery</h3>
+                        </div>
+                        <div data-filename="pages/WebsiteCode" data-linenumber="526" data-visual-selector-id="pages/WebsiteCode526" class="skill-card-content">
+                            <div data-filename="pages/WebsiteCode" data-linenumber="527" data-visual-selector-id="pages/WebsiteCode527" class="skill-tags">
+                                <span data-filename="pages/WebsiteCode" data-linenumber="528" data-visual-selector-id="pages/WebsiteCode528" class="skill-tag">Hit-to-Lead Optimization</span><span data-filename="pages/WebsiteCode" data-linenumber="528" data-visual-selector-id="pages/WebsiteCode528" class="skill-tag">RNA Splicing Modulation</span><span data-filename="pages/WebsiteCode" data-linenumber="528" data-visual-selector-id="pages/WebsiteCode528" class="skill-tag">Structure-Activity Relationship (SAR)</span><span data-filename="pages/WebsiteCode" data-linenumber="528" data-visual-selector-id="pages/WebsiteCode528" class="skill-tag">DMPK Properties Analysis</span><span data-filename="pages/WebsiteCode" data-linenumber="528" data-visual-selector-id="pages/WebsiteCode528" class="skill-tag">NLRP3 Inflammasome</span><span data-filename="pages/WebsiteCode" data-linenumber="528" data-visual-selector-id="pages/WebsiteCode528" class="skill-tag">Huntington's Disease</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-filename="pages/WebsiteCode" data-linenumber="532" data-visual-selector-id="pages/WebsiteCode532" class="skill-card">
+                        <div data-filename="pages/WebsiteCode" data-linenumber="533" data-visual-selector-id="pages/WebsiteCode533" class="skill-card-header">
+                            <div data-filename="pages/WebsiteCode" data-linenumber="534" data-visual-selector-id="pages/WebsiteCode534" class="icon-bg"><svg data-filename='pages/WebsiteCode' data-linenumber='534' data-visual-selector-id='pages/WebsiteCode534' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='534' data-visual-selector-id='pages/WebsiteCode534' d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path data-filename='pages/WebsiteCode' data-linenumber='534' data-visual-selector-id='pages/WebsiteCode534' d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path data-filename='pages/WebsiteCode' data-linenumber='534' data-visual-selector-id='pages/WebsiteCode534' d="M12 2v2"/><path data-filename='pages/WebsiteCode' data-linenumber='534' data-visual-selector-id='pages/WebsiteCode534' d="M12 22v-2"/><path data-filename='pages/WebsiteCode' data-linenumber='534' data-visual-selector-id='pages/WebsiteCode534' d="m17 20.66-1-1.73"/><path data-filename='pages/WebsiteCode' data-linenumber='534' data-visual-selector-id='pages/WebsiteCode534' d="M11 10.27 7 3.34"/><path data-filename='pages/WebsiteCode' data-linenumber='534' data-visual-selector-id='pages/WebsiteCode534' d="m20.66 17-1.73-1"/><path data-filename='pages/WebsiteCode' data-linenumber='534' data-visual-selector-id='pages/WebsiteCode534' d="m3.34 7 1.73 1"/><path data-filename='pages/WebsiteCode' data-linenumber='534' data-visual-selector-id='pages/WebsiteCode534' d="M14 12h8"/><path data-filename='pages/WebsiteCode' data-linenumber='534' data-visual-selector-id='pages/WebsiteCode534' d="M2 12h2"/><path data-filename='pages/WebsiteCode' data-linenumber='534' data-visual-selector-id='pages/WebsiteCode534' d="m20.66 7-1.73 1"/><path data-filename='pages/WebsiteCode' data-linenumber='534' data-visual-selector-id='pages/WebsiteCode534' d="m3.34 17 1.73-1"/><path data-filename='pages/WebsiteCode' data-linenumber='534' data-visual-selector-id='pages/WebsiteCode534' d="m17 3.34-1 1.73"/><path data-filename='pages/WebsiteCode' data-linenumber='534' data-visual-selector-id='pages/WebsiteCode534' d="m11 13.73 4 6.93"/></svg></div>
+                            <h3 data-filename="pages/WebsiteCode" data-linenumber="535" data-visual-selector-id="pages/WebsiteCode535">Technical Skills</h3>
+                        </div>
+                        <div data-filename="pages/WebsiteCode" data-linenumber="537" data-visual-selector-id="pages/WebsiteCode537" class="skill-card-content">
+                            <div data-filename="pages/WebsiteCode" data-linenumber="538" data-visual-selector-id="pages/WebsiteCode538" class="skill-tags">
+                                <span data-filename="pages/WebsiteCode" data-linenumber="539" data-visual-selector-id="pages/WebsiteCode539" class="skill-tag">ChemDraw</span><span data-filename="pages/WebsiteCode" data-linenumber="539" data-visual-selector-id="pages/WebsiteCode539" class="skill-tag">Schrödinger Suite</span><span data-filename="pages/WebsiteCode" data-linenumber="539" data-visual-selector-id="pages/WebsiteCode539" class="skill-tag">NMR & Mass Spec Analysis</span><span data-filename="pages/WebsiteCode" data-linenumber="539" data-visual-selector-id="pages/WebsiteCode539" class="skill-tag">Glovebox Operations</span><span data-filename="pages/WebsiteCode" data-linenumber="539" data-visual-selector-id="pages/WebsiteCode539" class="skill-tag">High-Throughput Experimentation (HTE)</span><span data-filename="pages/WebsiteCode" data-linenumber="539" data-visual-selector-id="pages/WebsiteCode539" class="skill-tag">Patent Searching</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-filename="pages/WebsiteCode" data-linenumber="543" data-visual-selector-id="pages/WebsiteCode543" class="skill-card">
+                        <div data-filename="pages/WebsiteCode" data-linenumber="544" data-visual-selector-id="pages/WebsiteCode544" class="skill-card-header">
+                            <div data-filename="pages/WebsiteCode" data-linenumber="545" data-visual-selector-id="pages/WebsiteCode545" class="icon-bg"><svg data-filename='pages/WebsiteCode' data-linenumber='545' data-visual-selector-id='pages/WebsiteCode545' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='545' data-visual-selector-id='pages/WebsiteCode545' d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle data-filename='pages/WebsiteCode' data-linenumber='545' data-visual-selector-id='pages/WebsiteCode545' cx="9" cy="7" r="4"/><path data-filename='pages/WebsiteCode' data-linenumber='545' data-visual-selector-id='pages/WebsiteCode545' d="M22 21v-2a4 4 0 0 0-3-3.87"/><path data-filename='pages/WebsiteCode' data-linenumber='545' data-visual-selector-id='pages/WebsiteCode545' d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                            <h3 data-filename="pages/WebsiteCode" data-linenumber="546" data-visual-selector-id="pages/WebsiteCode546">Leadership & Management</h3>
+                        </div>
+                        <div data-filename="pages/WebsiteCode" data-linenumber="548" data-visual-selector-id="pages/WebsiteCode548" class="skill-card-content">
+                            <div data-filename="pages/WebsiteCode" data-linenumber="549" data-visual-selector-id="pages/WebsiteCode549" class="skill-tags">
+                                <span data-filename="pages/WebsiteCode" data-linenumber="550" data-visual-selector-id="pages/WebsiteCode550" class="skill-tag">Team Management & Mentoring</span><span data-filename="pages/WebsiteCode" data-linenumber="550" data-visual-selector-id="pages/WebsiteCode550" class="skill-tag">Project Leadership</span><span data-filename="pages/WebsiteCode" data-linenumber="550" data-visual-selector-id="pages/WebsiteCode550" class="skill-tag">CRO Management</span><span data-filename="pages/WebsiteCode" data-linenumber="550" data-visual-selector-id="pages/WebsiteCode550" class="skill-tag">Cross-functional Collaboration</span><span data-filename="pages/WebsiteCode" data-linenumber="550" data-visual-selector-id="pages/WebsiteCode550" class="skill-tag">On-campus Recruitment</span><span data-filename="pages/WebsiteCode" data-linenumber="550" data-visual-selector-id="pages/WebsiteCode550" class="skill-tag">Scientific Communication</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Offered Courses Section -->
+        <section data-filename="pages/WebsiteCode" data-linenumber="559" data-visual-selector-id="pages/WebsiteCode559" id="courses">
+            <div data-filename="pages/WebsiteCode" data-linenumber="560" data-visual-selector-id="pages/WebsiteCode560" class="container">
+                <div data-filename="pages/WebsiteCode" data-linenumber="561" data-visual-selector-id="pages/WebsiteCode561" class="section-header">
+                     <div data-filename="pages/WebsiteCode" data-linenumber="562" data-visual-selector-id="pages/WebsiteCode562" class="icon-wrapper"><svg data-filename='pages/WebsiteCode' data-linenumber='562' data-visual-selector-id='pages/WebsiteCode562' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='562' data-visual-selector-id='pages/WebsiteCode562' d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle data-filename='pages/WebsiteCode' data-linenumber='562' data-visual-selector-id='pages/WebsiteCode562' cx="9" cy="7" r="4"/><path data-filename='pages/WebsiteCode' data-linenumber='562' data-visual-selector-id='pages/WebsiteCode562' d="M22 21v-2a4 4 0 0 0-3-3.87"/><path data-filename='pages/WebsiteCode' data-linenumber='562' data-visual-selector-id='pages/WebsiteCode562' d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                    <h2 data-filename="pages/WebsiteCode" data-linenumber="563" data-visual-selector-id="pages/WebsiteCode563">Offered Courses</h2>
+                    <div data-filename="pages/WebsiteCode" data-linenumber="564" data-visual-selector-id="pages/WebsiteCode564" class="divider"></div>
+                </div>
+                <div data-filename="pages/WebsiteCode" data-linenumber="566" data-visual-selector-id="pages/WebsiteCode566" class="grid">
+                    <div data-filename="pages/WebsiteCode" data-linenumber="567" data-visual-selector-id="pages/WebsiteCode567" class="course-card">
+                        <div data-filename="pages/WebsiteCode" data-linenumber="568" data-visual-selector-id="pages/WebsiteCode568" class="course-card-header">
+                            <h3 data-filename="pages/WebsiteCode" data-linenumber="569" data-visual-selector-id="pages/WebsiteCode569">Fundamentals in Organic Chemistry</h3>
+                            <p data-filename="pages/WebsiteCode" data-linenumber="570" data-visual-selector-id="pages/WebsiteCode570">A comprehensive introduction to organic chemistry principles, covering molecular structure, bonding, stereochemistry, and basic reaction mechanisms.</p>
+                            <div data-filename="pages/WebsiteCode" data-linenumber="571" data-visual-selector-id="pages/WebsiteCode571" class="course-badges">
+                                <span data-filename="pages/WebsiteCode" data-linenumber="572" data-visual-selector-id="pages/WebsiteCode572" class="course-badge duration">10 weeks, 30 hours</span>
+                                <span data-filename="pages/WebsiteCode" data-linenumber="573" data-visual-selector-id="pages/WebsiteCode573" class="course-badge level">Beginner to Intermediate</span>
+                            </div>
+                        </div>
+                        <div data-filename="pages/WebsiteCode" data-linenumber="576" data-visual-selector-id="pages/WebsiteCode576" class="course-card-content"><button data-filename='pages/WebsiteCode' data-linenumber='576' data-visual-selector-id='pages/WebsiteCode576' class="course-card-button">Course details and registration</button></div>
+                    </div>
+                    <div data-filename="pages/WebsiteCode" data-linenumber="578" data-visual-selector-id="pages/WebsiteCode578" class="course-card">
+                        <div data-filename="pages/WebsiteCode" data-linenumber="579" data-visual-selector-id="pages/WebsiteCode579" class="course-card-header">
+                            <h3 data-filename="pages/WebsiteCode" data-linenumber="580" data-visual-selector-id="pages/WebsiteCode580">Fundamentals in Medicinal Chemistry</h3>
+                            <p data-filename="pages/WebsiteCode" data-linenumber="581" data-visual-selector-id="pages/WebsiteCode581">An essential course exploring drug discovery principles, structure-activity relationships, and the molecular basis of drug action.</p>
+                            <div data-filename="pages/WebsiteCode" data-linenumber="582" data-visual-selector-id="pages/WebsiteCode582" class="course-badges">
+                                <span data-filename="pages/WebsiteCode" data-linenumber="583" data-visual-selector-id="pages/WebsiteCode583" class="course-badge duration">10 weeks, 30 hours</span>
+                                <span data-filename="pages/WebsiteCode" data-linenumber="584" data-visual-selector-id="pages/WebsiteCode584" class="course-badge level">Intermediate to Advanced</span>
+                            </div>
+                        </div>
+                        <div data-filename="pages/WebsiteCode" data-linenumber="587" data-visual-selector-id="pages/WebsiteCode587" class="course-card-content"><button data-filename='pages/WebsiteCode' data-linenumber='587' data-visual-selector-id='pages/WebsiteCode587' class="course-card-button">Course details and registration</button></div>
+                    </div>
+                    <div data-filename="pages/WebsiteCode" data-linenumber="589" data-visual-selector-id="pages/WebsiteCode589" class="course-card">
+                        <div data-filename="pages/WebsiteCode" data-linenumber="590" data-visual-selector-id="pages/WebsiteCode590" class="course-card-header">
+                            <h3 data-filename="pages/WebsiteCode" data-linenumber="591" data-visual-selector-id="pages/WebsiteCode591">Organic Chemistry for Grade 11-12</h3>
+                            <p data-filename="pages/WebsiteCode" data-linenumber="592" data-visual-selector-id="pages/WebsiteCode592">Specially designed for HSC/A-Level students to master fundamental concepts, build a strong foundation for exams, and ignite a passion for the subject.</p>
+                            <div data-filename="pages/WebsiteCode" data-linenumber="593" data-visual-selector-id="pages/WebsiteCode593" class="course-badges">
+                                <span data-filename="pages/WebsiteCode" data-linenumber="594" data-visual-selector-id="pages/WebsiteCode594" class="course-badge duration">4 weeks, 12 hours</span>
+                                <span data-filename="pages/WebsiteCode" data-linenumber="595" data-visual-selector-id="pages/WebsiteCode595" class="course-badge level">High School (HSC / A-Level)</span>
+                            </div>
+                        </div>
+                        <div data-filename="pages/WebsiteCode" data-linenumber="598" data-visual-selector-id="pages/WebsiteCode598" class="course-card-content"><button data-filename='pages/WebsiteCode' data-linenumber='598' data-visual-selector-id='pages/WebsiteCode598' class="course-card-button">Course details and registration</button></div>
+                    </div>
+                    <div data-filename="pages/WebsiteCode" data-linenumber="600" data-visual-selector-id="pages/WebsiteCode600" class="course-card">
+                        <div data-filename="pages/WebsiteCode" data-linenumber="601" data-visual-selector-id="pages/WebsiteCode601" class="course-card-header">
+                            <h3 data-filename="pages/WebsiteCode" data-linenumber="602" data-visual-selector-id="pages/WebsiteCode602">Learn and Fun Chemistry</h3>
+                            <p data-filename="pages/WebsiteCode" data-linenumber="603" data-visual-selector-id="pages/WebsiteCode603">An exciting and interactive chemistry course for Grade 11-12 students that makes learning chemistry enjoyable through experiments and real-world applications.</p>
+                            <div data-filename="pages/WebsiteCode" data-linenumber="604" data-visual-selector-id="pages/WebsiteCode604" class="course-badges">
+                                <span data-filename="pages/WebsiteCode" data-linenumber="605" data-visual-selector-id="pages/WebsiteCode605" class="course-badge duration">10 weeks, 30 hours</span>
+                                <span data-filename="pages/WebsiteCode" data-linenumber="606" data-visual-selector-id="pages/WebsiteCode606" class="course-badge level">High School (HSC / A-Level)</span>
+                            </div>
+                        </div>
+                        <div data-filename="pages/WebsiteCode" data-linenumber="609" data-visual-selector-id="pages/WebsiteCode609" class="course-card-content"><button data-filename='pages/WebsiteCode' data-linenumber='609' data-visual-selector-id='pages/WebsiteCode609' class="course-card-button">Course details and registration</button></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section data-filename="pages/WebsiteCode" data-linenumber="616" data-visual-selector-id="pages/WebsiteCode616" id="publications">
+            <div data-filename="pages/WebsiteCode" data-linenumber="617" data-visual-selector-id="pages/WebsiteCode617" class="container">
+                <div data-filename="pages/WebsiteCode" data-linenumber="618" data-visual-selector-id="pages/WebsiteCode618" class="section-header">
+                     <div data-filename="pages/WebsiteCode" data-linenumber="619" data-visual-selector-id="pages/WebsiteCode619" class="icon-wrapper"><svg data-filename='pages/WebsiteCode' data-linenumber='619' data-visual-selector-id='pages/WebsiteCode619' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='619' data-visual-selector-id='pages/WebsiteCode619' d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path data-filename='pages/WebsiteCode' data-linenumber='619' data-visual-selector-id='pages/WebsiteCode619' d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+                    <h2 data-filename="pages/WebsiteCode" data-linenumber="620" data-visual-selector-id="pages/WebsiteCode620">Publications & Patents</h2>
+                    <div data-filename="pages/WebsiteCode" data-linenumber="621" data-visual-selector-id="pages/WebsiteCode621" class="divider"></div>
+                </div>
+                <div data-filename="pages/WebsiteCode" data-linenumber="623" data-visual-selector-id="pages/WebsiteCode623" class="grid">
+                    <div data-filename="pages/WebsiteCode" data-linenumber="624" data-visual-selector-id="pages/WebsiteCode624" class="publication-card">
+                        <div data-filename="pages/WebsiteCode" data-linenumber="625" data-visual-selector-id="pages/WebsiteCode625" class="publication-card-content">
+                            <img data-filename="pages/WebsiteCode" data-linenumber="626" data-visual-selector-id="pages/WebsiteCode626" src="https://raw.githubusercontent.com/Rauful15/rauful15.github.io/main/images/Org%20lett%20cover.jpg" alt="Org. Lett. cover">
+                            <div data-filename="pages/WebsiteCode" data-linenumber="627" data-visual-selector-id="pages/WebsiteCode627" class="text-content">
+                                <h3 data-filename="pages/WebsiteCode" data-linenumber="628" data-visual-selector-id="pages/WebsiteCode628">Photoredox-catalyzed Direct Reductive Amination of Aldehydes</h3>
+                                <p data-filename="pages/WebsiteCode" data-linenumber="629" data-visual-selector-id="pages/WebsiteCode629" class="authors">Alam, R.; Molander, A. G.</p>
+                                <p data-filename="pages/WebsiteCode" data-linenumber="630" data-visual-selector-id="pages/WebsiteCode630" class="journal">Org. Lett., 2018, 20, 2680-2684</p>
+                                <a data-filename="pages/WebsiteCode" data-linenumber="631" data-visual-selector-id="pages/WebsiteCode631" href="https://pubs.acs.org/doi/10.1021/acs.orglett.8b00895" target="_blank" rel="noopener noreferrer" class="view-button">View Publication</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-filename="pages/WebsiteCode" data-linenumber="635" data-visual-selector-id="pages/WebsiteCode635" class="publication-card">
+                        <div data-filename="pages/WebsiteCode" data-linenumber="636" data-visual-selector-id="pages/WebsiteCode636" class="publication-card-content">
+                            <img data-filename="pages/WebsiteCode" data-linenumber="637" data-visual-selector-id="pages/WebsiteCode637" src="https://raw.githubusercontent.com/Rauful15/rauful15.github.io/main/images/Angewandte%20Cover.jpg" alt="Angew. Chem. Int. Ed. cover">
+                            <div data-filename="pages/WebsiteCode" data-linenumber="638" data-visual-selector-id="pages/WebsiteCode638" class="text-content">
+                                <h3 data-filename="pages/WebsiteCode" data-linenumber="639" data-visual-selector-id="pages/WebsiteCode639">Catalytic Asymmetric Allylboration of Indoles and Dihydroisoquinolines</h3>
+                                <p data-filename="pages/WebsiteCode" data-linenumber="640" data-visual-selector-id="pages/WebsiteCode640" class="authors">Alam, R.; Diner, C.; et al.</p>
+                                <p data-filename="pages/WebsiteCode" data-linenumber="641" data-visual-selector-id="pages/WebsiteCode641" class="journal">Angew. Chem. Int. Ed. 2016, 55, 14417-14421</p>
+                                <a data-filename="pages/WebsiteCode" data-linenumber="642" data-visual-selector-id="pages/WebsiteCode642" href="http://onlinelibrary.wiley.com/doi/10.1002/anie.201608605/full" target="_blank" rel="noopener noreferrer" class="view-button">View Publication</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-filename="pages/WebsiteCode" data-linenumber="646" data-visual-selector-id="pages/WebsiteCode646" class="publication-card">
+                        <div data-filename="pages/WebsiteCode" data-linenumber="647" data-visual-selector-id="pages/WebsiteCode647" class="publication-card-content">
+                            <img data-filename="pages/WebsiteCode" data-linenumber="648" data-visual-selector-id="pages/WebsiteCode648" src="https://raw.githubusercontent.com/Rauful15/rauful15.github.io/main/images/JACS%20cover.jpg" alt="J. Am. Chem. Soc. cover">
+                            <div data-filename="pages/WebsiteCode" data-linenumber="649" data-visual-selector-id="pages/WebsiteCode649" class="text-content">
+                                <h3 data-filename="pages/WebsiteCode" data-linenumber="650" data-visual-selector-id="pages/WebsiteCode650">Synthesis of Adjacent Quaternary Stereocenters by Catalytic Asymmetric Allylboration</h3>
+                                <p data-filename="pages/WebsiteCode" data-linenumber="651" data-visual-selector-id="pages/WebsiteCode651" class="authors">Alam, R.; Vollgraff, T.; et al.</p>
+                                <p data-filename="pages/WebsiteCode" data-linenumber="652" data-visual-selector-id="pages/WebsiteCode652" class="journal">J. Am. Chem. Soc. 2015, 137, 11262-11265</p>
+                                <a data-filename="pages/WebsiteCode" data-linenumber="653" data-visual-selector-id="pages/WebsiteCode653" href="http://pubs.acs.org/doi/abs/10.1021/jacs.5b07498" target="_blank" rel="noopener noreferrer" class="view-button">View Publication</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-filename="pages/WebsiteCode" data-linenumber="657" data-visual-selector-id="pages/WebsiteCode657" class="publication-card">
+                        <div data-filename="pages/WebsiteCode" data-linenumber="658" data-visual-selector-id="pages/WebsiteCode658" class="publication-card-content">
+                            <img data-filename="pages/WebsiteCode" data-linenumber="659" data-visual-selector-id="pages/WebsiteCode659" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Patent document illustration">
+                            <div data-filename="pages/WebsiteCode" data-linenumber="660" data-visual-selector-id="pages/WebsiteCode660" class="text-content">
+                                <h3 data-filename="pages/WebsiteCode" data-linenumber="661" data-visual-selector-id="pages/WebsiteCode661">Novel Small Molecule Modulators for Splicing</h3>
+                                <p data-filename="pages/WebsiteCode" data-linenumber="662" data-visual-selector-id="pages/WebsiteCode662" class="authors">Multiple patent applications</p>
+                                <p data-filename="pages/WebsiteCode" data-linenumber="663" data-visual-selector-id="pages/WebsiteCode663" class="journal">e.g., WO/2019/191229</p>
+                                <a data-filename="pages/WebsiteCode" data-linenumber="664" data-visual-selector-id="pages/WebsiteCode664" href="https://rauful-alam.blogspot.com/" target="_blank" rel="noopener noreferrer" class="view-button">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-filename="pages/WebsiteCode" data-linenumber="669" data-visual-selector-id="pages/WebsiteCode669" class="more-pubs-container">
+                    <button data-filename="pages/WebsiteCode" data-linenumber="670" data-visual-selector-id="pages/WebsiteCode670" class="more-pubs-button">More Publications</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Blog Section -->
+        <section data-filename="pages/WebsiteCode" data-linenumber="676" data-visual-selector-id="pages/WebsiteCode676" id="blog">
+             <div data-filename="pages/WebsiteCode" data-linenumber="677" data-visual-selector-id="pages/WebsiteCode677" class="container">
+                <div data-filename="pages/WebsiteCode" data-linenumber="678" data-visual-selector-id="pages/WebsiteCode678" class="section-header">
+                     <div data-filename="pages/WebsiteCode" data-linenumber="679" data-visual-selector-id="pages/WebsiteCode679" class="icon-wrapper"><svg data-filename='pages/WebsiteCode' data-linenumber='679' data-visual-selector-id='pages/WebsiteCode679' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='679' data-visual-selector-id='pages/WebsiteCode679' d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+                    <h2 data-filename="pages/WebsiteCode" data-linenumber="680" data-visual-selector-id="pages/WebsiteCode680">Latest Insights</h2>
+                    <div data-filename="pages/WebsiteCode" data-linenumber="681" data-visual-selector-id="pages/WebsiteCode681" class="divider"></div>
+                </div>
+                <div data-filename="pages/WebsiteCode" data-linenumber="683" data-visual-selector-id="pages/WebsiteCode683" class="grid">
+                    <div data-filename="pages/WebsiteCode" data-linenumber="684" data-visual-selector-id="pages/WebsiteCode684" class="blog-card">
+                        <div data-filename="pages/WebsiteCode" data-linenumber="685" data-visual-selector-id="pages/WebsiteCode685" class="blog-card-header">
+                            <div data-filename="pages/WebsiteCode" data-linenumber="686" data-visual-selector-id="pages/WebsiteCode686"><h4 data-filename="pages/WebsiteCode" data-linenumber="686" data-visual-selector-id="pages/WebsiteCode686">Drug Discovery</h4></div>
+                        </div>
+                        <div data-filename="pages/WebsiteCode" data-linenumber="688" data-visual-selector-id="pages/WebsiteCode688" class="blog-card-content">
+                            <h3 data-filename="pages/WebsiteCode" data-linenumber="689" data-visual-selector-id="pages/WebsiteCode689">The Future of RNA Splicing in Drug Discovery</h3>
+                            <a data-filename="pages/WebsiteCode" data-linenumber="690" data-visual-selector-id="pages/WebsiteCode690" href="https://rauful-alam.blogspot.com/" target="_blank" rel="noopener noreferrer" class="blog-card-button">Read More</a>
+                        </div>
+                    </div>
+                    <div data-filename="pages/WebsiteCode" data-linenumber="693" data-visual-selector-id="pages/WebsiteCode693" class="blog-card">
+                        <div data-filename="pages/WebsiteCode" data-linenumber="694" data-visual-selector-id="pages/WebsiteCode694" class="blog-card-header green">
+                            <div data-filename="pages/WebsiteCode" data-linenumber="695" data-visual-selector-id="pages/WebsiteCode695"><h4 data-filename="pages/WebsiteCode" data-linenumber="695" data-visual-selector-id="pages/WebsiteCode695">Medicinal Chemistry</h4></div>
+                        </div>
+                        <div data-filename="pages/WebsiteCode" data-linenumber="697" data-visual-selector-id="pages/WebsiteCode697" class="blog-card-content">
+                            <h3 data-filename="pages/WebsiteCode" data-linenumber="698" data-visual-selector-id="pages/WebsiteCode698">From Hit to Lead: Optimizing Small Molecules for CNS Targets</h3>
+                            <a data-filename="pages/WebsiteCode" data-linenumber="699" data-visual-selector-id="pages/WebsiteCode699" href="https://rauful-alam.blogspot.com/" target="_blank" rel="noopener noreferrer" class="blog-card-button">Read More</a>
+                        </div>
+                    </div>
+                    <div data-filename="pages/WebsiteCode" data-linenumber="702" data-visual-selector-id="pages/WebsiteCode702" class="blog-card">
+                        <div data-filename="pages/WebsiteCode" data-linenumber="703" data-visual-selector-id="pages/WebsiteCode703" class="blog-card-header orange">
+                            <div data-filename="pages/WebsiteCode" data-linenumber="704" data-visual-selector-id="pages/WebsiteCode704"><h4 data-filename="pages/WebsiteCode" data-linenumber="704" data-visual-selector-id="pages/WebsiteCode704">Career Advice</h4></div>
+                        </div>
+                        <div data-filename="pages/WebsiteCode" data-linenumber="706" data-visual-selector-id="pages/WebsiteCode706" class="blog-card-content">
+                            <h3 data-filename="pages/WebsiteCode" data-linenumber="707" data-visual-selector-id="pages/WebsiteCode707">Transitioning from Academia to Industry: A Chemist's Journey</h3>
+                            <a data-filename="pages/WebsiteCode" data-linenumber="708" data-visual-selector-id="pages/WebsiteCode708" href="https://rauful-alam.blogspot.com/" target="_blank" rel="noopener noreferrer" class="blog-card-button">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section data-filename="pages/WebsiteCode" data-linenumber="716" data-visual-selector-id="pages/WebsiteCode716" id="contact">
+            <div data-filename="pages/WebsiteCode" data-linenumber="717" data-visual-selector-id="pages/WebsiteCode717" class="container">
+                <div data-filename="pages/WebsiteCode" data-linenumber="718" data-visual-selector-id="pages/WebsiteCode718" class="content-wrapper">
+                    <h2 data-filename="pages/WebsiteCode" data-linenumber="719" data-visual-selector-id="pages/WebsiteCode719">Let's Collaborate</h2>
+                    <p data-filename="pages/WebsiteCode" data-linenumber="720" data-visual-selector-id="pages/WebsiteCode720">I am always open to meaningful conversations that can advance the field of medicinal chemistry. Whether you're interested in drug discovery partnerships, consulting opportunities, or academic collaborations, I'd love to hear from you.</p>
+                    <a data-filename="pages/WebsiteCode" data-linenumber="721" data-visual-selector-id="pages/WebsiteCode721" href="mailto:rauful.alam15@gmail.com" class="contact-button">Start a Conversation</a>
+                    <div data-filename="pages/WebsiteCode" data-linenumber="722" data-visual-selector-id="pages/WebsiteCode722" class="divider"></div>
+                    <h3 data-filename="pages/WebsiteCode" data-linenumber="723" data-visual-selector-id="pages/WebsiteCode723">Find me on social media</h3>
+                    <div data-filename="pages/WebsiteCode" data-linenumber="724" data-visual-selector-id="pages/WebsiteCode724" class="social-links">
+                        <a data-filename="pages/WebsiteCode" data-linenumber="725" data-visual-selector-id="pages/WebsiteCode725" href="https://www.linkedin.com/in/rauful-alam-phd-12536365/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg data-filename='pages/WebsiteCode' data-linenumber='725' data-visual-selector-id='pages/WebsiteCode725' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='725' data-visual-selector-id='pages/WebsiteCode725' d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect data-filename='pages/WebsiteCode' data-linenumber='725' data-visual-selector-id='pages/WebsiteCode725' width="4" height="12" x="2" y="9"/><circle data-filename='pages/WebsiteCode' data-linenumber='725' data-visual-selector-id='pages/WebsiteCode725' cx="4" cy="4" r="2"/></svg></a>
+                        <a data-filename="pages/WebsiteCode" data-linenumber="726" data-visual-selector-id="pages/WebsiteCode726" href="https://www.facebook.com/rauful.alam15" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg data-filename='pages/WebsiteCode' data-linenumber='726' data-visual-selector-id='pages/WebsiteCode726' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='726' data-visual-selector-id='pages/WebsiteCode726' d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                        <a data-filename="pages/WebsiteCode" data-linenumber="727" data-visual-selector-id="pages/WebsiteCode727" href="https://www.youtube.com/@raufulalam9197" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg data-filename='pages/WebsiteCode' data-linenumber='727' data-visual-selector-id='pages/WebsiteCode727' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='727' data-visual-selector-id='pages/WebsiteCode727' d="M2.5 17a24.12 24.12 0 0 1 0-10C2.5 4.24 4.24 2.5 7 2.5h10c2.76 0 4.5 1.74 4.5 4.5s0 10 0 10c0 2.76-1.74 4.5-4.5 4.5H7c-2.76 0-4.5-1.74-4.5-4.5Z"/><path data-filename='pages/WebsiteCode' data-linenumber='727' data-visual-selector-id='pages/WebsiteCode727' d="m10 15 5-3-5-3z"/></svg></a>
+                        <a data-filename="pages/WebsiteCode" data-linenumber="728" data-visual-selector-id="pages/WebsiteCode728" href="https://scholar.google.com/citations?user=PrrE9dQAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><svg data-filename='pages/WebsiteCode' data-linenumber='728' data-visual-selector-id='pages/WebsiteCode728' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='728' data-visual-selector-id='pages/WebsiteCode728' d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.084a1 1 0 0 0 0 1.838l8.57 3.908a2 2 0 0 0 1.66 0z"/><path data-filename='pages/WebsiteCode' data-linenumber='728' data-visual-selector-id='pages/WebsiteCode728' d="M22 10v6"/><path data-filename='pages/WebsiteCode' data-linenumber='728' data-visual-selector-id='pages/WebsiteCode728' d="M6 12.5V16a6 6 0 0 0 12 0v-3.5"/><path data-filename='pages/WebsiteCode' data-linenumber='728' data-visual-selector-id='pages/WebsiteCode728' d="M6 12.5a1 1 0 0 0-1 1V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a1 1 0 0 0-1-1"/></svg></a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Scroll to Top Button -->
-    <button data-filename="pages/WebsiteCode" data-linenumber="403" data-visual-selector-id="pages/WebsiteCode403" class="scroll-top-button" id="scrollTopButton">↑</button>
+    <!-- Contribution Modal -->
+    <div data-filename="pages/WebsiteCode" data-linenumber="736" data-visual-selector-id="pages/WebsiteCode736" id="contributionModal" class="modal-backdrop hidden">
+        <div data-filename="pages/WebsiteCode" data-linenumber="737" data-visual-selector-id="pages/WebsiteCode737" class="modal-content">
+            <div data-filename="pages/WebsiteCode" data-linenumber="738" data-visual-selector-id="pages/WebsiteCode738" class="modal-header">
+                <div data-filename="pages/WebsiteCode" data-linenumber="739" data-visual-selector-id="pages/WebsiteCode739">
+                    <h3 data-filename="pages/WebsiteCode" data-linenumber="740" data-visual-selector-id="pages/WebsiteCode740" class="modal-title">Major Contributions</h3>
+                    <p data-filename="pages/WebsiteCode" data-linenumber="741" data-visual-selector-id="pages/WebsiteCode741" class="modal-description">Key achievements and responsibilities.</p>
+                </div>
+                <button data-filename="pages/WebsiteCode" data-linenumber="743" data-visual-selector-id="pages/WebsiteCode743" class="modal-close-btn" data-modal-close="contributionModal">
+                    <svg data-filename="pages/WebsiteCode" data-linenumber="744" data-visual-selector-id="pages/WebsiteCode744" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line data-filename='pages/WebsiteCode' data-linenumber='744' data-visual-selector-id='pages/WebsiteCode744' x1="18" y1="6" x2="6" y2="18"/><line data-filename='pages/WebsiteCode' data-linenumber='744' data-visual-selector-id='pages/WebsiteCode744' x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+            <div data-filename="pages/WebsiteCode" data-linenumber="747" data-visual-selector-id="pages/WebsiteCode747" class="modal-body">
+                <ul data-filename="pages/WebsiteCode" data-linenumber="748" data-visual-selector-id="pages/WebsiteCode748" id="contributionList"></ul>
+            </div>
+            <div data-filename="pages/WebsiteCode" data-linenumber="750" data-visual-selector-id="pages/WebsiteCode750" class="modal-footer">
+                <button data-filename="pages/WebsiteCode" data-linenumber="751" data-visual-selector-id="pages/WebsiteCode751" data-modal-close="contributionModal">Close</button>
+            </div>
+        </div>
+    </div>
     
-    <script data-filename="pages/WebsiteCode" data-linenumber="405" data-visual-selector-id="pages/WebsiteCode405">
-        document.addEventListener('DOMContentLoaded', function () {
-            
-            // --- 3D Molecule Animation ---
-            function initThreeJSAnimation() {
-                const canvas = document.getElementById('bg-canvas');
-                if (!canvas || typeof THREE === 'undefined') return;
-
+    <button data-filename="pages/WebsiteCode" data-linenumber="756" data-visual-selector-id="pages/WebsiteCode756" id="scrollTopBtn" class="scroll-top-btn hidden">
+        <svg data-filename="pages/WebsiteCode" data-linenumber="757" data-visual-selector-id="pages/WebsiteCode757" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='757' data-visual-selector-id='pages/WebsiteCode757' d="m18 15-6-6-6 6"/></svg>
+    </button>
+    
+    <script data-filename="pages/WebsiteCode" data-linenumber="760" data-visual-selector-id="pages/WebsiteCode760">
+        document.addEventListener('DOMContentLoaded', () => {
+            // Molecule Animation
+            const mountRef = document.getElementById('molecule-animation-container');
+            if (mountRef && typeof THREE !== 'undefined') {
                 const scene = new THREE.Scene();
-                const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+                const camera = new THREE.PerspectiveCamera(75, mountRef.clientWidth / mountRef.clientHeight, 0.1, 1000);
                 camera.position.z = 25;
-
-                const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
-                renderer.setSize(window.innerWidth, window.innerHeight);
+                const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+                renderer.setSize(mountRef.clientWidth, mountRef.clientHeight);
                 renderer.setPixelRatio(window.devicePixelRatio);
-
+                mountRef.appendChild(renderer.domElement);
+                
                 const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
                 scene.add(ambientLight);
                 const pointLight = new THREE.PointLight(0xffffff, 0.8);
                 pointLight.position.set(10, 10, 10);
                 scene.add(pointLight);
-                const pointLight2 = new THREE.PointLight(0xffffff, 0.4);
-                pointLight2.position.set(-10, -10, 5);
-                scene.add(pointLight2);
 
-                // Create methane-like molecule structure
-                function createMolecule(scale) {
+                function createMolecule(scale = 1) {
                     const molecule = new THREE.Group();
-
-                    // Central carbon atom
                     const centralAtomGeometry = new THREE.SphereGeometry(0.6 * scale, 32, 32);
                     const centralAtomMaterial = new THREE.MeshPhongMaterial({ color: 0x3b82f6, shininess: 100 });
                     const centralAtom = new THREE.Mesh(centralAtomGeometry, centralAtomMaterial);
                     molecule.add(centralAtom);
-
-                    // Tetrahedral positions for hydrogen atoms
-                    const tetrahedralPositions = [
-                        new THREE.Vector3(1, 1, 1),
-                        new THREE.Vector3(-1, -1, 1),
-                        new THREE.Vector3(-1, 1, -1),
-                        new THREE.Vector3(1, -1, -1),
-                    ];
-
-                    tetrahedralPositions.forEach(function(pos) {
+                    const tetrahedralPositions = [new THREE.Vector3(1, 1, 1), new THREE.Vector3(-1, -1, 1), new THREE.Vector3(-1, 1, -1), new THREE.Vector3(1, -1, -1)];
+                    tetrahedralPositions.forEach(pos => {
                         pos.normalize().multiplyScalar(2.2 * scale);
-
-                        // Hydrogen atom
                         const hydrogenGeometry = new THREE.SphereGeometry(0.35 * scale, 24, 24);
                         const hydrogenMaterial = new THREE.MeshPhongMaterial({ color: 0x8b5cf6, shininess: 100 });
                         const hydrogen = new THREE.Mesh(hydrogenGeometry, hydrogenMaterial);
                         hydrogen.position.copy(pos);
                         molecule.add(hydrogen);
-
-                        // Bond
                         const bondLength = pos.length() - 0.6 * scale;
                         const bondGeometry = new THREE.CylinderGeometry(0.08 * scale, 0.08 * scale, bondLength, 8);
                         const bondMaterial = new THREE.MeshPhongMaterial({ color: 0x64748b });
                         const bond = new THREE.Mesh(bondGeometry, bondMaterial);
-
                         bond.position.copy(pos).multiplyScalar(0.5);
                         bond.lookAt(pos.clone().add(bond.position));
                         bond.rotateX(Math.PI / 2);
                         molecule.add(bond);
                     });
-
                     return molecule;
                 }
 
-                // Create multiple molecules
                 const molecules = [];
-                
-                const molecule1 = createMolecule(2.4);
-                molecule1.position.set(-25, 5, -10);
-                molecule1.rotation.set(0.3, 0.5, 0.2);
-                scene.add(molecule1);
-                molecules.push({ mesh: molecule1, speed: 0.003 });
+                const moleculeConfigs = [
+                    { scale: 2.4, pos: [-25, 5, -10], speed: 0.003 },
+                    { scale: 2.0, pos: [22, -4, -8], speed: -0.004 },
+                    { scale: 1.6, pos: [18, 15, -15], speed: 0.005 },
+                    { scale: 1.8, pos: [-20, -12, -12], speed: -0.003 }
+                ];
+                moleculeConfigs.forEach(config => {
+                    const molecule = createMolecule(config.scale);
+                    molecule.position.set(...config.pos);
+                    scene.add(molecule);
+                    molecules.push({ mesh: molecule, speed: config.speed });
+                });
 
-                const molecule2 = createMolecule(2.0);
-                molecule2.position.set(22, -4, -8);
-                molecule2.rotation.set(0.7, 0.2, 0.4);
-                scene.add(molecule2);
-                molecules.push({ mesh: molecule2, speed: -0.004 });
-
-                const molecule3 = createMolecule(1.6);
-                molecule3.position.set(18, 15, -15);
-                molecule3.rotation.set(0.1, 0.8, 0.6);
-                scene.add(molecule3);
-                molecules.push({ mesh: molecule3, speed: 0.005 });
-
-                const molecule4 = createMolecule(1.8);
-                molecule4.position.set(-20, -12, -12);
-                molecule4.rotation.set(0.9, 0.3, 0.1);
-                scene.add(molecule4);
-                molecules.push({ mesh: molecule4, speed: -0.003 });
+                const handleResize = () => {
+                    camera.aspect = mountRef.clientWidth / mountRef.clientHeight;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(mountRef.clientWidth, mountRef.clientHeight);
+                };
+                window.addEventListener('resize', handleResize);
 
                 function animate() {
                     requestAnimationFrame(animate);
-                    molecules.forEach(function(mol) {
+                    molecules.forEach(mol => {
                         mol.mesh.rotation.y += mol.speed;
                         mol.mesh.rotation.x += mol.speed * 0.5;
                     });
                     renderer.render(scene, camera);
                 }
                 animate();
-
-                window.addEventListener('resize', function() {
-                    camera.aspect = window.innerWidth / window.innerHeight;
-                    camera.updateProjectionMatrix();
-                    renderer.setSize(window.innerWidth, window.innerHeight);
-                });
             }
 
-            initThreeJSAnimation();
+            // Scroll-based Nav & Button visibility
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('#mainNav a.nav-button');
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
             
-            // --- DATA ---
-            const navItemsData = [
-                { id: 'hero', label: 'Home', icon: '🏠' },
-                { id: 'experience', label: 'Experience', icon: '💼' },
-                { id: 'education', label: 'Education', icon: '🎓' },
-                { id: 'skills', label: 'Skills', icon: '🛠️' },
-                { id: 'publications', label: 'Publications', icon: '📖' },
-                { id: 'blog', label: 'Blog', icon: '✍️' },
-                { id: 'contact', label: 'Contact', icon: '📧' },
-            ];
-
-            const experienceData = [
-                { position: "Staff Scientist (Medicinal Chemistry)", company: "Center for Chemical Biology and Therapeutics (CCBT), University of Chicago", company_link: "https://www.uchicago.edu/", duration: "September 2025 - Present", achievements: ["Leading cutting-edge research in medicinal chemistry", "Developing novel therapeutic approaches for rare diseases", "Collaborating with multidisciplinary teams on drug discovery programs"] },
-                { position: "Principal Scientist", company: "PTC Therapeutics, NJ", company_link: "https://www.ptcbio.com/", duration: "September 2023 - May 2024", achievements: ["Led design and synthesis of novel small molecule modulators targeting RNA splicing", "Directed teams of CRO chemists with strategic proposals and expert guidance", "Collaborated with Biology, DMPK, and Pharmacology teams on biomarker selection", "Conducted extensive literature searches and competitive intelligence"] },
-                { position: "Senior Scientist", company: "PTC Therapeutics, NJ", company_link: "https://www.ptcbio.com/", duration: "March 2020 - August 2023", achievements: ["Supervised two PhD scientists and managed CRO chemistry teams", "Discovered highly potent compounds (pico-molar range) for NLRP3 inflammasome inhibition", "Initiated and hosted monthly chemistry seminars for the team", "Led on-campus recruitment, onboarding 5 PhD scientists from 20+ universities", "Awarded RNA (Recognition for Novel Achievement) for patent searching excellence"] },
-                { position: "Scientist-II", company: "PTC Therapeutics, NJ", company_link: "https://www.ptcbio.com/", duration: "April 2018 - February 2020", achievements: ["Discovered novel series with nM activity and desired DMPK properties for Huntington's Disease", "Contributed to synthetic route design for PTC518 (ongoing Phase-II trial for Huntington's)"] },
-                { position: "Postdoctoral Research Associate", company: "University of Pennsylvania, Philadelphia", company_link: "https://www.upenn.edu/", duration: "September 2016 - March 2018", supervisor: "Prof. Gary A Molander", supervisorLink: "https://scholar.google.com/citations?user=N2yeDaoAAAAJ&hl=en", achievements: ["Developed novel synthetic methods for C-C and C-N bond construction using photoredox catalysis", "Worked closely with the High-Throughput Experimentation (HTE) center"] }
-            ];
-
-            const educationData = [
-                { degree: "PhD in Organic Chemistry", institution: "Stockholm University, Sweden", institution_link: "https://www.su.se/english/", duration: "January 2012 - March 2016", details: "Advisor: Prof. Kálmán J. Szabó", examiner: "PhD Examiner: Prof. Varinder K Aggarwal (Bristol University, UK)", thesisLink: "https://su.diva-portal.org/smash/record.jsf?pid=diva2%3A861175&dswid=-7288", achievements: [] },
-                { degree: "MS in Organic Chemistry", institution: "Stockholm University, Sweden", institution_link: "https://www.su.se/english/", duration: "September 2010 - December 2011", details: "Thesis Advisor: Prof. Kálmán J. Szabó", achievements: [] },
-                { degree: "BSc (Honors) in Chemistry", institution: "University of Chittagong, Bangladesh", institution_link: "https://cu.ac.bd/", duration: "May 2004 - December 2008", details: "", achievements: [] }
-            ];
-            
-            const skillsData = [
-                { icon: '🧪', iconColor: '#3b82f6', title: 'Chemistry Expertise', skills: ['Organic Synthesis', 'Medicinal Chemistry', 'Asymmetric Catalysis', 'Photoredox Chemistry', 'Multi-step Synthesis', 'Purification (HPLC, SFC)'] },
-                { icon: '💊', iconColor: '#8b5cf6', title: 'Drug Discovery', skills: ['Hit-to-Lead Optimization', 'RNA Splicing Modulation', 'Structure-Activity Relationship (SAR)', 'DMPK Properties Analysis', 'NLRP3 Inflammasome', "Huntington's Disease"] },
-                { icon: '💻', iconColor: '#22c55e', title: 'Technical Skills', skills: ['ChemDraw', 'Schrödinger Suite', 'NMR & Mass Spec Analysis', 'Glovebox Operations', 'High-Throughput Experimentation (HTE)', 'Patent Searching'] },
-                { icon: '👥', iconColor: '#f97316', title: 'Leadership & Management', skills: ['Team Management & Mentoring', 'Project Leadership', 'CRO Management', 'Cross-functional Collaboration', 'On-campus Recruitment', 'Scientific Communication'] }
-            ];
-
-            const publicationsData = [
-                { title: "Photoredox-catalyzed Direct Reductive Amination of Aldehydes", authors: "Alam, R.; Molander, A. G.", journal: "Org. Lett., 2018, 20, 2680-2684", url: "https://pubs.acs.org/doi/10.1021/acs.orglett.8b00895" },
-                { title: "Catalytic Asymmetric Allylboration of Indoles and Dihydroisoquinolines", authors: "Alam, R.; Diner, C.; et al.", journal: "Angew. Chem. Int. Ed. 2016, 55, 14417-14421", url: "http://onlinelibrary.wiley.com/doi/10.1002/anie.201608605/full" },
-                { title: "Synthesis of Adjacent Quaternary Stereocenters by Catalytic Asymmetric Allylboration", authors: "Alam, R.; Vollgraff, T.; et al.", journal: "J. Am. Chem. Soc. 2015, 137, 11262-11265", url: "http://pubs.acs.org/doi/abs/10.1021/jacs.5b07498" },
-                { title: "Patent: Novel Small Molecule Modulators", authors: "Multiple patent applications", journal: "WO/2019/191229, and others", url: "https://rauful-alam.blogspot.com/" }
-            ];
-            
-            const blogData = [
-                { title: "The Future of RNA Splicing in Drug Discovery", category: "Drug Discovery", gradient: "gradient-blue" },
-                { title: "From Hit to Lead: Optimizing Small Molecules for CNS Targets", category: "Medicinal Chemistry", gradient: "gradient-green" },
-                { title: "Transitioning from Academia to Industry: A Chemist's Journey", category: "Career Advice", gradient: "gradient-orange" }
-            ];
-
-            // --- CONTENT INJECTION ---
-            function injectTimelineItems(containerId, data) {
-                const container = document.getElementById(containerId);
-                data.forEach(function(item, index) {
-                    const achievementsHTML = item.achievements.map(function(ach) { return "<li data-filename='pages/WebsiteCode' data-linenumber='568' data-visual-selector-id='pages/WebsiteCode568'>" + ach + "</li>"; }).join('');
-                    
-                    // Add logos based on institution/company
-                    let logoHTML = '';
-                    if ((item.company || item.institution).includes('University of Pennsylvania')) {
-                        logoHTML = "<img data-filename='pages/WebsiteCode' data-linenumber='573' data-visual-selector-id='pages/WebsiteCode573' src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/UPenn_shield_with_banner.svg/150px-UPenn_shield_with_banner.svg.png' alt='UPenn Logo' class='company-logo' />";
-                    } else if ((item.company || item.institution).includes('Stockholm University')) {
-                        logoHTML = "<img data-filename='pages/WebsiteCode' data-linenumber='575' data-visual-selector-id='pages/WebsiteCode575' src='https://raw.githubusercontent.com/Rauful15/rauful.alam/main/Stockholms_Universitet_logo.svg.png' alt='Stockholm University Logo' class='company-logo' />";
-                    } else if ((item.company || item.institution).includes('University of Chicago')) {
-                        logoHTML = "<img data-filename='pages/WebsiteCode' data-linenumber='577' data-visual-selector-id='pages/WebsiteCode577' src='https://upload.wikimedia.org/wikipedia/en/thumb/7/79/University_of_Chicago_shield.svg/150px-University_of_Chicago_shield.svg.png' alt='University of Chicago Logo' class='company-logo' />";
-                    } else if ((item.company || item.institution).includes('PTC Therapeutics')) {
-                        logoHTML = "<div data-filename='pages/WebsiteCode' data-linenumber='579' data-visual-selector-id='pages/WebsiteCode579' style='width: 2rem; height: 2rem; background-color: var(--blue-600); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 0.875rem;'>PTC</div>";
-                    } else if ((item.company || item.institution).includes('University of Chittagong')) {
-                        logoHTML = "<img data-filename='pages/WebsiteCode' data-linenumber='581' data-visual-selector-id='pages/WebsiteCode581' src='https://raw.githubusercontent.com/Rauful15/rauful.alam/main/University_of_Chittagong_logo.svg.png' alt='University of Chittagong Logo' class='company-logo' />";
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 150) {
+                        current = section.getAttribute('id');
                     }
-                    
-                    const companyHTML = (item.company_link || item.institution_link) ? 
-                        "<div data-filename='pages/WebsiteCode' data-linenumber='585' data-visual-selector-id='pages/WebsiteCode585' class='company-container'>" + logoHTML + "<a data-filename='pages/WebsiteCode' data-linenumber='585' data-visual-selector-id='pages/WebsiteCode585' href='" + (item.company_link || item.institution_link) + "' target='_blank' rel='noopener noreferrer' class='company'>" + (item.institution || item.company) + "</a></div>" :
-                        "<div data-filename='pages/WebsiteCode' data-linenumber='586' data-visual-selector-id='pages/WebsiteCode586' class='company-container'>" + logoHTML + "<p data-filename='pages/WebsiteCode' data-linenumber='586' data-visual-selector-id='pages/WebsiteCode586' class='company'>" + (item.institution || item.company) + "</p></div>";
-                    
-                    let detailsHTML = '';
-                    if (item.details) {
-                        if (item.details.includes('Prof. Kálmán J. Szabó')) {
-                            detailsHTML = "<p data-filename='pages/WebsiteCode' data-linenumber='591' data-visual-selector-id='pages/WebsiteCode591' class='details'>Advisor: <a data-filename='pages/WebsiteCode' data-linenumber='591' data-visual-selector-id='pages/WebsiteCode591' href='https://www.organ.su.se/ks/' target='_blank' rel='noopener noreferrer'>Prof. Kálmán J. Szabó</a></p>";
-                        } else {
-                            detailsHTML = "<p data-filename='pages/WebsiteCode' data-linenumber='593' data-visual-selector-id='pages/WebsiteCode593' class='details'>" + item.details + "</p>";
-                        }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === current) {
+                        link.classList.add('active');
                     }
-                    
-                    const examinerHTML = item.examiner ? 
-                        "<p data-filename='pages/WebsiteCode' data-linenumber='598' data-visual-selector-id='pages/WebsiteCode598' class='details'>PhD Examiner: <a data-filename='pages/WebsiteCode' data-linenumber='598' data-visual-selector-id='pages/WebsiteCode598' href='https://www.chm.bris.ac.uk/org/aggarwal/vka.php' target='_blank' rel='noopener noreferrer'>Prof. Varinder K Aggarwal</a> (Bristol University, UK)</p>" : '';
-                    
-                    const supervisorHTML = item.supervisor && item.supervisorLink ?
-                        "<p data-filename='pages/WebsiteCode' data-linenumber='601' data-visual-selector-id='pages/WebsiteCode601' class='details'>Supervisor: <a data-filename='pages/WebsiteCode' data-linenumber='601' data-visual-selector-id='pages/WebsiteCode601' href='" + item.supervisorLink + "' target='_blank' rel='noopener noreferrer'>" + item.supervisor + "</a></p>" : '';
-
-                    const thesisLinkHTML = item.thesisLink ? 
-                        "<a data-filename='pages/WebsiteCode' data-linenumber='604' data-visual-selector-id='pages/WebsiteCode604' href='" + item.thesisLink + "' target='_blank' rel='noopener noreferrer' class='thesis-link'>📖 Read Full PhD Thesis</a>" : '';
-                        
-                    const itemHTML = "<div data-filename='pages/WebsiteCode' data-linenumber='606' data-visual-selector-id='pages/WebsiteCode606' class='timeline-item fade-in'>" +
-                        "<div data-filename='pages/WebsiteCode' data-linenumber='607' data-visual-selector-id='pages/WebsiteCode607' class='timeline-dot'></div>" +
-                        "<div data-filename='pages/WebsiteCode' data-linenumber='608' data-visual-selector-id='pages/WebsiteCode608' class='timeline-card'>" +
-                            "<h3 data-filename='pages/WebsiteCode' data-linenumber='609' data-visual-selector-id='pages/WebsiteCode609'>" + (item.degree || item.position) + "</h3>" +
-                            companyHTML +
-                            detailsHTML +
-                            examinerHTML +
-                            supervisorHTML +
-                            (item.duration ? "<div data-filename='pages/WebsiteCode' data-linenumber='614' data-visual-selector-id='pages/WebsiteCode614' class='duration'>" + item.duration + "</div>" : '') +
-                            thesisLinkHTML +
-                            (achievementsHTML ? "<ul data-filename='pages/WebsiteCode' data-linenumber='616' data-visual-selector-id='pages/WebsiteCode616'>" + achievementsHTML + "</ul>" : '') +
-                        "</div>" +
-                    "</div>";
-                    container.innerHTML += itemHTML;
                 });
-            }
 
-            function injectSkills() {
-                const container = document.getElementById('skillsGrid');
-                skillsData.forEach(function(cat) {
-                    const skillsHTML = cat.skills.map(function(skill) {
-                        return "<span data-filename='pages/WebsiteCode' data-linenumber='627' data-visual-selector-id='pages/WebsiteCode627' class='skill-tag'>" + skill + "</span>";
-                    }).join('');
-                    container.innerHTML += "<div data-filename='pages/WebsiteCode' data-linenumber='629' data-visual-selector-id='pages/WebsiteCode629' class='card fade-in'>" +
-                        "<div data-filename='pages/WebsiteCode' data-linenumber='630' data-visual-selector-id='pages/WebsiteCode630' class='card-content'>" +
-                            "<div data-filename='pages/WebsiteCode' data-linenumber='631' data-visual-selector-id='pages/WebsiteCode631' class='skill-header'>" +
-                                "<div data-filename='pages/WebsiteCode' data-linenumber='632' data-visual-selector-id='pages/WebsiteCode632' class='skill-icon' style='color: " + cat.iconColor + ";'>" +
-                                    "<span data-filename='pages/WebsiteCode' data-linenumber='633' data-visual-selector-id='pages/WebsiteCode633' style='font-size: 2rem;'>" + cat.icon + "</span>" +
-                                "</div>" +
-                                "<h3 data-filename='pages/WebsiteCode' data-linenumber='635' data-visual-selector-id='pages/WebsiteCode635' class='card-title'>" + cat.title + "</h3>" +
-                            "</div>" +
-                            "<div data-filename='pages/WebsiteCode' data-linenumber='637' data-visual-selector-id='pages/WebsiteCode637' class='skill-tags'>" + skillsHTML + "</div>" +
-                        "</div>" +
-                    "</div>";
-                });
-            }
-            
-            function injectPublications() {
-                const container = document.getElementById('publicationsGrid');
-                publicationsData.forEach(function(pub) {
-                    container.innerHTML += "<div data-filename='pages/WebsiteCode' data-linenumber='646' data-visual-selector-id='pages/WebsiteCode646' class='card publication-card fade-in'>" +
-                        "<div data-filename='pages/WebsiteCode' data-linenumber='647' data-visual-selector-id='pages/WebsiteCode647' class='card-content publication-content'>" +
-                            "<h4 data-filename='pages/WebsiteCode' data-linenumber='648' data-visual-selector-id='pages/WebsiteCode648' class='publication-title'>" + pub.title + "</h4>" +
-                            "<p data-filename='pages/WebsiteCode' data-linenumber='649' data-visual-selector-id='pages/WebsiteCode649' class='publication-authors'>" + pub.authors + "</p>" +
-                            "<p data-filename='pages/WebsiteCode' data-linenumber='650' data-visual-selector-id='pages/WebsiteCode650' class='publication-journal'>" + pub.journal + "</p>" +
-                        "</div>" +
-                        "<div data-filename='pages/WebsiteCode' data-linenumber='652' data-visual-selector-id='pages/WebsiteCode652' class='card-content'>" +
-                            "<a data-filename='pages/WebsiteCode' data-linenumber='653' data-visual-selector-id='pages/WebsiteCode653' href='" + pub.url + "' target='_blank' rel='noopener noreferrer' class='publication-button'>" +
-                                "View Publication " +
-                                "<svg data-filename='pages/WebsiteCode' data-linenumber='655' data-visual-selector-id='pages/WebsiteCode655' xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path data-filename='pages/WebsiteCode' data-linenumber='655' data-visual-selector-id='pages/WebsiteCode655' d='M7 7h10v10'></path><path data-filename='pages/WebsiteCode' data-linenumber='655' data-visual-selector-id='pages/WebsiteCode655' d='M7 17 17 7'></path></svg>" +
-                            "</a>" +
-                        "</div>" +
-                    "</div>";
-                });
-            }
-
-            function injectBlogPosts() {
-                const container = document.getElementById('blogGrid');
-                blogData.forEach(function(post) {
-                    container.innerHTML += "<div data-filename='pages/WebsiteCode' data-linenumber='665' data-visual-selector-id='pages/WebsiteCode665' class='card blog-card fade-in'>" +
-                        "<div data-filename='pages/WebsiteCode' data-linenumber='666' data-visual-selector-id='pages/WebsiteCode666' class='blog-header " + post.gradient + "'>" +
-                            "<h4 data-filename='pages/WebsiteCode' data-linenumber='667' data-visual-selector-id='pages/WebsiteCode667' class='blog-category'>" + post.category + "</h4>" +
-                        "</div>" +
-                        "<div data-filename='pages/WebsiteCode' data-linenumber='669' data-visual-selector-id='pages/WebsiteCode669' class='blog-body'>" +
-                            "<h3 data-filename='pages/WebsiteCode' data-linenumber='670' data-visual-selector-id='pages/WebsiteCode670' class='blog-title'>" + post.title + "</h3>" +
-                            "<a data-filename='pages/WebsiteCode' data-linenumber='671' data-visual-selector-id='pages/WebsiteCode671' href='https://rauful-alam.blogspot.com/' target='_blank' rel='noopener noreferrer' class='blog-button'>" +
-                                "Read More " +
-                                "<svg data-filename='pages/WebsiteCode' data-linenumber='673' data-visual-selector-id='pages/WebsiteCode673' xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path data-filename='pages/WebsiteCode' data-linenumber='673' data-visual-selector-id='pages/WebsiteCode673' d='M7 7h10v10'></path><path data-filename='pages/WebsiteCode' data-linenumber='673' data-visual-selector-id='pages/WebsiteCode673' d='M7 17 17 7'></path></svg>" +
-                            "</a>" +
-                        "</div>" +
-                    "</div>";
-                });
-            }
-
-            // Inject all content
-            injectTimelineItems('experienceTimeline', experienceData);
-            injectTimelineItems('educationTimeline', educationData);
-            injectSkills();
-            injectPublications();
-            injectBlogPosts();
-
-            // --- NAVIGATION ---
-            const desktopNavContainer = document.getElementById('desktopNavButtons');
-            const mobileNavContainer = document.getElementById('mobileNavItems');
-            const mobileMenuButton = document.getElementById('mobileMenuButton');
-            const mobileNav = document.getElementById('mobileNav');
-            const mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
-            const scrollTopButton = document.getElementById('scrollTopButton');
-
-            function createNavButton(item, isMobile) {
-                const button = document.createElement('button');
-                button.className = 'nav-button';
-                button.dataset.section = item.id;
-                button.innerHTML = '<span data-filename="pages/WebsiteCode" data-linenumber="699" data-visual-selector-id="pages/WebsiteCode699">' + item.icon + '</span> ' + item.label;
-                button.onclick = function() {
-                    document.getElementById(item.id).scrollIntoView({ behavior: 'smooth' });
-                    if (isMobile) closeMobileMenu();
-                };
-                return button;
-            }
-
-            navItemsData.forEach(function(item) {
-                desktopNavContainer.appendChild(createNavButton(item, false));
-                mobileNavContainer.appendChild(createNavButton(item, true));
-            });
-
-            function openMobileMenu() { 
-                mobileNav.classList.add('open'); 
-                mobileNavBackdrop.classList.add('open'); 
-                mobileMenuButton.innerHTML = '✕'; 
-            }
-            function closeMobileMenu() { 
-                mobileNav.classList.remove('open'); 
-                mobileNavBackdrop.classList.remove('open'); 
-                mobileMenuButton.innerHTML = '☰'; 
-            }
-
-            mobileMenuButton.addEventListener('click', function() { 
-                mobileNav.classList.contains('open') ? closeMobileMenu() : openMobileMenu(); 
-            });
-            mobileNavBackdrop.addEventListener('click', closeMobileMenu);
-            scrollTopButton.addEventListener('click', function() { 
-                window.scrollTo({ top: 0, behavior: 'smooth' }); 
-            });
-
-            // --- SCROLL EFFECTS ---
-            const sections = navItemsData.map(function(item) { return document.getElementById(item.id); });
-            const allNavButtons = document.querySelectorAll('.nav-button');
-
-            function updateActiveNav() {
-                let currentSectionId = 'hero';
-                const scrollPosition = window.scrollY + window.innerHeight / 2;
-                
-                sections.forEach(function(section) { 
-                    if (section && section.offsetTop <= scrollPosition) { 
-                        currentSectionId = section.id; 
-                    } 
-                });
-                
-                allNavButtons.forEach(function(button) { 
-                    button.dataset.section === currentSectionId ? button.classList.add('active') : button.classList.remove('active'); 
-                });
-                
-                if (scrollTopButton) {
-                    window.scrollY > 400 ? scrollTopButton.classList.add('visible') : scrollTopButton.classList.remove('visible');
+                if (window.scrollY > 400) {
+                    scrollTopBtn.classList.remove('hidden');
+                } else {
+                    scrollTopBtn.classList.add('hidden');
                 }
-            }
+            });
+            
+            scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-            // Intersection Observer for animations
-            const observer = new IntersectionObserver(function(entries) { 
-                entries.forEach(function(entry) { 
-                    if (entry.isIntersecting) { 
-                        entry.target.classList.add('visible'); 
-                    } 
-                }); 
-            }, { threshold: 0.1 });
+            // CV Link Placeholder
+            document.getElementById('cvLink')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert('The link to the Complete CV will be added here soon.');
+            });
+
+            // Contribution Modal Logic
+            const modal = document.getElementById('contributionModal');
+            const contributionList = document.getElementById('contributionList');
             
-            document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+            document.querySelectorAll('[data-modal-target="contributionModal"]').forEach(button => {
+                button.addEventListener('click', () => {
+                    const contributions = button.dataset.contributions.split('|');
+                    contributionList.innerHTML = '';
+                    contributions.forEach(text => {
+                        const li = document.createElement('li');
+                        li.innerHTML = `<svg data-filename="pages/WebsiteCode" data-linenumber="883" data-visual-selector-id="pages/WebsiteCode883" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-filename='pages/WebsiteCode' data-linenumber='883' data-visual-selector-id='pages/WebsiteCode883' d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span data-filename='pages/WebsiteCode' data-linenumber='883' data-visual-selector-id='pages/WebsiteCode883'>${text}</span>`;
+                        contributionList.appendChild(li);
+                    });
+                    modal.classList.remove('hidden');
+                });
+            });
+
+            document.querySelectorAll('[data-modal-close="contributionModal"]').forEach(button => {
+                button.addEventListener('click', () => {
+                    modal.classList.add('hidden');
+                });
+            });
             
-            window.addEventListener('scroll', updateActiveNav);
-            updateActiveNav(); // Initial call
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.add('hidden');
+                }
+            });
         });
     </script>
 </body>
