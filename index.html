@@ -1,2227 +1,2160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. Rauful Alam - Medicinal Chemist</title>
-<style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-
-body {
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-line-height: 1.6;
-color: #333;
-overflow-x: hidden;
-background: #f8f9fa;
-}
-
-/* Hero Section */
-.hero {
-min-height: 100vh;
-background: linear-gradient(135deg, #2c3e50 0%, #3498db 50%, #9b59b6 100%);
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
-color: white;
-position: relative;
-overflow: hidden;
-}
-
-.hero::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.1) 0%, transparent 50%),
-radial-gradient(circle at 70% 80%, rgba(255,255,255,0.08) 0%, transparent 50%);
-animation: float 12s ease-in-out infinite;
-}
-
-@keyframes float {
-0%, 100% { transform: translateY(0px); opacity: 0.7; }
-50% { transform: translateY(-20px); opacity: 1; }
-}
-
-.hero-content {
-z-index: 2;
-position: relative;
-max-width: 800px;
-padding: 0 20px;
-}
-
-/* Professional Photo */
-.hero-photo {
-width: 200px;
-height: 200px;
-border-radius: 50%;
-border: 5px solid rgba(255, 255, 255, 0.3);
-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-margin: 0 auto 2rem;
-overflow: hidden;
-position: relative;
-background: rgba(255, 255, 255, 0.1);
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 3rem;
-font-weight: 300;
-transition: transform 0.3s ease;
-}
-
-.hero-photo:hover {
-transform: scale(1.05);
-}
-
-.hero-photo img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-display: block;
-}
-
-.hero-photo img:not([src]) {
-display: none;
-}
-
-.hero-photo img[src=""] {
-display: none;
-}
-
-.hero h1 {
-font-size: clamp(2.5rem, 5vw, 4rem);
-font-weight: 700;
-margin-bottom: 1rem;
-text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-.hero .subtitle {
-font-size: clamp(1.2rem, 3vw, 1.8rem);
-margin-bottom: 2rem;
-color: rgba(255, 255, 255, 0.9);
-font-weight: 300;
-}
-
-.hero .description {
-font-size: 1.1rem;
-max-width: 700px;
-margin: 0 auto;
-color: rgba(255, 255, 255, 0.8);
-line-height: 1.8;
-text-align: center;
-padding: 0 20px;
-}
-
-/* Navigation */
-nav.visible {
-transform: translateY(0);
-}
-
-/* Force navigation to be visible initially */
-nav {
-position: fixed;
-top: 0;
-left: 0;
-right: 0;
-background: rgba(255, 255, 255, 0.95);
-backdrop-filter: blur(10px);
-z-index: 1000;
-padding: 1rem 0;
-transform: translateY(0) !important;
-transition: transform 0.3s ease;
-box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-}
-
-nav ul {
-list-style: none;
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 2rem;
-max-width: 1200px;
-margin: 0 auto;
-padding: 0 20px;
-}
-
-nav li {
-display: flex;
-align-items: center;
-}
-
-nav a {
-text-decoration: none;
-color: #333;
-font-weight: 500;
-padding: 0.5rem 1rem;
-border-radius: 25px;
-transition: all 0.3s ease;
-}
-
-nav a:hover {
-background: linear-gradient(135deg, #3498db, #9b59b6);
-color: white;
-transform: translateY(-2px);
-}
-
-/* Sections */
-section {
-padding: 5rem 0;
-width: 100%;
-margin: 0;
-padding-left: 20px;
-padding-right: 20px;
-}
-
-.section-content {
-max-width: 1200px;
-margin: 0 auto;
-}
-
-.section-title {
-font-size: 2.5rem;
-text-align: center;
-margin-bottom: 3rem;
-color: #2c3e50;
-position: relative;
-}
-
-.section-title::after {
-content: '';
-width: 80px;
-height: 4px;
-background: linear-gradient(135deg, #3498db, #9b59b6);
-display: block;
-margin: 1rem auto;
-border-radius: 2px;
-}
-
-/* Section Title with Icon */
-.section-title-with-icon {
-display: flex;
-flex-direction: column;
-align-items: center;
-text-align: center;
-margin-bottom: 3rem;
-}
-
-.section-icon {
-width: 80px;
-height: 80px;
-background: linear-gradient(135deg, #3498db, #9b59b6);
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 2rem;
-color: white;
-margin-bottom: 1rem;
-box-shadow: 0 5px 20px rgba(52, 152, 219, 0.3);
-transition: transform 0.3s ease;
-}
-
-.section-icon:hover {
-transform: scale(1.1);
-}
-
-.section-title-with-icon .section-title {
-margin: 0;
-}
-
-/* Timeline Styles */
-.timeline {
-position: relative;
-max-width: 1000px;
-margin: 0 auto;
-padding: 2rem 0;
-}
-
-.timeline::before {
-content: '';
-position: absolute;
-left: 50%;
-top: 0;
-bottom: 0;
-width: 3px;
-background: linear-gradient(180deg, #3498db 0%, #9b59b6 100%);
-transform: translateX(-50%);
-border-radius: 2px;
-}
-
-/* DNA/RNA Molecules */
-#experience::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-z-index: 0;
-}
-
-.dna-molecule {
-position: absolute;
-opacity: 0.08;
-z-index: 1;
-animation: dnaFloat 20s ease-in-out infinite;
-}
-
-.dna-molecule:nth-child(1) {
-top: 10%;
-left: 5%;
-animation-delay: 0s;
-animation-duration: 25s;
-}
-
-.dna-molecule:nth-child(2) {
-bottom: 15%;
-right: 8%;
-animation-delay: -10s;
-animation-duration: 30s;
-}
-
-@keyframes dnaFloat {
-0%, 100% {
-transform: translateY(0px) translateX(0px) rotate(0deg);
-}
-25% {
-transform: translateY(-20px) translateX(10px) rotate(90deg);
-}
-50% {
-transform: translateY(-40px) translateX(-5px) rotate(180deg);
-}
-75% {
-transform: translateY(-20px) translateX(-10px) rotate(270deg);
-}
-}
-
-.dna-helix {
-width: 200px;
-height: 300px;
-}
-
-.dna-helix svg {
-width: 100%;
-height: 100%;
-}
-
-.dna-strand {
-stroke: rgba(52, 152, 219, 0.3);
-stroke-width: 3;
-fill: none;
-}
-
-.dna-strand2 {
-stroke: rgba(155, 89, 182, 0.3);
-stroke-width: 3;
-fill: none;
-}
-
-.dna-base {
-stroke: rgba(52, 152, 219, 0.4);
-stroke-width: 2;
-}
-
-.rna-molecule {
-position: absolute;
-opacity: 0.08;
-z-index: 1;
-animation: rnaFloat 18s ease-in-out infinite;
-}
-
-.rna-molecule:nth-child(3) {
-top: 50%;
-right: 15%;
-animation-delay: -5s;
-animation-duration: 22s;
-}
-
-@keyframes rnaFloat {
-0%, 100% {
-transform: translateY(0px) translateX(0px) rotate(0deg);
-}
-33% {
-transform: translateY(-15px) translateX(8px) rotate(120deg);
-}
-66% {
-transform: translateY(-30px) translateX(-8px) rotate(240deg);
-}
-}
-
-.rna-strand {
-width: 150px;
-height: 200px;
-}
-
-.rna-strand svg {
-width: 100%;
-height: 100%;
-}
-
-.rna-backbone {
-stroke: rgba(231, 76, 60, 0.3);
-stroke-width: 3;
-fill: none;
-}
-
-.rna-base {
-fill: rgba(231, 76, 60, 0.4);
-}
-
-#experience {
-position: relative;
-background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-padding: 5rem 0;
-margin: 0;
-}
-
-#education {
-background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
-position: relative;
-overflow: hidden;
-}
-
-#education::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-z-index: 0;
-}
-
-.education-watermark {
-position: absolute;
-opacity: 0.15;
-z-index: 1;
-animation: educationFloat 25s ease-in-out infinite;
-}
-
-.education-watermark:nth-child(1) {
-top: 10%;
-left: 8%;
-animation-delay: 0s;
-}
-
-.education-watermark:nth-child(2) {
-bottom: 15%;
-right: 10%;
-animation-delay: -12s;
-}
-
-.education-watermark:nth-child(3) {
-top: 50%;
-left: 70%;
-animation-delay: -8s;
-animation-duration: 30s;
-}
-
-@keyframes educationFloat {
-0%, 100% {
-transform: translateY(0px) translateX(0px) rotate(0deg);
-}
-25% {
-transform: translateY(-15px) translateX(8px) rotate(5deg);
-}
-50% {
-transform: translateY(-30px) translateX(-5px) rotate(-3deg);
-}
-75% {
-transform: translateY(-15px) translateX(-8px) rotate(2deg);
-}
-}
-
-.graduation-cap {
-width: 200px;
-height: 200px;
-}
-
-.graduation-cap svg {
-width: 100%;
-height: 100%;
-}
-
-.diploma {
-width: 150px;
-height: 180px;
-}
-
-.diploma svg {
-width: 100%;
-height: 100%;
-}
-
-.book {
-width: 120px;
-height: 150px;
-}
-
-.book svg {
-width: 100%;
-height: 100%;
-}
-
-#skills {
-background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
-}
-
-#publications {
-background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
-}
-
-#presentations {
-background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
-}
-
-#blog {
-background: linear-gradient(135deg, #e2e3e5 0%, #d6d8db 100%);
-}
-
-#contact {
-background: linear-gradient(135deg, #d4e6f1 0%, #aed6f1 100%);
-}
-
-.timeline-item {
-position: relative;
-margin: 3rem 0;
-display: flex;
-align-items: flex-start;
-}
-
-.timeline-item.left {
-justify-content: flex-end;
-}
-
-.timeline-item.right {
-justify-content: flex-start;
-}
-
-.timeline-content {
-background: rgba(255, 255, 255, 0.95);
-border-radius: 15px;
-padding: 2rem;
-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-position: relative;
-width: calc(50% - 30px);
-max-width: 450px;
-transition: all 0.3s ease;
-z-index: 2;
-border: 1px solid #e0e0e0;
-border-left: 5px solid #3498db;
-}
-
-.timeline-content::before {
-content: '';
-position: absolute;
-top: 0;
-left: -5px;
-bottom: 0;
-width: 5px;
-background: linear-gradient(135deg, #3498db, #9b59b6);
-border-radius: 15px 0 0 15px;
-}
-
-.timeline-content::after {
-content: '';
-position: absolute;
-top: -1px;
-right: -1px;
-bottom: -1px;
-width: 1px;
-background: linear-gradient(135deg, #3498db, #9b59b6);
-border-radius: 0 15px 15px 0;
-}
-
-.timeline-content:hover {
-transform: translateY(-5px);
-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-}
-
-.timeline-item.left .timeline-content {
-margin-right: 30px;
-text-align: left;
-}
-
-.timeline-item.right .timeline-content {
-margin-left: 30px;
-text-align: left;
-}
-
-.timeline-content::after {
-content: '';
-position: absolute;
-top: 30px;
-width: 0;
-height: 0;
-border: 10px solid transparent;
-}
-
-.timeline-item.left .timeline-content::after {
-right: -20px;
-border-left-color: white;
-}
-
-.timeline-item.right .timeline-content::after {
-left: -20px;
-border-right-color: white;
-}
-
-.timeline-dot {
-position: absolute;
-left: 50%;
-top: 30px;
-width: 16px;
-height: 16px;
-background: linear-gradient(135deg, #3498db, #9b59b6);
-border: 3px solid white;
-border-radius: 50%;
-transform: translateX(-50%);
-z-index: 10;
-box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7);
-animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-0% {
-box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7);
-}
-70% {
-box-shadow: 0 0 0 10px rgba(52, 152, 219, 0);
-}
-100% {
-box-shadow: 0 0 0 0 rgba(52, 152, 219, 0);
-}
-}
-
-.timeline-content h3 {
-color: #2c3e50;
-font-size: 1.3rem;
-margin-bottom: 0.5rem;
-font-weight: 600;
-}
-
-.timeline-content .company {
-color: #3498db;
-font-weight: 600;
-margin-bottom: 0.5rem;
-font-size: 1rem;
-}
-
-.timeline-content .duration {
-color: #7f8c8d;
-font-size: 0.9rem;
-margin-bottom: 1rem;
-background: rgba(52, 152, 219, 0.1);
-padding: 0.3rem 0.8rem;
-border-radius: 15px;
-display: inline-block;
-}
-
-.timeline-content ul {
-list-style: none;
-padding: 0;
-}
-
-.timeline-content li {
-margin-bottom: 0.7rem;
-padding-left: 1.2rem;
-position: relative;
-line-height: 1.5;
-font-size: 0.95rem;
-}
-
-.timeline-item.left li {
-padding-left: 0;
-padding-right: 1.2rem;
-}
-
-/* Thesis Button */
-.thesis-btn {
-display: inline-block;
-background: linear-gradient(135deg, #3498db, #9b59b6);
-color: white;
-padding: 0.8rem 1.8rem;
-border-radius: 25px;
-text-decoration: none;
-font-size: 0.95rem;
-font-weight: 500;
-cursor: pointer;
-transition: all 0.3s ease;
-margin-top: 1rem;
-box-shadow: 0 3px 15px rgba(52, 152, 219, 0.3);
-}
-
-.thesis-btn:hover {
-transform: translateY(-2px);
-box-shadow: 0 5px 20px rgba(52, 152, 219, 0.4);
-color: white;
-background: linear-gradient(135deg, #2980b9, #8e44ad);
-}
-
-/* Key Contributions Button */
-.contributions-btn {
-background: linear-gradient(135deg, #3498db, #9b59b6);
-color: white;
-border: none;
-padding: 0.7rem 1.5rem;
-border-radius: 25px;
-font-size: 0.9rem;
-font-weight: 500;
-cursor: pointer;
-transition: all 0.3s ease;
-margin-top: 1rem;
-box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
-}
-
-.contributions-btn:hover {
-transform: translateY(-2px);
-box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
-}
-
-/* Modal Popup Styles */
-.modal-overlay {
-position: fixed;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background: rgba(0, 0, 0, 0.7);
-backdrop-filter: blur(5px);
-display: none;
-justify-content: center;
-align-items: center;
-z-index: 2000;
-animation: fadeIn 0.3s ease;
-}
-
-.modal-overlay.active {
-display: flex;
-}
-
-.modal-content {
-background: white;
-border-radius: 20px;
-padding: 0;
-max-width: 600px;
-width: 90%;
-max-height: 80vh;
-overflow: hidden;
-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-transform: scale(0.9);
-transition: transform 0.3s ease;
-position: relative;
-}
-
-.modal-overlay.active .modal-content {
-transform: scale(1);
-}
-
-.modal-header {
-background: linear-gradient(135deg, #3498db, #9b59b6);
-color: white;
-padding: 1.5rem 2rem;
-position: relative;
-}
-
-.modal-header h3 {
-margin: 0;
-font-size: 1.4rem;
-font-weight: 600;
-}
-
-.modal-header .position-info {
-font-size: 0.9rem;
-opacity: 0.9;
-margin-top: 0.5rem;
-}
-
-.modal-close {
-position: absolute;
-top: 1rem;
-right: 1rem;
-background: rgba(255, 255, 255, 0.2);
-border: none;
-color: white;
-width: 40px;
-height: 40px;
-border-radius: 50%;
-font-size: 1.2rem;
-cursor: pointer;
-transition: all 0.3s ease;
-display: flex;
-align-items: center;
-justify-content: center;
-}
-
-.modal-close:hover {
-background: rgba(255, 255, 255, 0.3);
-transform: rotate(90deg);
-}
-
-.modal-body {
-padding: 2rem;
-max-height: 60vh;
-overflow-y: auto;
-}
-
-.modal-body::-webkit-scrollbar {
-width: 6px;
-}
-
-.modal-body::-webkit-scrollbar-track {
-background: #f1f1f1;
-border-radius: 3px;
-}
-
-.modal-body::-webkit-scrollbar-thumb {
-background: linear-gradient(135deg, #3498db, #9b59b6);
-border-radius: 3px;
-}
-
-.contribution-item {
-display: flex;
-align-items: flex-start;
-margin-bottom: 1.5rem;
-padding: 1rem;
-background: rgba(52, 152, 219, 0.05);
-border-radius: 10px;
-border-left: 4px solid transparent;
-border-image: linear-gradient(135deg, #3498db, #9b59b6) 1;
-transition: all 0.3s ease;
-}
-
-.contribution-item:hover {
-transform: translateX(5px);
-box-shadow: 0 5px 15px rgba(52, 152, 219, 0.1);
-}
-
-.contribution-icon {
-width: 40px;
-height: 40px;
-background: linear-gradient(135deg, #3498db, #9b59b6);
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-color: white;
-font-weight: bold;
-margin-right: 1rem;
-flex-shrink: 0;
-font-size: 0.9rem;
-}
-
-.contribution-text {
-flex: 1;
-line-height: 1.6;
-color: #333;
-}
-
-.contributions-list {
-margin-top: 1rem;
-transition: all 0.3s ease;
-display: none;
-}
-
-.timeline-content li::before {
-content: '•';
-position: absolute;
-color: #3498db;
-font-size: 1rem;
-top: 0;
-font-weight: bold;
-}
-
-.timeline-item.left li::before {
-left: -1.2rem;
-right: auto;
-content: '•';
-}
-
-.timeline-item.right li::before {
-left: 0;
-}
-
-/* Skills Section */
-.skills-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-gap: 2rem;
-margin-bottom: 3rem;
-}
-
-.skill-category {
-background: white;
-border-radius: 10px;
-padding: 2rem;
-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-transition: transform 0.3s ease;
-}
-
-.skill-category:hover {
-transform: translateY(-5px);
-}
-
-.skill-category h3 {
-color: #2c3e50;
-margin-bottom: 1rem;
-font-size: 1.2rem;
-}
-
-/* Publications Grid */
-.publications-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-gap: 2rem;
-margin-bottom: 3rem;
-}
-
-.publication-card {
-background: white;
-border-radius: 10px;
-padding: 1.5rem;
-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-transition: transform 0.3s ease;
-border-top: 3px solid transparent;
-border-image: linear-gradient(135deg, #3498db, #9b59b6) 1;
-}
-
-.publication-card:hover {
-transform: translateY(-5px);
-}
-
-.publication-card h4 {
-color: #2c3e50;
-margin-bottom: 0.5rem;
-font-size: 1rem;
-line-height: 1.4;
-}
-
-.publication-card .authors {
-color: #3498db;
-font-size: 0.9rem;
-margin-bottom: 0.5rem;
-}
-
-.publication-card .journal {
-color: #7f8c8d;
-font-size: 0.9rem;
-margin-bottom: 1rem;
-}
-
-.pub-link {
-display: inline-block;
-background: linear-gradient(135deg, #3498db, #9b59b6);
-color: white;
-padding: 0.5rem 1rem;
-border-radius: 20px;
-text-decoration: none;
-font-size: 0.9rem;
-transition: transform 0.3s ease;
-}
-
-.pub-link:hover {
-transform: scale(1.05);
-}
-
-/* Blog Section */
-.blog-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-gap: 2rem;
-margin-bottom: 3rem;
-}
-
-.blog-card {
-background: white;
-border-radius: 15px;
-overflow: hidden;
-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-transition: all 0.3s ease;
-cursor: pointer;
-}
-
-.blog-card:hover {
-transform: translateY(-10px);
-box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
-.blog-image {
-position: relative;
-height: 200px;
-overflow: hidden;
-background: linear-gradient(135deg, #3498db, #9b59b6);
-display: flex;
-align-items: center;
-justify-content: center;
-color: white;
-font-size: 1.5rem;
-font-weight: 600;
-}
-
-.blog-image img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-transition: transform 0.3s ease;
-}
-
-.blog-card:hover .blog-image img {
-transform: scale(1.05);
-}
-
-.reading-time {
-position: absolute;
-top: 15px;
-right: 15px;
-background: rgba(0, 0, 0, 0.7);
-color: white;
-padding: 0.5rem 1rem;
-border-radius: 20px;
-font-size: 0.8rem;
-font-weight: 500;
-}
-
-.blog-content {
-padding: 1.5rem;
-}
-
-.blog-content h3 {
-color: #2c3e50;
-font-size: 1.2rem;
-margin-bottom: 1rem;
-line-height: 1.4;
-font-weight: 600;
-}
-
-.blog-excerpt {
-color: #666;
-font-size: 0.95rem;
-line-height: 1.6;
-margin-bottom: 1.5rem;
-display: -webkit-box;
--webkit-line-clamp: 3;
--webkit-box-orient: vertical;
-overflow: hidden;
-}
-
-.blog-footer {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding-top: 1rem;
-border-top: 1px solid #eee;
-}
-
-.blog-author {
-display: flex;
-align-items: center;
-gap: 0.8rem;
-}
-
-.author-photo {
-width: 40px;
-height: 40px;
-border-radius: 50%;
-background: linear-gradient(135deg, #3498db, #9b59b6);
-color: white;
-display: flex;
-align-items: center;
-justify-content: center;
-font-weight: 600;
-font-size: 0.9rem;
-}
-
-.author-info {
-display: flex;
-flex-direction: column;
-}
-
-.author-name {
-font-weight: 600;
-color: #2c3e50;
-font-size: 0.9rem;
-}
-
-.blog-date {
-color: #7f8c8d;
-font-size: 0.8rem;
-}
-
-.blog-engagement {
-display: flex;
-gap: 1rem;
-font-size: 0.8rem;
-color: #7f8c8d;
-}
-
-.blog-engagement span {
-display: flex;
-align-items: center;
-gap: 0.3rem;
-}
-
-.comments:hover, .likes:hover {
-color: #3498db;
-cursor: pointer;
-}
-
-/* Responsive Blog Design */
-@media (max-width: 768px) {
-.blog-footer {
-flex-direction: column;
-gap: 1rem;
-align-items: flex-start;
-}
-
-.blog-engagement {
-align-self: flex-end;
-}
-}
-.contact-info {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 2rem;
-text-align: center;
-}
-
-.contact-item {
-background: white;
-border-radius: 10px;
-padding: 2rem;
-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-transition: transform 0.3s ease;
-}
-
-.contact-item:hover {
-transform: translateY(-5px);
-}
-
-.contact-item .icon {
-font-size: 2rem;
-color: #3498db;
-margin-bottom: 1rem;
-}
-
-.social-icon {
-display: inline-block;
-width: 40px;
-height: 40px;
-margin: 0 10px;
-background: linear-gradient(135deg, #3498db, #9b59b6);
-border-radius: 50%;
-display: inline-flex;
-align-items: center;
-justify-content: center;
-color: white;
-text-decoration: none;
-font-size: 1.2rem;
-transition: transform 0.3s ease;
-}
-
-.social-icon:hover {
-transform: scale(1.1);
-}
-
-.social-links {
-margin-top: 1rem;
-}
-
-/* Floating Action Button */
-.fab {
-position: fixed;
-bottom: 2rem;
-right: 2rem;
-width: 60px;
-height: 60px;
-background: linear-gradient(135deg, #3498db, #9b59b6);
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-cursor: pointer;
-transition: transform 0.3s ease;
-z-index: 1000;
-}
-
-.fab:hover {
-transform: scale(1.1);
-}
-
-.fab .icon {
-color: white;
-font-size: 1.5rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-.timeline::before {
-left: 30px;
-}
-
-.timeline-item {
-justify-content: flex-start !important;
-}
-
-.timeline-content {
-width: calc(100% - 80px);
-margin-left: 80px !important;
-margin-right: 0 !important;
-text-align: left !important;
-}
-
-.timeline-content::after {
-left: -20px !important;
-right: auto !important;
-border-right-color: white !important;
-border-left-color: transparent !important;
-}
-
-.timeline-dot {
-left: 30px;
-}
-
-.timeline-item.left li {
-padding-left: 1.2rem;
-padding-right: 0;
-}
-
-.timeline-item.left li::before {
-left: 0;
-right: auto;
-content: '•';
-}
-
-nav ul {
-flex-direction: column;
-gap: 1rem;
-}
-
-.section-title {
-font-size: 2rem;
-}
-}
-
-/* Dropdown Styles */
-.dropdown {
-position: relative;
-display: inline-block;
-}
-
-.dropdown-content {
-display: none;
-position: absolute;
-background-color: white;
-min-width: 200px;
-box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-border-radius: 8px;
-z-index: 1000;
-top: 100%;
-left: 50%;
-transform: translateX(-50%);
-margin-top: 5px;
-}
-
-.dropdown-content a {
-color: #333 !important;
-padding: 12px 16px;
-text-decoration: none;
-display: block;
-border-radius: 0;
-transition: background-color 0.3s ease;
-}
-
-.dropdown-content a:first-child {
-border-radius: 8px 8px 0 0;
-}
-
-.dropdown-content a:last-child {
-border-radius: 0 0 8px 8px;
-}
-
-.dropdown-content a:hover {
-background-color: #f1f1f1;
-transform: none;
-}
-
-.dropdown:hover .dropdown-content {
-display: block;
-animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-from { opacity: 0; transform: translateX(-50%) translateY(-10px); }
-to { opacity: 1; transform: translateX(-50%) translateY(0); }
-}
-
-/* Mobile Navigation - Simplified and Fixed */
-@media (max-width: 768px) {
-nav {
-transition: all 0.3s ease;
-transform: translateY(-100%);
-opacity: 0;
-visibility: hidden;
-}
-
-/* Show nav when mobile-show class is added */
-nav.mobile-show {
-transform: translateY(0);
-opacity: 1;
-visibility: visible;
-}
-
-nav ul {
-flex-direction: column;
-gap: 0;
-padding: 0.5rem 10px;
-max-height: 70vh;
-overflow-y: auto;
-background: rgba(255, 255, 255, 0.98);
-}
-
-nav li {
-width: 100%;
-text-align: center;
-border-bottom: 1px solid #eee;
-}
-
-nav li:last-child {
-border-bottom: none;
-}
-
-nav a {
-display: block;
-width: 100%;
-padding: 1rem;
-font-size: 0.9rem;
-color: #333;
-}
-
-nav a:hover {
-background: rgba(52, 152, 219, 0.1);
-color: #2c3e50;
-transform: none;
-}
-
-/* Compact dropdowns */
-.dropdown-content {
-position: static;
-width: 100%;
-min-width: auto;
-box-shadow: none;
-border-radius: 0;
-transform: none;
-margin-top: 0;
-background-color: rgba(240, 240, 240, 0.98);
-max-height: 0;
-overflow: hidden;
-transition: max-height 0.3s ease;
-}
-
-.dropdown.active .dropdown-content {
-max-height: 200px;
-}
-
-.dropdown-content a {
-padding: 0.8rem 1.5rem;
-font-size: 0.85rem;
-border-radius: 0 !important;
-background-color: rgba(255, 255, 255, 0.9);
-color: #666 !important;
-}
-
-.dropdown-content a:hover {
-background-color: rgba(52, 152, 219, 0.1) !important;
-color: #2c3e50 !important;
-transform: none !important;
-}
-
-.dropdown:hover .dropdown-content {
-display: none;
-}
-
-.dropdown > a::after {
-content: ' ▼';
-font-size: 0.7rem;
-margin-left: 0.5rem;
-transition: transform 0.3s ease;
-}
-
-.dropdown.active > a::after {
-transform: rotate(180deg);
-}
-}
-
-/* Mobile nav toggle button - always visible */
-.mobile-nav-toggle {
-position: fixed;
-top: 15px;
-right: 15px;
-z-index: 1001;
-background: linear-gradient(135deg, #3498db, #9b59b6);
-color: white;
-border: none;
-border-radius: 50%;
-width: 50px;
-height: 50px;
-font-size: 1.2rem;
-cursor: pointer;
-box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-transition: all 0.3s ease;
-display: none;
-}
-
-.mobile-nav-toggle:hover {
-transform: scale(1.1);
-}
-
-.mobile-nav-toggle.active {
-background: linear-gradient(135deg, #e74c3c, #c0392b);
-}
-
-@media (max-width: 768px) {
-.mobile-nav-toggle {
-display: block;
-}
-}
-
-/* Animations */
-.fade-in {
-opacity: 0;
-transform: translateY(30px);
-transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.fade-in.visible {
-opacity: 1;
-transform: translateY(0);
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Rauful Alam - Medicinal Chemist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 50%, #9b59b6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            margin: 0 auto 2rem;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            font-size: 3rem;
+            font-weight: 300;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-photo:hover {
+            transform: scale(1.05);
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+        }
+
+        .hero .description {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+            margin: 0;
+        }
+
+        .section-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            display: block;
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        .section-title-with-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 1rem;
+            box-shadow: 0 5px 20px rgba(52, 152, 219, 0.3);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #3498db 0%, #9b59b6 100%);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 3rem 0;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .timeline-item.left {
+            justify-content: flex-end;
+        }
+
+        .timeline-item.right {
+            justify-content: flex-start;
+        }
+
+        .timeline-content {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            width: calc(50% - 30px);
+            max-width: 450px;
+            transition: all 0.3s ease;
+            border-left: 5px solid #3498db;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .timeline-item.left .timeline-content {
+            margin-right: 30px;
+        }
+
+        .timeline-item.right .timeline-content {
+            margin-left: 30px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 30px;
+            width: 16px;
+            height: 16px;
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            border: 3px solid white;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .timeline-content h3 {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .timeline-content .company {
+            color: #3498db;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .timeline-content .company a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .timeline-content .duration {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            background: rgba(52, 152, 219, 0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            display: inline-block;
+        }
+
+        .contributions-btn {
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .contributions-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .thesis-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .thesis-btn:hover {
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        /* Section Backgrounds */
+        #experience {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        #education {
+            background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+        }
+
+        #skills {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+        }
+
+        #publications {
+            background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+        }
+
+        #presentations {
+            background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+        }
+
+        #blog {
+            background: linear-gradient(135deg, #e2e3e5 0%, #d6d8db 100%);
+        }
+
+        #courses {
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+        }
+
+        /* Course Card Styles */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s ease;
+            position: relative;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+        }
+
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 20px;
+            padding: 2px;
+            background: linear-gradient(135deg, #3498db, #9b59b6, #e74c3c);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            z-index: -1;
+        }
+
+        .course-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        .course-header {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 50%, #1f618d 100%);
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: courseFloat 8s ease-in-out infinite;
+        }
+
+        @keyframes courseFloat {
+            0%, 100% { transform: rotate(0deg) translate(-20px, -20px); }
+            50% { transform: rotate(180deg) translate(20px, 20px); }
+        }
+
+        .course-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            margin: 0 auto 1rem;
+            position: relative;
+            z-index: 2;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .course-title {
+            color: white;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .course-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            position: relative;
+            z-index: 2;
+            font-weight: 300;
+        }
+
+        .course-body {
+            padding: 2rem;
+        }
+
+        .course-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .course-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem;
+            background: rgba(52, 152, 219, 0.05);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border-left: 3px solid #3498db;
+        }
+
+        .course-feature:hover {
+            background: rgba(52, 152, 219, 0.1);
+            transform: translateX(5px);
+        }
+
+        .feature-icon {
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            font-size: 0.95rem;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .course-description {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .course-highlights {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .course-highlights h4 {
+            color: #2c3e50;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .highlights-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .highlights-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .highlights-list li::before {
+            content: '✓';
+            background: linear-gradient(135deg, #27ae60, #229954);
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .course-action {
+            text-align: center;
+        }
+
+        .course-register-btn {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 50%, #a93226 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 20px rgba(231, 76, 60, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-register-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .course-register-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.6);
+        }
+
+        .course-register-btn:hover::before {
+            left: 100%;
+        }
+
+        /* Course Modal Styles */
+        .course-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 3000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .course-modal-overlay.active {
+            display: flex;
+        }
+
+        .course-modal-content {
+            background: white;
+            border-radius: 25px;
+            max-width: 800px;
+            width: 95%;
+            max-height: 90vh;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .course-modal-overlay.active .course-modal-content {
+            transform: scale(1);
+        }
+
+        .course-modal-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #3498db 100%);
+            color: white;
+            padding: 2rem;
+            position: relative;
+            text-align: center;
+        }
+
+        .course-modal-header h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .course-modal-subtitle {
+            opacity: 0.9;
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        .course-modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .course-modal-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .course-modal-body {
+            padding: 2rem;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+
+        .course-detail-section {
+            margin-bottom: 2rem;
+        }
+
+        .course-detail-section h4 {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .course-detail-section h4::before {
+            content: '';
+            width: 4px;
+            height: 25px;
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            border-radius: 2px;
+        }
+
+        .course-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .course-info-item {
+            background: rgba(52, 152, 219, 0.05);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(52, 152, 219, 0.1);
+        }
+
+        .course-info-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 auto 1rem;
+        }
+
+        .course-info-label {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .course-info-value {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Mobile nav toggle button - always visible */
+        .mobile-nav-toggle {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            z-index: 1001;
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-nav-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .mobile-nav-toggle.active {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+        }
+
+        @media (max-width: 768px) {
+            .mobile-nav-toggle {
+                display: flex;
+            }
+            
+            nav {
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+
+            nav.mobile-show {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+                padding: 0.5rem 10px;
+                max-height: 70vh;
+                overflow-y: auto;
+                background: rgba(255, 255, 255, 0.98);
+            }
+
+            nav li {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid #eee;
+            }
+
+            nav li:last-child {
+                border-bottom: none;
+            }
+
+            nav a {
+                display: block;
+                width: 100%;
+                padding: 1rem;
+                font-size: 0.9rem;
+                color: #333;
+            }
+
+            nav a:hover {
+                background: rgba(52, 152, 219, 0.1);
+                color: #2c3e50;
+                transform: none;
+            }
+        }
+
+        /* Payment Options Styles */
+        .payment-option {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 12px;
+            border: 2px solid #f1f2f6;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .payment-option:hover {
+            border-color: #3498db;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
+        }
+
+        .payment-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .payment-method {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.2rem;
+        }
+
+        .payment-desc {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .payment-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .payment-btn {
+            background: linear-gradient(135deg, #27ae60, #229954);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+        }
+
+        .payment-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4);
+            color: white;
+        }
+
+        .payment-btn.secondary {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .payment-btn.secondary:hover {
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid #3498db;
+        }
+
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -5px;
+            bottom: 0;
+            width: 5px;
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            border-radius: 15px 0 0 15px;
+        }
+
+        .skill-category::after {
+            content: '';
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            bottom: -1px;
+            width: 1px;
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            border-radius: 0 15px 15px 0;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* Publications Grid */
+        .publications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .publication-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border-top: 3px solid #3498db;
+        }
+
+        .publication-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .publication-card h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        .publication-card .authors {
+            color: #3498db;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-card .journal {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .pub-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+        }
+
+        .pub-link:hover {
+            transform: scale(1.05);
+            color: white;
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-image {
+            position: relative;
+            height: 200px;
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .reading-time {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-content h3 {
+            color: #2c3e50;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            font-weight: 600;
+        }
+
+        .blog-excerpt {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .blog-author {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .author-photo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .author-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.9rem;
+        }
+
+        .blog-date {
+            color: #7f8c8d;
+            font-size: 0.8rem;
+        }
+
+        .blog-engagement {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.8rem;
+            color: #7f8c8d;
+        }
+
+        /* Contact */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: all 0.3s ease;
+            z-index: 2;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid #3498db;
+            text-align: center;
+        }
+
+        .contact-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -5px;
+            bottom: 0;
+            width: 5px;
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            border-radius: 15px 0 0 15px;
+        }
+
+        .contact-item::after {
+            content: '';
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            bottom: -1px;
+            width: 1px;
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            border-radius: 0 15px 15px 0;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-item .icon {
+            font-size: 2rem;
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .social-links {
+            margin-top: 1rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                justify-content: flex-start !important;
+            }
+
+            .timeline-content {
+                width: calc(100% - 80px);
+                margin-left: 80px !important;
+                margin-right: 0 !important;
+            }
+
+            .timeline-dot {
+                left: 30px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .blog-footer {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            color: white;
+            padding: 1.5rem 2rem;
+            position: relative;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .modal-header .position-info {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .modal-body {
+            padding: 2rem;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+
+        .contribution-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(52, 152, 219, 0.05);
+            border-radius: 10px;
+        }
+
+        .contribution-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
+            font-size: 0.9rem;
+        }
+
+        .contribution-text {
+            flex: 1;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Scroll to top button */
+        .fab {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        .fab:hover {
+            transform: scale(1.1);
+        }
+
+        .fab .icon {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            z-index: 1000;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 5px;
+        }
+
+        .dropdown-content a {
+            color: #333 !important;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+            transform: none;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
 </head>
 <body>
-<nav id="navbar">
-<ul>
-<li><a href="#hero">Home</a></li>
-<li><a href="#experience">Experience</a></li>
-<li><a href="#education">Education</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#publications">Publications</a></li>
-<li class="dropdown">
-<a href="#blog">Blog</a>
-<div class="dropdown-content">
-<a href="https://rauful-alam.blogspot.com/" target="_blank">Personal Blog</a>
-<a href="https://rauful-alam.blogspot.com/2016/12/publications.html" target="_blank">Research Publications</a>
-<a href="#" target="_blank">Career Advice</a>
-</div>
-</li>
-<li><a href="#presentations">Presentations</a></li>
-<li class="dropdown">
-<a href="#gallery">Photo Gallery</a>
-<div class="dropdown-content">
-<a href="#" target="_blank">Professional Events</a>
-<a href="#" target="_blank">Laboratory Work</a>
-<a href="#" target="_blank">Conference Presentations</a>
-<a href="#" target="_blank">Awards & Recognition</a>
-</div>
-</li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
-
-<!-- Mobile Navigation Toggle Button -->
-<button class="mobile-nav-toggle" id="mobileNavToggle">☰</button>
-
-<section id="hero" class="hero">
-<div class="hero-content">
-<div class="hero-photo">
-<img src="https://github.com/Rauful15/rauful15.github.io/raw/main/images/Photo_RA.jpg" alt="Dr. Rauful Alam" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-<span style="display: none; position: absolute; inset: 0; align-items: center; justify-content: center; font-size: 3rem; font-weight: 300;">RA</span>
-</div>
-<h1>Dr. Rauful Alam</h1>
-<p class="subtitle">Scientist | Teacher | Author</p>
-<p class="description">An expert medicinal chemist with a Ph.D. in Organic Chemistry, driving pre-clinical drug discovery research. Passionately advocating for the advancement of education and research culture in Bangladesh.</p>
-</div>
-</section>
-
-<section id="experience" class="fade-in">
-<div class="section-content">
-<!-- DNA Molecule 1 -->
-<div class="dna-molecule">
-<div class="dna-helix">
-<svg viewBox="0 0 120 200">
-<path d="M35 15 Q 85 45, 35 75 Q 85 105, 35 135 Q 85 165, 35 195" class="dna-strand"/>
-<path d="M85 15 Q 35 45, 85 75 Q 35 105, 85 135 Q 35 165, 85 195" class="dna-strand2"/>
-<line x1="45" y1="30" x2="75" y2="30" class="dna-base"/>
-<line x1="60" y1="60" x2="60" y2="60" class="dna-base"/>
-<line x1="45" y1="90" x2="75" y2="90" class="dna-base"/>
-<line x1="60" y1="120" x2="60" y2="120" class="dna-base"/>
-<line x1="45" y1="150" x2="75" y2="150" class="dna-base"/>
-<line x1="60" y1="180" x2="60" y2="180" class="dna-base"/>
-</svg>
-</div>
-</div>
-
-<!-- RNA Molecule -->
-<div class="rna-molecule">
-<div class="rna-strand">
-<svg viewBox="0 0 100 150">
-<path d="M20 15 Q 60 30, 50 60 Q 40 90, 70 105 Q 80 120, 60 135" class="rna-backbone"/>
-<circle cx="25" cy="20" r="3" class="rna-base"/>
-<circle cx="45" cy="35" r="3" class="rna-base"/>
-<circle cx="55" cy="55" r="3" class="rna-base"/>
-<circle cx="45" cy="75" r="3" class="rna-base"/>
-<circle cx="60" cy="95" r="3" class="rna-base"/>
-<circle cx="75" cy="110" r="3" class="rna-base"/>
-<circle cx="65" cy="130" r="3" class="rna-base"/>
-</svg>
-</div>
-</div>
-
-<!-- Inspirational Quote -->
-<div style="text-align: center; margin-bottom: 3rem; position: relative; z-index: 10;">
-<p style="font-style: italic; font-size: 1.2rem; color: #2c3e50; max-width: 700px; margin: 0 auto; line-height: 1.8; font-weight: 300; background: rgba(255,255,255,0.95); padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-left: 4px solid transparent; border-right: 4px solid transparent; border-image: linear-gradient(135deg, #3498db, #9b59b6) 1;">
-"A ship in harbor is safe, but that is not what ships are built for."
-<br><span style="font-size: 1rem; opacity: 0.7; margin-top: 1rem; display: inline-block;">— Unknown</span>
-</p>
-</div>
-
-<div class="section-title-with-icon">
-<div class="section-icon">
-🚀
-</div>
-<h2 class="section-title">Professional Journey</h2>
-</div>
-<div class="timeline">
-<div class="timeline-item left">
-<div class="timeline-content">
-<p class="duration">September 2025 - Present</p>
-<h3>Staff Scientist (Medicinal Chemistry)</h3>
-<p class="company"><a href="https://biologicalsciences.uchicago.edu/" target="_blank" style="color: #3498db; text-decoration: none;">Center for Chemical Biology and Therapeutics (CCBT), University of Chicago</a></p>
-<button class="contributions-btn" 
-        data-position="Staff Scientist (Medicinal Chemistry)"
-        data-company="Center for Chemical Biology and Therapeutics (CCBT), University of Chicago"
-        data-duration="September 2025 - Present"
-        data-contributions='["Leading cutting-edge research in medicinal chemistry","Developing novel therapeutic approaches for rare diseases","Collaborating with multidisciplinary teams on drug discovery programs"]'>
-Key Contributions
-</button>
-</div>
-<div class="timeline-dot"></div>
-</div>
-
-<div class="timeline-item right">
-<div class="timeline-content">
-<p class="duration">September 2023 - May 2024</p>
-<h3>Principal Scientist</h3>
-<p class="company"><a href="https://www.ptcbio.com/" target="_blank" style="color: #3498db; text-decoration: none;">PTC Therapeutics, NJ</a></p>
-<button class="contributions-btn"
-        data-position="Principal Scientist"
-        data-company="PTC Therapeutics, NJ"
-        data-duration="September 2023 - May 2024"
-        data-contributions='["Led design and synthesis of novel small molecule modulators targeting RNA splicing","Directed teams of CRO chemists with strategic proposals and expert guidance","Collaborated with Biology, DMPK, and Pharmacology teams on biomarker selection","Conducted extensive literature searches and competitive intelligence"]'>
-Key Contributions
-</button>
-</div>
-<div class="timeline-dot"></div>
-</div>
-
-<div class="timeline-item left">
-<div class="timeline-content">
-<p class="duration">March 2020 - August 2023</p>
-<h3>Senior Scientist</h3>
-<p class="company"><a href="https://www.ptcbio.com/" target="_blank" style="color: #3498db; text-decoration: none;">PTC Therapeutics, NJ</a></p>
-<button class="contributions-btn"
-        data-position="Senior Scientist"
-        data-company="PTC Therapeutics, NJ"
-        data-duration="March 2020 - August 2023"
-        data-contributions='["Supervised two PhD scientists and managed CRO chemistry teams","Discovered highly potent compounds (pico-molar range) for NLRP3 inflammasome inhibition","Initiated and hosted monthly chemistry seminars for the team","Led on-campus recruitment, onboarding 5 PhD scientists from 20+ universities","Awarded RNA (Recognition for Novel Achievement) for patent searching excellence"]'>
-Key Contributions
-</button>
-</div>
-<div class="timeline-dot"></div>
-</div>
-
-<div class="timeline-item right">
-<div class="timeline-content">
-<p class="duration">April 2018 - February 2020</p>
-<h3>Scientist-II</h3>
-<p class="company"><a href="https://www.ptcbio.com/" target="_blank" style="color: #3498db; text-decoration: none;">PTC Therapeutics, NJ</a></p>
-<button class="contributions-btn"
-        data-position="Scientist-II"
-        data-company="PTC Therapeutics, NJ"
-        data-duration="April 2018 - February 2020"
-        data-contributions='["Discovered novel series with nM activity and desired DMPK properties for Huntington'"'"'s Disease","Contributed to synthetic route design for PTC518 (ongoing Phase-II trial)","Received RNA certificate for breakthrough compound discovery","Presented findings at PTC Science Forum"]'>
-Key Contributions
-</button>
-</div>
-<div class="timeline-dot"></div>
-</div>
-
-<div class="timeline-item left">
-<div class="timeline-content">
-<p class="duration">September 2016 - March 2018</p>
-<h3>Postdoctoral Research Associate</h3>
-<p class="company">University of Pennsylvania, Philadelphia</p>
-<p style="margin: 1rem 0;"><strong>Advisor:</strong> Prof. Gary A. Molander</p>
-<button class="contributions-btn"
-        data-position="Postdoctoral Research Associate"
-        data-company="University of Pennsylvania, Philadelphia"
-        data-duration="September 2016 - March 2018"
-        data-contributions='["Developed novel synthetic methods for C-C and C-N bond construction under photoredox catalysis","Worked extensively with High-Throughput Experimentation (HTE) center","Presented quarterly research updates to support grant applications"]'>
-Key Contributions
-</button>
-</div>
-<div class="timeline-dot"></div>
-</div>
-</div>
-</div>
-</section>
-
-<section id="education" class="fade-in">
-<!-- Education Watermarks -->
-<div class="education-watermark">
-<div class="graduation-cap">
-<svg viewBox="0 0 200 200">
-<!-- Graduation Cap -->
-<polygon points="100,40 160,60 100,80 40,60" fill="rgba(40,167,69,0.6)" stroke="rgba(40,167,69,0.8)" stroke-width="2"/>
-<!-- Cap base -->
-<ellipse cx="100" cy="60" rx="60" ry="20" fill="rgba(40,167,69,0.5)"/>
-<!-- Tassel -->
-<line x1="160" y1="60" x2="170" y2="90" stroke="rgba(40,167,69,0.8)" stroke-width="3"/>
-<circle cx="170" cy="95" r="5" fill="rgba(40,167,69,0.8)"/>
-<!-- Mortar board top -->
-<rect x="70" y="35" width="60" height="60" fill="rgba(40,167,69,0.5)" stroke="rgba(40,167,69,0.8)" stroke-width="2"/>
-</svg>
-</div>
-</div>
-
-<div class="education-watermark">
-<div class="diploma">
-<svg viewBox="0 0 120 150">
-<!-- Diploma scroll -->
-<rect x="10" y="20" width="100" height="110" rx="5" fill="rgba(40,167,69,0.4)" stroke="rgba(40,167,69,0.6)" stroke-width="2"/>
-<!-- Ribbon -->
-<rect x="45" y="10" width="30" height="130" fill="rgba(220,53,69,0.6)"/>
-<!-- Text lines -->
-<line x1="20" y1="40" x2="100" y2="40" stroke="rgba(40,167,69,0.8)" stroke-width="2"/>
-<line x1="20" y1="55" x2="100" y2="55" stroke="rgba(40,167,69,0.8)" stroke-width="2"/>
-<line x1="20" y1="70" x2="100" y2="70" stroke="rgba(40,167,69,0.8)" stroke-width="2"/>
-<line x1="20" y1="85" x2="80" y2="85" stroke="rgba(40,167,69,0.8)" stroke-width="2"/>
-<!-- Seal -->
-<circle cx="85" cy="110" r="12" fill="rgba(255,193,7,0.7)" stroke="rgba(255,193,7,0.9)" stroke-width="2"/>
-</svg>
-</div>
-</div>
-
-<div class="education-watermark">
-<div class="book">
-<svg viewBox="0 0 100 120">
-<!-- Book cover -->
-<rect x="15" y="10" width="70" height="100" rx="3" fill="rgba(40,167,69,0.4)" stroke="rgba(40,167,69,0.6)" stroke-width="2"/>
-<!-- Book spine -->
-<rect x="10" y="10" width="10" height="100" rx="2" fill="rgba(40,167,69,0.6)"/>
-<!-- Pages -->
-<rect x="20" y="15" width="60" height="90" fill="rgba(255,255,255,0.7)" stroke="rgba(40,167,69,0.5)" stroke-width="1"/>
-<!-- Book lines -->
-<line x1="25" y1="25" x2="75" y2="25" stroke="rgba(40,167,69,0.6)" stroke-width="1"/>
-<line x1="25" y1="35" x2="75" y2="35" stroke="rgba(40,167,69,0.6)" stroke-width="1"/>
-<line x1="25" y1="45" x2="70" y2="45" stroke="rgba(40,167,69,0.6)" stroke-width="1"/>
-<!-- Chemistry symbol -->
-<circle cx="50" cy="70" r="8" fill="none" stroke="rgba(40,167,69,0.8)" stroke-width="2"/>
-<text x="50" y="75" text-anchor="middle" fill="rgba(40,167,69,0.8)" font-size="10" font-family="Arial">PhD</text>
-</svg>
-</div>
-</div>
-
-<div class="section-content">
-<h2 class="section-title">Education</h2>
-<div class="timeline">
-<div class="timeline-item left">
-<div class="timeline-content">
-<h3>PhD in Organic Chemistry</h3>
-<p class="company">Stockholm University, Sweden</p>
-<p class="duration">January 2012 - March 2016</p>
-<p class="duration" style="margin-bottom: 1.5rem;"><strong>Advisor:</strong> Prof. Kálmán Szabó | <strong>PhD Examiner:</strong> Prof. Varinder K Aggarwal (Bristol University, UK)</p>
-<a href="https://su.diva-portal.org/smash/record.jsf?pid=diva2%3A861175&dswid=-7800" target="_blank" class="thesis-btn">
-📄 Read Full PhD Thesis
-</a>
-</div>
-<div class="timeline-dot"></div>
-</div>
-
-<div class="timeline-item right">
-<div class="timeline-content">
-<h3>MS in Organic Chemistry</h3>
-<p class="company">Stockholm University, Sweden</p>
-<p class="duration"><strong>Thesis Advisor:</strong> Prof. Kálmán Szabó</p>
-</div>
-<div class="timeline-dot"></div>
-</div>
-
-<div class="timeline-item left">
-<div class="timeline-content">
-<h3>BSc in Chemistry</h3>
-<p class="company">University of Chittagong, Bangladesh</p>
-</div>
-<div class="timeline-dot"></div>
-</div>
-</div>
-</div>
-</section>
-
-<section id="skills" class="fade-in">
-<div class="section-content">
-<h2 class="section-title">Core Competencies</h2>
-<div class="skills-grid">
-<div class="skill-category">
-<h3>🧪 Chemistry Expertise</h3>
-<p><strong>Organic Synthesis:</strong> Multistep synthesis, asymmetric catalysis, photoredox chemistry</p>
-<p><strong>Medicinal Chemistry:</strong> Hit-to-lead optimization, structure-activity relationships, DMPK properties</p>
-<p><strong>Analytical Chemistry:</strong> NMR, HPLC, GC-MS, HRMS, SFC, FT-IR</p>
-</div>
-
-<div class="skill-category">
-<h3>💊 Drug Discovery</h3>
-<p><strong>Therapeutic Areas:</strong> CNS, Rare diseases, Inflammatory diseases</p>
-<p><strong>Technologies:</strong> RNA splicing modulation, NLRP3 inflammasome inhibition</p>
-<p><strong>Development:</strong> Hit identification to preclinical development</p>
-</div>
-
-<div class="skill-category">
-<h3>🔬 Technical Skills</h3>
-<p><strong>Software:</strong> ChemDraw, Schrödinger Suite, GraphPad Prism, DataWarrior</p>
-<p><strong>Laboratory:</strong> Glovebox operations, purification techniques, safety protocols</p>
-<p><strong>Analysis:</strong> Structure elucidation, purity assessment, reaction optimization</p>
-</div>
-
-<div class="skill-category">
-<h3>👥 Leadership</h3>
-<p><strong>Team Management:</strong> Led PhD scientists and CRO teams</p>
-<p><strong>Project Management:</strong> Cross-functional collaboration, milestone achievement</p>
-<p><strong>Mentoring:</strong> Trained students resulting in multiple publications</p>
-</div>
-</div>
-</div>
-</section>
-
-<section id="publications" class="fade-in">
-<div class="section-content">
-<h2 class="section-title">Selected Publications & Patents</h2>
-<div class="publications-grid">
-<div class="publication-card">
-<h4>Photoredox-catalyzed Direct Reductive Amination of Aldehydes without an External Hydrogen/Hydride Source</h4>
-<p class="authors"><strong>Alam, R.</strong>; Molander, A. G.</p>
-<p class="journal">Org. Lett., 2018, 20, 2680-2684</p>
-<a href="https://pubs.acs.org/doi/10.1021/acs.orglett.8b00895" class="pub-link" target="_blank">View Publication</a>
-</div>
-
-<div class="publication-card">
-<h4>Catalytic Asymmetric Allylboration of Indoles and Dihydroisoquinolines with Allylboronic Acids</h4>
-<p class="authors"><strong>Alam, R.</strong>; Diner, C.; Jonker, S.; Eriksson, L.; Szabó, J. K.</p>
-<p class="journal">Angew. Chem. Int. Ed. 2016, 55, 14417-14421</p>
-<a href="http://onlinelibrary.wiley.com/doi/10.1002/anie.201608605/full" class="pub-link" target="_blank">View Publication</a>
-</div>
-
-<div class="publication-card">
-<h4>Synthesis of Adjacent Quaternary Stereocenters by Catalytic Asymmetric Allylboration</h4>
-<p class="authors"><strong>Alam, R.</strong>; Vollgraff, T.; Eriksson, L.; Szabó, J. K.</p>
-<p class="journal">J. Am. Chem. Soc. 2015, 137, 11262-11265</p>
-<a href="http://pubs.acs.org/doi/abs/10.1021/jacs.5b07498" class="pub-link" target="_blank">View Publication</a>
-</div>
-
-<div class="publication-card">
-<h4>Patent: Novel Small Molecule Modulators</h4>
-<p class="authors">Multiple patent applications in medicinal chemistry</p>
-<p class="journal">WO/2019/191229, WO/2020/005873, WO/2021/207453, and others</p>
-<a href="https://rauful-alam.blogspot.com/" class="pub-link" target="_blank">View All Patents</a>
-</div>
-</div>
-
-<div style="text-align: center; margin-top: 2rem;">
-<p><strong>13 Peer-reviewed articles | 7 Lead authorship articles | 10+ Patent applications</strong></p>
-<a href="https://rauful-alam.blogspot.com/" class="pub-link" target="_blank" style="margin-top: 1rem; display: inline-block;">View Complete Publication List</a>
-</div>
-</div>
-</section>
-
-<section id="presentations" class="fade-in">
-<div class="section-content">
-<h2 class="section-title">Scientific Lectures and Presentations</h2>
-<div class="publications-grid">
-<div class="publication-card">
-<h4>19th Drug Discovery Chemistry</h4>
-<p class="journal">April 2024 (San Diego, USA)</p>
-</div>
-
-<div class="publication-card">
-<h4>2022 ACS Fall National Meeting and Exposition</h4>
-<p class="journal">August 2022 (Chicago, USA)</p>
-</div>
-
-<div class="publication-card">
-<h4>4th Silk Road International Symposium for Distinguished Young Scholars (SRIS-2018)</h4>
-<p class="journal">April 2018 (Xi'an, China)</p>
-<p class="authors"><strong>Oral Presentation</strong></p>
-</div>
-
-<div class="publication-card">
-<h4>254th ACS National Meeting and Exposition</h4>
-<p class="journal">August 2017 (Washington, USA)</p>
-<p class="authors"><strong>Oral and Poster Presentation</strong> • Presentation in <em>Sci-Mix</em> session</p>
-</div>
-
-<div class="publication-card">
-<h4>PACIFICHEM (The International Chemical Congress of Pacific Basin Societies)</h4>
-<p class="journal">December 2015 (Hawaii, USA)</p>
-<p class="authors"><strong>Oral and Poster Presentation</strong></p>
-</div>
-
-<div class="publication-card">
-<h4>OMCOS (Organometallic Chemistry Directed Towards Organic Synthesis)</h4>
-<p class="journal">June 2015 (Sitges, Spain)</p>
-<p class="authors"><strong>Poster Presentation</strong></p>
-</div>
-
-<div class="publication-card">
-<h4>CARISMA (Catalytic Routines for Small Molecule Activation) Meeting</h4>
-<p class="journal">March 2015 (Tarragona, Spain)</p>
-<p class="authors"><strong>Poster Presentation</strong></p>
-</div>
-
-<div class="publication-card">
-<h4>Organikerdagarna</h4>
-<p class="journal">June 2014 (Djurönäset, Stockholm)</p>
-<p class="authors"><strong>Oral Presentation</strong></p>
-</div>
-
-<div class="publication-card">
-<h4>248th ACS National Meeting and Exposition</h4>
-<p class="journal">August 2014 (San Francisco, USA)</p>
-<p class="authors"><strong>Oral and Poster Presentation</strong> • Presentation in <em>Sci-Mix</em> session</p>
-</div>
-
-<div class="publication-card">
-<h4>246th ACS National Meeting and Exposition</h4>
-<p class="journal">September 2013 (Indianapolis, USA)</p>
-<p class="authors"><strong>Oral and Poster Presentation</strong> • Presentation in <em>Sci-Mix</em> session</p>
-</div>
-
-<div class="publication-card">
-<h4>244th ACS National Meeting and Exposition</h4>
-<p class="journal">August 2012 (Philadelphia, USA)</p>
-<p class="authors"><strong>Oral and Poster Presentation</strong> • Presentation in <em>Sci-Mix</em> session</p>
-</div>
-</div>
-
-<div style="text-align: center; margin-top: 2rem;">
-<p><strong>11 International Scientific Presentations | Multiple Oral and Poster Sessions | Featured in Sci-Mix Sessions</strong></p>
-</div>
-</div>
-</section>
-
-<section id="blog" class="fade-in">
-<div class="section-content">
-<h2 class="section-title">Latest Blog Posts</h2>
-<div class="blog-grid">
-<article class="blog-card">
-<div class="blog-image">
-Drug Discovery
-<div class="reading-time">
-<span>⏱️ 5 min read</span>
-</div>
-</div>
-<div class="blog-content">
-<h3>The Future of RNA Splicing in Drug Discovery</h3>
-<p class="blog-excerpt">RNA splicing modulation represents a paradigm shift in drug discovery, offering unprecedented opportunities to target previously "undruggable" proteins. By manipulating the splicing machinery, we can correct disease-causing mutations at the RNA level, potentially treating genetic disorders like Duchenne muscular dystrophy and spinal muscular atrophy. This approach bypasses traditional protein targeting limitations and opens new therapeutic avenues for rare diseases affecting millions worldwide.</p>
-<div class="blog-footer">
-<div class="blog-author">
-<div class="author-photo">RA</div>
-<div class="author-info">
-<span class="author-name">Dr. Rauful Alam</span>
-<span class="blog-date">February 28, 2024</span>
-</div>
-</div>
-<div class="blog-engagement">
-<span class="comments">💬 8 comments</span>
-<span class="likes">❤️ 32 likes</span>
-</div>
-</div>
-</div>
-</article>
-
-<article class="blog-card">
-<div class="blog-image">
-Career Advice
-<div class="reading-time">
-<span>⏱️ 6 min read</span>
-</div>
-</div>
-<div class="blog-content">
-<h3>Transitioning from Academia to Industry: A Chemist's Journey</h3>
-<p class="blog-excerpt">Practical advice for PhD chemists considering a move from academic research to pharmaceutical industry, including interview tips and skill development...</p>
-<div class="blog-footer">
-<div class="blog-author">
-<div class="author-photo">RA</div>
-<div class="author-info">
-<span class="author-name">Dr. Rauful Alam</span>
-<span class="blog-date">February 10, 2024</span>
-</div>
-</div>
-<div class="blog-engagement">
-<span class="comments">💬 25 comments</span>
-<span class="likes">❤️ 67 likes</span>
-</div>
-</div>
-</div>
-</article>
-</div>
-
-<div style="text-align: center; margin-top: 2rem;">
-<a href="https://rauful-alam.blogspot.com/" class="pub-link" target="_blank">View All Blog Posts</a>
-</div>
-</div>
-</section>
-
-<section id="contact" class="fade-in">
-<div class="section-content">
-<h2 class="section-title">Get In Touch</h2>
-<div class="contact-info">
-<div class="contact-item">
-<div class="icon">✉️</div>
-<p><a href="mailto:rauful.alam15@gmail.com" style="color: #3498db; text-decoration: none; font-weight: 500; transition: color 0.3s ease;">rauful.alam15@gmail.com</a></p>
-</div>
-<div class="contact-item">
-<div class="icon">🌐</div>
-<div class="social-links">
-<a href="https://www.linkedin.com/in/rauful-alam-ph-d-12536365/" target="_blank" class="social-icon" title="LinkedIn">
-💼
-</a>
-<a href="#" target="_blank" class="social-icon" title="Google Scholar">
-🎓
-</a>
-<a href="#" target="_blank" class="social-icon" title="Facebook">
-📘
-</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<div class="fab" onclick="scrollToTop()">
-<div class="icon">↑</div>
-</div>
-
-<!-- Modal for Key Contributions -->
-<div class="modal-overlay" id="contributionsModal">
-<div class="modal-content">
-<div class="modal-header">
-<h3 id="modalPosition">Position Title</h3>
-<div class="position-info">
-<span id="modalCompany">Company</span> • <span id="modalDuration">Duration</span>
-</div>
-<button class="modal-close" onclick="closeModal()">&times;</button>
-</div>
-<div class="modal-body" id="modalContributions">
-<!-- Contributions will be populated here -->
-</div>
-</div>
-</div>
-
-<script>
-// Modal functionality for contributions
-function openModal(position, company, duration, contributions) {
-const modal = document.getElementById('contributionsModal');
-const modalPosition = document.getElementById('modalPosition');
-const modalCompany = document.getElementById('modalCompany');
-const modalDuration = document.getElementById('modalDuration');
-const modalContributions = document.getElementById('modalContributions');
-
-modalPosition.textContent = position;
-modalCompany.textContent = company;
-modalDuration.textContent = duration;
-
-// Clear previous content
-modalContributions.innerHTML = '';
-
-// Add contributions with icons
-contributions.forEach((contribution, index) => {
-const contributionDiv = document.createElement('div');
-contributionDiv.className = 'contribution-item';
-contributionDiv.innerHTML = `
-<div class="contribution-icon">${index + 1}</div>
-<div class="contribution-text">${contribution}</div>
-`;
-modalContributions.appendChild(contributionDiv);
-});
-
-modal.classList.add('active');
-document.body.style.overflow = 'hidden';
-}
-
-function closeModal() {
-const modal = document.getElementById('contributionsModal');
-modal.classList.remove('active');
-document.body.style.overflow = 'auto';
-}
-
-// Close modal when clicking overlay
-document.getElementById('contributionsModal').addEventListener('click', function(e) {
-if (e.target === this) {
-closeModal();
-}
-});
-
-// Close modal with Escape key
-document.addEventListener('keydown', function(e) {
-if (e.key === 'Escape') {
-closeModal();
-}
-});
-
-// Navigation visibility on scroll
-window.addEventListener('scroll', function() {
-const navbar = document.getElementById('navbar');
-if (window.scrollY > 100) {
-navbar.classList.add('visible');
-} else {
-navbar.classList.remove('visible');
-}
-});
-
-// Smooth scrolling for navigation links
-document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', function (e) {
-e.preventDefault();
-const target = document.querySelector(this.getAttribute('href'));
-if (target) {
-target.scrollIntoView({
-behavior: 'smooth',
-block: 'start'
-});
-}
-});
-});
-
-// Scroll to top function
-function scrollToTop() {
-window.scrollTo({
-top: 0,
-behavior: 'smooth'
-});
-}
-
-// Fade in animation on scroll
-const observerOptions = {
-threshold: 0.1,
-rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver(function(entries) {
-entries.forEach(entry => {
-if (entry.isIntersecting) {
-entry.target.classList.add('visible');
-}
-});
-}, observerOptions);
-
-document.querySelectorAll('.fade-in').forEach(el => {
-observer.observe(el);
-});
-
-// Initialize fade-in visibility for sections
-setTimeout(() => {
-document.querySelectorAll('.fade-in').forEach(el => {
-el.classList.add('visible');
-});
-}, 500);
-
-// Automatic blog functionality
-function initializeBlogFeatures() {
-// Calculate reading time based on word count
-function calculateReadingTime(text) {
-const wordsPerMinute = 200; // Average reading speed
-const words = text.trim().split(/\s+/).length;
-const minutes = Math.ceil(words / wordsPerMinute);
-return `⏱️ ${minutes} min read`;
-}
-
-// Format date to readable format
-function formatDate(date) {
-return date.toLocaleDateString('en-US', {
-year: 'numeric',
-month: 'long',
-day: 'numeric'
-});
-}
-
-// Update each blog card
-document.querySelectorAll('.blog-card').forEach((card, index) => {
-// Calculate reading time based on blog content
-const blogContent = card.querySelector('.blog-excerpt').textContent;
-const readingTimeElement = card.querySelector('.reading-time span');
-if (readingTimeElement) {
-readingTimeElement.textContent = calculateReadingTime(blogContent);
-}
-
-// Set publication dates (recent posts)
-const blogDateElement = card.querySelector('.blog-date');
-if (blogDateElement) {
-const currentDate = new Date();
-// Subtract days to make posts appear at different times
-const daysAgo = index * 15 + Math.floor(Math.random() * 10); // 15-25 days apart
-const postDate = new Date(currentDate.getTime() - (daysAgo * 24 * 60 * 60 * 1000));
-blogDateElement.textContent = formatDate(postDate);
-}
-});
-}
-
-// Mobile dropdown functionality
-function initializeMobileDropdowns() {
-const dropdowns = document.querySelectorAll('.dropdown');
-
-dropdowns.forEach(dropdown => {
-const dropdownLink = dropdown.querySelector('a');
-
-dropdownLink.addEventListener('click', function(e) {
-// Only prevent default on mobile
-if (window.innerWidth <= 768) {
-e.preventDefault();
-
-// Close other dropdowns
-dropdowns.forEach(otherDropdown => {
-if (otherDropdown !== dropdown) {
-otherDropdown.classList.remove('active');
-}
-});
-
-// Toggle current dropdown
-dropdown.classList.toggle('active');
-}
-});
-});
-
-// Close dropdowns when clicking outside
-document.addEventListener('click', function(e) {
-if (window.innerWidth <= 768) {
-const isDropdownClick = e.target.closest('.dropdown');
-if (!isDropdownClick) {
-dropdowns.forEach(dropdown => {
-dropdown.classList.remove('active');
-});
-}
-}
-});
-
-// Close dropdowns on window resize
-window.addEventListener('resize', function() {
-dropdowns.forEach(dropdown => {
-dropdown.classList.remove('active');
-});
-});
-}
-
-// Mobile navigation toggle - Clean version
-document.addEventListener('DOMContentLoaded', function() {
-initializeBlogFeatures();
-
-// Add click handlers for contribution buttons
-document.querySelectorAll('.contributions-btn').forEach(button => {
-button.addEventListener('click', function() {
-const position = this.getAttribute('data-position');
-const company = this.getAttribute('data-company');
-const duration = this.getAttribute('data-duration');
-const contributions = JSON.parse(this.getAttribute('data-contributions'));
-openModal(position, company, duration, contributions);
-});
-});
-
-// Mobile navigation functionality
-const navbar = document.getElementById('navbar');
-const mobileToggle = document.getElementById('mobileNavToggle');
-const dropdowns = document.querySelectorAll('.dropdown');
-let mobileNavOpen = false;
-
-if (mobileToggle) {
-// Mobile nav toggle button click
-mobileToggle.addEventListener('click', function(e) {
-e.preventDefault();
-e.stopPropagation();
-
-mobileNavOpen = !mobileNavOpen;
-
-if (mobileNavOpen) {
-navbar.classList.add('visible');
-navbar.classList.add('mobile-show');
-mobileToggle.classList.add('active');
-mobileToggle.innerHTML = '✕';
-} else {
-navbar.classList.remove('mobile-show');
-mobileToggle.classList.remove('active');
-mobileToggle.innerHTML = '☰';
-}
-});
-
-// Close nav when clicking outside
-document.addEventListener('click', function(e) {
-if (mobileNavOpen && !e.target.closest('nav') && !e.target.closest('#mobileNavToggle')) {
-mobileNavOpen = false;
-navbar.classList.remove('mobile-show');
-mobileToggle.classList.remove('active');
-mobileToggle.innerHTML = '☰';
-}
-});
-
-// Handle navigation links
-document.querySelectorAll('nav a[href^="#"]').forEach(link => {
-link.addEventListener('click', function() {
-if (mobileNavOpen && !this.closest('.dropdown-content')) {
-setTimeout(() => {
-mobileNavOpen = false;
-navbar.classList.remove('mobile-show');
-mobileToggle.classList.remove('active');
-mobileToggle.innerHTML = '☰';
-}, 300);
-}
-});
-});
-
-// Mobile dropdown functionality
-dropdowns.forEach(dropdown => {
-const dropdownLink = dropdown.querySelector('a');
-
-dropdownLink.addEventListener('click', function(e) {
-if (mobileNavOpen && window.innerWidth <= 768) {
-e.preventDefault();
-
-// Close other dropdowns
-dropdowns.forEach(otherDropdown => {
-if (otherDropdown !== dropdown) {
-otherDropdown.classList.remove('active');
-}
-});
-
-// Toggle current dropdown
-dropdown.classList.toggle('active');
-}
-});
-});
-}
-});
-</script>
+    <nav id="navbar">
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li class="dropdown">
+                <a href="#experience">My Journey</a>
+                <div class="dropdown-content">
+                    <a href="#experience">Professional Experience</a>
+                    <a href="#education">Education</a>
+                    <a href="#skills">Skills & Expertise</a>
+                    <a href="#publications">Publications & Patents</a>
+                    <a href="#presentations">Presentations</a>
+                </div>
+            </li>
+            <li><a href="#courses">Courses</a></li>
+            <li class="dropdown">
+                <a href="#blog">Blog</a>
+                <div class="dropdown-content">
+                    <a href="https://rauful-alam.blogspot.com/" target="_blank">Personal Blog</a>
+                    <a href="https://rauful-alam.blogspot.com/2016/12/publications.html" target="_blank">Research Publications</a>
+                    <a href="#" target="_blank">Career Advice</a>
+                </div>
+            </li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Mobile Navigation Toggle Button -->
+    <button class="mobile-nav-toggle" id="mobileNavToggle">☰</button>
+
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <div class="hero-photo">
+                <img src="https://github.com/Rauful15/rauful15.github.io/raw/main/images/Photo_RA.jpg" alt="Dr. Rauful Alam" onerror="this.style.display='none'; this.parentElement.innerHTML='RA';">
+            </div>
+            <h1>Dr. Rauful Alam</h1>
+            <p class="subtitle">Scientist | Teacher | Author</p>
+            <p class="description">An expert medicinal chemist with a Ph.D. in Organic Chemistry, driving pre-clinical drug discovery research. Passionately advocating for the advancement of education and research culture in Bangladesh.</p>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="section-content">
+            <div style="text-align: center; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                <div style="background: white; border-radius: 15px; padding: 2rem; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); position: relative; transition: all 0.3s ease; border-left: 5px solid #3498db;">
+                    <p style="font-style: italic; font-size: 1.1rem; color: #2c3e50; line-height: 1.8; font-weight: 300; margin: 0;">
+                        "A ship in harbor is safe, but that is not what ships are built for." <span style="font-size: 1rem; opacity: 0.7; margin-left: 1rem;">— Unknown</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="section-title-with-icon">
+                <div class="section-icon">⛵</div>
+                <h2 class="section-title">Professional Journey</h2>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <p class="duration">September 2025 - Present</p>
+                        <h3>Staff Scientist (Medicinal Chemistry)</h3>
+                        <p class="company"><a href="https://biologicalsciences.uchicago.edu/" target="_blank">Center for Chemical Biology and Therapeutics (CCBT), University of Chicago</a></p>
+                        <button class="contributions-btn" 
+                                data-position="Staff Scientist (Medicinal Chemistry)"
+                                data-company="Center for Chemical Biology and Therapeutics (CCBT), University of Chicago"
+                                data-duration="September 2025 - Present"
+                                data-contributions='["Leading cutting-edge research in medicinal chemistry","Developing novel therapeutic approaches for rare diseases","Collaborating with multidisciplinary teams on drug discovery programs"]'>
+                            Key Contributions
+                        </button>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <p class="duration">September 2023 - May 2024</p>
+                        <h3>Principal Scientist</h3>
+                        <p style="color: #666; font-style: italic; margin-bottom: 0.5rem;">Pre-clinical Drug Discovery</p>
+                        <p class="company"><a href="https://www.ptcbio.com/" target="_blank">PTC Therapeutics, NJ</a></p>
+                        <button class="contributions-btn"
+                                data-position="Principal Scientist"
+                                data-company="PTC Therapeutics, NJ"
+                                data-duration="September 2023 - May 2024"
+                                data-contributions='["Led design and synthesis of novel small molecule modulators targeting RNA splicing","Directed teams of CRO chemists with strategic proposals and expert guidance","Collaborated with Biology, DMPK, and Pharmacology teams on biomarker selection","Conducted extensive literature searches and competitive intelligence"]'>
+                            Key Contributions
+                        </button>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <p class="duration">March 2020 - August 2023</p>
+                        <h3>Senior Scientist</h3>
+                        <p style="color: #666; font-style: italic; margin-bottom: 0.5rem;">Pre-clinical Drug Discovery</p>
+                        <p class="company"><a href="https://www.ptcbio.com/" target="_blank">PTC Therapeutics, NJ</a></p>
+                        <button class="contributions-btn"
+                                data-position="Senior Scientist"
+                                data-company="PTC Therapeutics, NJ"
+                                data-duration="March 2020 - August 2023"
+                                data-contributions='["Supervised two PhD scientists and managed CRO chemistry teams","Discovered highly potent compounds (pico-molar range) for NLRP3 inflammasome inhibition","Initiated and hosted monthly chemistry seminars for the team","Led on-campus recruitment, onboarding 5 PhD scientists from 20+ universities","Awarded RNA (Recognition for Novel Achievement) for patent searching excellence"]'>
+                            Key Contributions
+                        </button>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <p class="duration">April 2018 - February 2020</p>
+                        <h3>Scientist-II</h3>
+                        <p style="color: #666; font-style: italic; margin-bottom: 0.5rem;">Pre-clinical Drug Discovery</p>
+                        <p class="company"><a href="https://www.ptcbio.com/" target="_blank">PTC Therapeutics, NJ</a></p>
+                        <button class="contributions-btn"
+                                data-position="Scientist-II"
+                                data-company="PTC Therapeutics, NJ"
+                                data-duration="April 2018 - February 2020"
+                                data-contributions='["Discovered novel series with nM activity and desired DMPK properties for Huntingtons Disease","Contributed to synthetic route design for PTC518 (ongoing Phase-II trial)","Received RNA certificate for breakthrough compound discovery","Presented findings at PTC Science Forum"]'>
+                            Key Contributions
+                        </button>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <p class="duration">September 2016 - March 2018</p>
+                        <h3>Postdoctoral Research Associate</h3>
+                        <p class="company"><a href="https://www.upenn.edu/" target="_blank">University of Pennsylvania, Philadelphia</a></p>
+                        <p style="margin: 1rem 0;"><strong>Advisor:</strong> Prof. Gary A. Molander</p>
+                        <button class="contributions-btn"
+                                data-position="Postdoctoral Research Associate"
+                                data-company="University of Pennsylvania, Philadelphia"
+                                data-duration="September 2016 - March 2018"
+                                data-contributions='["Developed novel synthetic methods for C-C and C-N bond construction under photoredox catalysis","Worked extensively with High-Throughput Experimentation (HTE) center","Presented quarterly research updates to support grant applications"]'>
+                            Key Contributions
+                        </button>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="section-content">
+            <div class="section-title-with-icon">
+                <div class="section-icon">🎓</div>
+                <h2 class="section-title">Education</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>PhD in Organic Chemistry</h3>
+                        <p class="company"><a href="https://www.su.se/cmlink/stockholm-university" target="_blank" style="color: #3498db; text-decoration: none;">Stockholm University</a>, Sweden</p>
+                        <p class="duration">January 2012 - March 2016</p>
+                        <p class="duration" style="margin-bottom: 1.5rem;"><strong>Advisor:</strong> <a href="https://www.organ.su.se/ks/" target="_blank" style="color: #3498db; text-decoration: none;">Prof. Kálmán Szabó</a> | <strong>PhD Examiner:</strong> <a href="https://www.chm.bris.ac.uk/org/aggarwal/vka.php" target="_blank" style="color: #3498db; text-decoration: none;">Prof. Varinder K Aggarwal</a> (Bristol University, UK)</p>
+                        <a href="https://su.diva-portal.org/smash/record.jsf?pid=diva2%3A861175&dswid=-7800" target="_blank" class="thesis-btn">
+                            📄 Read Full PhD Thesis
+                        </a>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>MS in Organic Chemistry</h3>
+                        <p class="company">Stockholm University, Sweden</p>
+                        <p class="duration"><strong>Thesis Advisor:</strong> Prof. Kálmán Szabó</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>BSc in Chemistry</h3>
+                        <p class="company"><a href="https://cu.ac.bd/v2/" target="_blank" style="color: #3498db; text-decoration: none;">University of Chittagong</a>, Bangladesh</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-content">
+            <div class="section-title-with-icon">
+                <div class="section-icon">🔬</div>
+                <h2 class="section-title">Core Competencies</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>🧪 Chemistry Expertise</h3>
+                    <p><strong>Organic Synthesis:</strong> Multistep synthesis, asymmetric catalysis, photoredox chemistry</p>
+                    <p><strong>Medicinal Chemistry:</strong> Hit-to-lead optimization, structure-activity relationships, DMPK properties</p>
+                    <p><strong>Analytical Chemistry:</strong> NMR, HPLC, GC-MS, HRMS, SFC, FT-IR</p>
+                </div>
+
+                <div class="skill-category">
+                    <h3>💊 Drug Discovery</h3>
+                    <p><strong>Therapeutic Areas:</strong> CNS, Rare diseases, Inflammatory diseases</p>
+                    <p><strong>Technologies:</strong> RNA splicing modulation, NLRP3 inflammasome inhibition</p>
+                    <p><strong>Development:</strong> Hit identification to preclinical development</p>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🔬 Technical Skills</h3>
+                    <p><strong>Software:</strong> ChemDraw, Schrödinger Suite, GraphPad Prism, DataWarrior</p>
+                    <p><strong>Laboratory:</strong> Glovebox operations, purification techniques, safety protocols</p>
+                    <p><strong>Analysis:</strong> Structure elucidation, purity assessment, reaction optimization</p>
+                </div>
+
+                <div class="skill-category">
+                    <h3>👥 Leadership</h3>
+                    <p><strong>Team Management:</strong> Led PhD scientists and CRO teams</p>
+                    <p><strong>Project Management:</strong> Cross-functional collaboration, milestone achievement</p>
+                    <p><strong>Mentoring:</strong> Trained students resulting in multiple publications</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications">
+        <div class="section-content">
+            <div class="section-title-with-icon">
+                <div class="section-icon">📚</div>
+                <h2 class="section-title">Selected Publications & Patents</h2>
+            </div>
+            <div class="publications-grid">
+                <div class="publication-card">
+                    <h4>Photoredox-catalyzed Direct Reductive Amination of Aldehydes without an External Hydrogen/Hydride Source</h4>
+                    <p class="authors"><strong>Alam, R.</strong>; Molander, A. G.</p>
+                    <p class="journal">Org. Lett., 2018, 20, 2680-2684</p>
+                    <a href="https://pubs.acs.org/doi/10.1021/acs.orglett.8b00895" class="pub-link" target="_blank">View Publication</a>
+                </div>
+
+                <div class="publication-card">
+                    <h4>Catalytic Asymmetric Allylboration of Indoles and Dihydroisoquinolines with Allylboronic Acids</h4>
+                    <p class="authors"><strong>Alam, R.</strong>; Diner, C.; Jonker, S.; Eriksson, L.; Szabó, J. K.</p>
+                    <p class="journal">Angew. Chem. Int. Ed. 2016, 55, 14417-14421</p>
+                    <a href="http://onlinelibrary.wiley.com/doi/10.1002/anie.201608605/full" class="pub-link" target="_blank">View Publication</a>
+                </div>
+
+                <div class="publication-card">
+                    <h4>Synthesis of Adjacent Quaternary Stereocenters by Catalytic Asymmetric Allylboration</h4>
+                    <p class="authors"><strong>Alam, R.</strong>; Vollgraff, T.; Eriksson, L.; Szabó, J. K.</p>
+                    <p class="journal">J. Am. Chem. Soc. 2015, 137, 11262-11265</p>
+                    <a href="http://pubs.acs.org/doi/abs/10.1021/jacs.5b07498" class="pub-link" target="_blank">View Publication</a>
+                </div>
+
+                <div class="publication-card">
+                    <h4>Patent: Novel Small Molecule Modulators</h4>
+                    <p class="authors">Multiple patent applications in medicinal chemistry</p>
+                    <p class="journal">WO/2019/191229, WO/2020/005873, WO/2021/207453, and others</p>
+                    <a href="https://rauful-alam.blogspot.com/" class="pub-link" target="_blank">View All Patents</a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <p><strong>13 Peer-reviewed articles | 7 Lead authorship articles | 10+ Patent applications</strong></p>
+                <a href="https://rauful-alam.blogspot.com/" class="pub-link" target="_blank" style="margin-top: 1rem; display: inline-block;">View Complete Publication List</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses">
+        <div class="section-content">
+            <h2 class="section-title">Offered Courses</h2>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-header">
+                        <div class="course-icon">🧪</div>
+                        <h3 class="course-title">Fundamentals of Organic Chemistry</h3>
+                        <p class="course-subtitle">Master the foundations of organic chemistry with expert guidance</p>
+                    </div>
+                    <div class="course-body">
+                        <div class="course-features">
+                            <div class="course-feature">
+                                <div class="feature-icon">📚</div>
+                                <span class="feature-text">Comprehensive Curriculum</span>
+                            </div>
+                            <div class="course-feature">
+                                <div class="feature-icon">👨‍🏫</div>
+                                <span class="feature-text">Expert Instructor</span>
+                            </div>
+                            <div class="course-feature">
+                                <div class="feature-icon">🎯</div>
+                                <span class="feature-text">Practical Applications</span>
+                            </div>
+                            <div class="course-feature">
+                                <div class="feature-icon">🏆</div>
+                                <span class="feature-text">Industry Insights</span>
+                            </div>
+                        </div>
+
+                        <p class="course-description">
+                            Dive deep into the fundamental principles of organic chemistry with this comprehensive course designed for students and professionals. Learn structure, bonding, nomenclature, reaction mechanisms, and synthesis strategies from an industry expert with extensive pharmaceutical experience.
+                        </p>
+
+                        <div class="course-highlights">
+                            <h4>🌟 Course Highlights</h4>
+                            <ul class="highlights-list">
+                                <li>Molecular structure and bonding theory</li>
+                                <li>Functional groups and nomenclature</li>
+                                <li>Reaction mechanisms and stereochemistry</li>
+                                <li>Synthetic methods and retrosynthetic analysis</li>
+                                <li>Real-world pharmaceutical applications</li>
+                                <li>Interactive problem-solving sessions</li>
+                            </ul>
+                        </div>
+
+                        <div class="course-action">
+                            <button class="course-register-btn" onclick="openCourseModal()">
+                                📋 Course Details and Registration
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="presentations">
+        <div class="section-content">
+            <h2 class="section-title">Scientific Lectures and Presentations</h2>
+            <div class="publications-grid">
+                <div class="publication-card">
+                    <h4>19th Drug Discovery Chemistry</h4>
+                    <p class="journal">April 2024 (San Diego, USA)</p>
+                </div>
+
+                <div class="publication-card">
+                    <h4>2022 ACS Fall National Meeting and Exposition</h4>
+                    <p class="journal">August 2022 (Chicago, USA)</p>
+                </div>
+
+                <div class="publication-card">
+                    <h4>4th Silk Road International Symposium for Distinguished Young Scholars (SRIS-2018)</h4>
+                    <p class="journal">April 2018 (Xi'an, China)</p>
+                    <p class="authors"><strong>Oral Presentation</strong></p>
+                </div>
+
+                <div class="publication-card">
+                    <h4>254th ACS National Meeting and Exposition</h4>
+                    <p class="journal">August 2017 (Washington, USA)</p>
+                    <p class="authors"><strong>Oral and Poster Presentation</strong> • Presentation in <em>Sci-Mix</em> session</p>
+                </div>
+
+                <div class="publication-card">
+                    <h4>PACIFICHEM (The International Chemical Congress of Pacific Basin Societies)</h4>
+                    <p class="journal">December 2015 (Hawaii, USA)</p>
+                    <p class="authors"><strong>Oral and Poster Presentation</strong></p>
+                </div>
+
+                <div class="publication-card">
+                    <h4>OMCOS (Organometallic Chemistry Directed Towards Organic Synthesis)</h4>
+                    <p class="journal">June 2015 (Sitges, Spain)</p>
+                    <p class="authors"><strong>Poster Presentation</strong></p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <p><strong>11 International Scientific Presentations | Multiple Oral and Poster Sessions | Featured in Sci-Mix Sessions</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog">
+        <div class="section-content">
+            <h2 class="section-title">Latest Blog Posts</h2>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        Drug Discovery
+                        <div class="reading-time">
+                            <span>⏱️ 5 min read</span>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>The Future of RNA Splicing in Drug Discovery</h3>
+                        <p class="blog-excerpt">RNA splicing modulation represents a paradigm shift in drug discovery, offering unprecedented opportunities to target previously "undruggable" proteins. By manipulating the splicing machinery, we can correct disease-causing mutations at the RNA level, potentially treating genetic disorders like Duchenne muscular dystrophy and spinal muscular atrophy.</p>
+                        <div class="blog-footer">
+                            <div class="blog-author">
+                                <div class="author-photo">RA</div>
+                                <div class="author-info">
+                                    <span class="author-name">Dr. Rauful Alam</span>
+                                    <span class="blog-date">February 28, 2024</span>
+                                </div>
+                            </div>
+                            <div class="blog-engagement">
+                                <span class="comments">💬 8 comments</span>
+                                <span class="likes">❤️ 32 likes</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        Career Advice
+                        <div class="reading-time">
+                            <span>⏱️ 6 min read</span>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Transitioning from Academia to Industry: A Chemist's Journey</h3>
+                        <p class="blog-excerpt">Practical advice for PhD chemists considering a move from academic research to pharmaceutical industry, including interview tips and skill development strategies for career advancement...</p>
+                        <div class="blog-footer">
+                            <div class="blog-author">
+                                <div class="author-photo">RA</div>
+                                <div class="author-info">
+                                    <span class="author-name">Dr. Rauful Alam</span>
+                                    <span class="blog-date">February 10, 2024</span>
+                                </div>
+                            </div>
+                            <div class="blog-engagement">
+                                <span class="comments">💬 25 comments</span>
+                                <span class="likes">❤️ 67 likes</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        Medicinal Chemistry
+                        <div class="reading-time">
+                            <span>⏱️ 8 min read</span>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>From Hit to Lead: Optimizing Small Molecules for CNS Targets</h3>
+                        <p class="blog-excerpt">A comprehensive guide to medicinal chemistry strategies for developing central nervous system drugs, including DMPK considerations and blood-brain barrier penetration optimization techniques...</p>
+                        <div class="blog-footer">
+                            <div class="blog-author">
+                                <div class="author-photo">RA</div>
+                                <div class="author-info">
+                                    <span class="author-name">Dr. Rauful Alam</span>
+                                    <span class="blog-date">March 15, 2024</span>
+                                </div>
+                            </div>
+                            <div class="blog-engagement">
+                                <span class="comments">💬 12 comments</span>
+                                <span class="likes">❤️ 45 likes</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="https://rauful-alam.blogspot.com/" class="pub-link" target="_blank">View All Blog Posts</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-content">
+            <div class="section-title-with-icon">
+                <div class="section-icon">📞</div>
+                <h2 class="section-title">Get In Touch</h2>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="icon">✉️</div>
+                    <p><a href="mailto:rauful.alam15@gmail.com" style="color: #3498db; text-decoration: none; font-weight: 500;">rauful.alam15@gmail.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">🌐</div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/rauful-alam-ph-d-12536365/" target="_blank" class="social-icon" title="LinkedIn">💼</a>
+                        <a href="#" target="_blank" class="social-icon" title="Google Scholar">🎓</a>
+                        <a href="#" target="_blank" class="social-icon" title="Facebook">📘</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="fab" onclick="scrollToTop()">
+        <div class="icon">↑</div>
+    </div>
+
+    <!-- Course Modal -->
+    <div class="course-modal-overlay" id="courseModal">
+        <div class="course-modal-content">
+            <div class="course-modal-header">
+                <h3>Fundamentals of Organic Chemistry</h3>
+                <p class="course-modal-subtitle">Complete Course Information & Registration</p>
+                <button class="course-modal-close" onclick="closeCourseModal()">&times;</button>
+            </div>
+            <div class="course-modal-body">
+                <div class="course-detail-section">
+                    <h4>Course Overview</h4>
+                    <p>This comprehensive course covers the fundamental principles of organic chemistry, designed for students pursuing careers in chemistry, biology, medicine, and related fields. Taught by Dr. Rauful Alam, an experienced medicinal chemist with extensive industry experience at PTC Therapeutics and current staff scientist at University of Chicago.</p>
+                </div>
+
+                <div class="course-info-grid">
+                    <div class="course-info-item">
+                        <div class="course-info-icon">⏱️</div>
+                        <div class="course-info-label">Duration</div>
+                        <div class="course-info-value">10 Weeks<br>30 hrs total</div>
+                    </div>
+                    <div class="course-info-item">
+                        <div class="course-info-icon">🎓</div>
+                        <div class="course-info-label">Level</div>
+                        <div class="course-info-value">Undergraduate<br>Foundation</div>
+                    </div>
+                    <div class="course-info-item">
+                        <div class="course-info-icon">💻</div>
+                        <div class="course-info-label">Format</div>
+                        <div class="course-info-value">Online + Lab<br>Interactive</div>
+                    </div>
+                    <div class="course-info-item">
+                        <div class="course-info-icon">📜</div>
+                        <div class="course-info-label">Certificate</div>
+                        <div class="course-info-value">Completion<br>Certificate</div>
+                    </div>
+                </div>
+
+                <div class="course-detail-section">
+                    <h4>Learning Objectives</h4>
+                    <ul class="highlights-list" style="margin-bottom: 1rem;">
+                        <li>Master fundamental organic chemistry principles and concepts</li>
+                        <li>Understand molecular structure, bonding, and stereochemistry</li>
+                        <li>Learn systematic nomenclature and functional group chemistry</li>
+                        <li>Analyze reaction mechanisms and predict products</li>
+                        <li>Apply retrosynthetic analysis to design synthetic routes</li>
+                        <li>Gain insights into pharmaceutical and drug discovery applications</li>
+                    </ul>
+                </div>
+
+                <div class="course-detail-section">
+                    <h4>Course Topics</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+                        <div>
+                            <strong>Module 1-3:</strong> Structure & Bonding<br>
+                            <small>Atomic orbitals, hybridization, resonance, molecular shapes</small>
+                        </div>
+                        <div>
+                            <strong>Module 4-6:</strong> Functional Groups<br>
+                            <small>Alkanes, alkenes, alkynes, aromatics, nomenclature</small>
+                        </div>
+                        <div>
+                            <strong>Module 7-8:</strong> Stereochemistry<br>
+                            <small>Chirality, optical activity, conformational analysis</small>
+                        </div>
+                        <div>
+                            <strong>Module 9-10:</strong> Reactions & Synthesis<br>
+                            <small>Mechanisms, synthesis strategies, pharmaceutical applications</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-detail-section">
+                    <h4>Prerequisites & Requirements</h4>
+                    <p><strong>Prerequisites:</strong> General Chemistry I & II, Basic Mathematics<br>
+                    <strong>Materials:</strong> Wade Organic Chemistry textbook, Molecular model kit<br>
+                    <strong>Technology:</strong> Computer with internet access, webcam for exams</p>
+                </div>
+
+                <div class="course-detail-section">
+                    <h4>Course Pricing & Payment</h4>
+                    <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 1.5rem; border-radius: 15px; margin-bottom: 1.5rem;">
+                        <div style="text-align: center; margin-bottom: 1rem;">
+                            <span style="font-size: 2.5rem; font-weight: 700; color: #2c3e50;">৳10,000</span>
+                            <div style="color: #666; font-size: 1rem; margin-top: 0.5rem;">Bangladeshi Taka</div>
+                        </div>
+                        <div style="text-align: center; color: #666; font-size: 0.95rem;">
+                            <strong>Includes:</strong> All course materials, lab access, certificate, and lifetime access to recordings
+                        </div>
+                    </div>
+
+                    <div class="payment-methods">
+                        <h5 style="color: #2c3e50; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                            💳 Payment Options
+                        </h5>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+                            <div class="payment-option">
+                                <div class="payment-icon">💳</div>
+                                <div class="payment-info">
+                                    <div class="payment-method">Credit/Debit Card</div>
+                                    <div class="payment-desc">Visa, Mastercard, Amex</div>
+                                </div>
+                            </div>
+                            <div class="payment-option">
+                                <div class="payment-icon">🏦</div>
+                                <div class="payment-info">
+                                    <div class="payment-method">Bank Transfer</div>
+                                    <div class="payment-desc">Direct bank payment</div>
+                                </div>
+                            </div>
+                            <div class="payment-option">
+                                <div class="payment-icon">📱</div>
+                                <div class="payment-info">
+                                    <div class="payment-method">Mobile Banking</div>
+                                    <div class="payment-desc">bKash, Nagad, Rocket</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-detail-section">
+                    <h4>Registration Information</h4>
+                    <p>Ready to master organic chemistry? Choose your preferred payment method below. For questions about course content or scheduling, feel free to contact us directly.</p>
+                    <div class="payment-buttons">
+                        <button class="payment-btn" onclick="initiatePayment()">
+                            💳 Enroll Now & Pay - ৳10,000
+                        </button>
+                    </div>
+                    <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem; flex-wrap: wrap;">
+                        <a href="https://drive.google.com/file/d/1ymDsCGqoyXkl3Rj9kp6sL6C4v6NpV6mu/view" target="_blank" 
+                           style="background: linear-gradient(135deg, #95a5a6, #7f8c8d); color: white; padding: 0.8rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 500; transition: transform 0.3s ease; font-size: 0.95rem;"
+                           onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                            📄 Download Course Brochure
+                        </a>
+                        <a href="mailto:rauful.alam15@gmail.com?subject=Organic Chemistry Course Inquiry" 
+                           style="background: linear-gradient(135deg, #f39c12, #e67e22); color: white; padding: 0.8rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 500; transition: transform 0.3s ease; font-size: 0.95rem;"
+                           onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                            ✉️ Contact for Questions
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Key Contributions -->
+    <div class="modal-overlay" id="contributionsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalPosition">Position Title</h3>
+                <div class="position-info">
+                    <span id="modalCompany">Company</span> • <span id="modalDuration">Duration</span>
+                </div>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalContributions">
+                <!-- Contributions will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Payment functionality
+        function initiatePayment() {
+            // Simple payment simulation - in real implementation, integrate with payment processor
+            if (confirm('🎓 Ready to enroll in Fundamentals of Organic Chemistry?\n\nPrice: ৳10,000 (Bangladeshi Taka)\nDuration: 10 weeks, 30 hours total\n\nClick OK to proceed to secure payment, or Cancel to contact us for more information.')) {
+                // In a real implementation, this would redirect to a payment processor like Stripe, PayPal, etc.
+                alert('🚀 Redirecting to secure payment portal...\n\nFor now, please contact Dr. Alam directly at rauful.alam15@gmail.com to complete your enrollment.\n\nThank you for your interest!');
+                
+                // Open email as fallback
+                window.open('mailto:rauful.alam15@gmail.com?subject=Organic Chemistry Course Enrollment - Payment Ready&body=Hello Dr. Alam,%0D%0A%0D%0AI would like to enroll in the Fundamentals of Organic Chemistry course and am ready to make payment of ৳10,000.%0D%0A%0D%0APlease provide payment instructions and course start details.%0D%0A%0D%0AThank you!', '_blank');
+            }
+        }
+
+        // Course Modal functionality
+        function openCourseModal() {
+            const modal = document.getElementById('courseModal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCourseModal() {
+            const modal = document.getElementById('courseModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close course modal when clicking overlay
+        document.getElementById('courseModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeCourseModal();
+            }
+        });
+
+        // Modal functionality
+        function openModal(position, company, duration, contributions) {
+            const modal = document.getElementById('contributionsModal');
+            const modalPosition = document.getElementById('modalPosition');
+            const modalCompany = document.getElementById('modalCompany');
+            const modalDuration = document.getElementById('modalDuration');
+            const modalContributions = document.getElementById('modalContributions');
+
+            modalPosition.textContent = position;
+            modalCompany.textContent = company;
+            modalDuration.textContent = duration;
+
+            modalContributions.innerHTML = '';
+
+            contributions.forEach((contribution, index) => {
+                const contributionDiv = document.createElement('div');
+                contributionDiv.className = 'contribution-item';
+                contributionDiv.innerHTML = `
+                    <div class="contribution-icon">${index + 1}</div>
+                    <div class="contribution-text">${contribution}</div>
+                `;
+                modalContributions.appendChild(contributionDiv);
+            });
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('contributionsModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking overlay
+        document.getElementById('contributionsModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Initialize functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click handlers for contribution buttons
+            document.querySelectorAll('.contributions-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const position = this.getAttribute('data-position');
+                    const company = this.getAttribute('data-company');
+                    const duration = this.getAttribute('data-duration');
+                    const contributions = JSON.parse(this.getAttribute('data-contributions'));
+                    openModal(position, company, duration, contributions);
+                });
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            });
+        });
+    </script>
 </body>
-</html>name">Dr. Rauful Alam</span>
-<span class="blog-date">March 15, 2024</span>
-</div>
-</div>
-<div class="blog-engagement">
-<span class="comments">💬 12 comments</span>
-<span class="likes">❤️ 45 likes</span>
-</div>
-</div>
-</div>
+</html>
