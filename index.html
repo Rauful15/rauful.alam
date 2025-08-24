@@ -110,10 +110,12 @@ font-weight: 300;
 
 .hero .description {
 font-size: 1.1rem;
-max-width: 600px;
+max-width: 700px;
 margin: 0 auto;
 color: rgba(255, 255, 255, 0.8);
-line-height: 1.6;
+line-height: 1.8;
+text-align: center;
+padding: 0 20px;
 }
 
 /* Navigation */
@@ -197,6 +199,38 @@ background: linear-gradient(135deg, #3498db, #9b59b6);
 display: block;
 margin: 1rem auto;
 border-radius: 2px;
+}
+
+/* Section Title with Icon */
+.section-title-with-icon {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+margin-bottom: 3rem;
+}
+
+.section-icon {
+width: 80px;
+height: 80px;
+background: linear-gradient(135deg, #3498db, #9b59b6);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 2rem;
+color: white;
+margin-bottom: 1rem;
+box-shadow: 0 5px 20px rgba(52, 152, 219, 0.3);
+transition: transform 0.3s ease;
+}
+
+.section-icon:hover {
+transform: scale(1.1);
+}
+
+.section-title-with-icon .section-title {
+margin: 0;
 }
 
 /* Timeline Styles */
@@ -470,7 +504,7 @@ justify-content: flex-start;
 
 .timeline-content {
 background: rgba(255, 255, 255, 0.95);
-border-radius: 10px;
+border-radius: 15px;
 padding: 2rem;
 box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 position: relative;
@@ -478,6 +512,30 @@ width: calc(50% - 30px);
 max-width: 450px;
 transition: all 0.3s ease;
 z-index: 2;
+border: 1px solid #e0e0e0;
+border-left: 5px solid #3498db;
+}
+
+.timeline-content::before {
+content: '';
+position: absolute;
+top: 0;
+left: -5px;
+bottom: 0;
+width: 5px;
+background: linear-gradient(135deg, #3498db, #9b59b6);
+border-radius: 15px 0 0 15px;
+}
+
+.timeline-content::after {
+content: '';
+position: absolute;
+top: -1px;
+right: -1px;
+bottom: -1px;
+width: 1px;
+background: linear-gradient(135deg, #3498db, #9b59b6);
+border-radius: 0 15px 15px 0;
 }
 
 .timeline-content:hover {
@@ -581,6 +639,29 @@ font-size: 0.95rem;
 .timeline-item.left li {
 padding-left: 0;
 padding-right: 1.2rem;
+}
+
+/* Thesis Button */
+.thesis-btn {
+display: inline-block;
+background: linear-gradient(135deg, #3498db, #9b59b6);
+color: white;
+padding: 0.8rem 1.8rem;
+border-radius: 25px;
+text-decoration: none;
+font-size: 0.95rem;
+font-weight: 500;
+cursor: pointer;
+transition: all 0.3s ease;
+margin-top: 1rem;
+box-shadow: 0 3px 15px rgba(52, 152, 219, 0.3);
+}
+
+.thesis-btn:hover {
+transform: translateY(-2px);
+box-shadow: 0 5px 20px rgba(52, 152, 219, 0.4);
+color: white;
+background: linear-gradient(135deg, #2980b9, #8e44ad);
 }
 
 /* Key Contributions Button */
@@ -1363,8 +1444,8 @@ transform: translateY(0);
 <span style="display: none; position: absolute; inset: 0; align-items: center; justify-content: center; font-size: 3rem; font-weight: 300;">RA</span>
 </div>
 <h1>Dr. Rauful Alam</h1>
-<p class="subtitle">Medicinal Chemist & Drug Discovery Expert</p>
-<p class="description">Versatile and accomplished chemist with a Ph.D. in Organic Chemistry, specializing in designing and synthesizing small molecules for CNS drug discovery through innovative RNA splicing technology.</p>
+<p class="subtitle">Scientist | Teacher | Author</p>
+<p class="description">An expert medicinal chemist with a Ph.D. in Organic Chemistry, driving pre-clinical drug discovery research. Passionately advocating for the advancement of education and research culture in Bangladesh.</p>
 </div>
 </section>
 
@@ -1402,13 +1483,26 @@ transform: translateY(0);
 </div>
 </div>
 
+<!-- Inspirational Quote -->
+<div style="text-align: center; margin-bottom: 3rem; position: relative; z-index: 10;">
+<p style="font-style: italic; font-size: 1.2rem; color: #2c3e50; max-width: 700px; margin: 0 auto; line-height: 1.8; font-weight: 300; background: rgba(255,255,255,0.95); padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-left: 4px solid transparent; border-right: 4px solid transparent; border-image: linear-gradient(135deg, #3498db, #9b59b6) 1;">
+"A ship in harbor is safe, but that is not what ships are built for."
+<br><span style="font-size: 1rem; opacity: 0.7; margin-top: 1rem; display: inline-block;">— Unknown</span>
+</p>
+</div>
+
+<div class="section-title-with-icon">
+<div class="section-icon">
+🚀
+</div>
 <h2 class="section-title">Professional Journey</h2>
+</div>
 <div class="timeline">
 <div class="timeline-item left">
 <div class="timeline-content">
+<p class="duration">September 2025 - Present</p>
 <h3>Staff Scientist (Medicinal Chemistry)</h3>
 <p class="company"><a href="https://biologicalsciences.uchicago.edu/" target="_blank" style="color: #3498db; text-decoration: none;">Center for Chemical Biology and Therapeutics (CCBT), University of Chicago</a></p>
-<p class="duration">September 2025 - Present</p>
 <button class="contributions-btn" 
         data-position="Staff Scientist (Medicinal Chemistry)"
         data-company="Center for Chemical Biology and Therapeutics (CCBT), University of Chicago"
@@ -1422,9 +1516,9 @@ Key Contributions
 
 <div class="timeline-item right">
 <div class="timeline-content">
+<p class="duration">September 2023 - May 2024</p>
 <h3>Principal Scientist</h3>
 <p class="company"><a href="https://www.ptcbio.com/" target="_blank" style="color: #3498db; text-decoration: none;">PTC Therapeutics, NJ</a></p>
-<p class="duration">September 2023 - May 2024</p>
 <button class="contributions-btn"
         data-position="Principal Scientist"
         data-company="PTC Therapeutics, NJ"
@@ -1438,9 +1532,9 @@ Key Contributions
 
 <div class="timeline-item left">
 <div class="timeline-content">
+<p class="duration">March 2020 - August 2023</p>
 <h3>Senior Scientist</h3>
 <p class="company"><a href="https://www.ptcbio.com/" target="_blank" style="color: #3498db; text-decoration: none;">PTC Therapeutics, NJ</a></p>
-<p class="duration">March 2020 - August 2023</p>
 <button class="contributions-btn"
         data-position="Senior Scientist"
         data-company="PTC Therapeutics, NJ"
@@ -1454,9 +1548,9 @@ Key Contributions
 
 <div class="timeline-item right">
 <div class="timeline-content">
+<p class="duration">April 2018 - February 2020</p>
 <h3>Scientist-II</h3>
 <p class="company"><a href="https://www.ptcbio.com/" target="_blank" style="color: #3498db; text-decoration: none;">PTC Therapeutics, NJ</a></p>
-<p class="duration">April 2018 - February 2020</p>
 <button class="contributions-btn"
         data-position="Scientist-II"
         data-company="PTC Therapeutics, NJ"
@@ -1470,17 +1564,20 @@ Key Contributions
 
 <div class="timeline-item left">
 <div class="timeline-content">
+<p class="duration">September 2016 - March 2018</p>
 <h3>Postdoctoral Research Associate</h3>
 <p class="company">University of Pennsylvania, Philadelphia</p>
-<p class="duration">September 2016 - March 2018</p>
-<ul>
-<li>Developed novel synthetic methods for C-C and C-N bond construction under photoredox catalysis</li>
-<li>Worked extensively with High-Throughput Experimentation (HTE) center</li>
-<li>Presented quarterly research updates to support grant applications</li>
-<li>Advisor: Prof. Gary A. Molander</li>
-</ul>
+<p style="margin: 1rem 0;"><strong>Advisor:</strong> Prof. Gary A. Molander</p>
+<button class="contributions-btn"
+        data-position="Postdoctoral Research Associate"
+        data-company="University of Pennsylvania, Philadelphia"
+        data-duration="September 2016 - March 2018"
+        data-contributions='["Developed novel synthetic methods for C-C and C-N bond construction under photoredox catalysis","Worked extensively with High-Throughput Experimentation (HTE) center","Presented quarterly research updates to support grant applications"]'>
+Key Contributions
+</button>
 </div>
 <div class="timeline-dot"></div>
+</div>
 </div>
 </div>
 </section>
@@ -1549,16 +1646,10 @@ Key Contributions
 <h3>PhD in Organic Chemistry</h3>
 <p class="company">Stockholm University, Sweden</p>
 <p class="duration">January 2012 - March 2016</p>
-<p class="duration" style="margin-bottom: 1rem;"><strong>Advisor:</strong> Prof. Kálmán Szabó | <strong>PhD Examiner:</strong> Prof. Varinder K Aggarwal (Bristol University, UK)</p>
-<ul>
-<li>Developed several novel catalytic stereoselective allylboration methods, enabling the construction of multiple stereocenters in a single step</li>
-<li>Created strategies important for forging asymmetric C<sub>SP3</sub>-C<sub>SP3</sub> bonds that are powerful disconnections for pharmaceutical drug discovery</li>
-<li>Mentored three undergraduates and one exchange-graduate student, resulting in three research article publications</li>
-<li>Maintained chiral HPLC (Waters) set-up and Glovebox (Vigor), provided training for new users</li>
-<li>Awarded prestigious postdoctoral stipend (~$45,000/year) from Swedish Chemical Society</li>
-<li>Received seven travel grants totaling approximately $10,000</li>
-<li>Attended four ACS meetings and delivered oral and poster presentations</li>
-</ul>
+<p class="duration" style="margin-bottom: 1.5rem;"><strong>Advisor:</strong> Prof. Kálmán Szabó | <strong>PhD Examiner:</strong> Prof. Varinder K Aggarwal (Bristol University, UK)</p>
+<a href="https://su.diva-portal.org/smash/record.jsf?pid=diva2%3A861175&dswid=-7800" target="_blank" class="thesis-btn">
+📄 Read Full PhD Thesis
+</a>
 </div>
 <div class="timeline-dot"></div>
 </div>
@@ -1578,6 +1669,7 @@ Key Contributions
 <p class="company">University of Chittagong, Bangladesh</p>
 </div>
 <div class="timeline-dot"></div>
+</div>
 </div>
 </div>
 </section>
@@ -1614,9 +1706,11 @@ Key Contributions
 <p><strong>Mentoring:</strong> Trained students resulting in multiple publications</p>
 </div>
 </div>
+</div>
 </section>
 
 <section id="publications" class="fade-in">
+<div class="section-content">
 <h2 class="section-title">Selected Publications & Patents</h2>
 <div class="publications-grid">
 <div class="publication-card">
@@ -1652,9 +1746,11 @@ Key Contributions
 <p><strong>13 Peer-reviewed articles | 7 Lead authorship articles | 10+ Patent applications</strong></p>
 <a href="https://rauful-alam.blogspot.com/" class="pub-link" target="_blank" style="margin-top: 1rem; display: inline-block;">View Complete Publication List</a>
 </div>
+</div>
 </section>
 
 <section id="presentations" class="fade-in">
+<div class="section-content">
 <h2 class="section-title">Scientific Lectures and Presentations</h2>
 <div class="publications-grid">
 <div class="publication-card">
@@ -1725,9 +1821,11 @@ Key Contributions
 <div style="text-align: center; margin-top: 2rem;">
 <p><strong>11 International Scientific Presentations | Multiple Oral and Poster Sessions | Featured in Sci-Mix Sessions</strong></p>
 </div>
+</div>
 </section>
 
 <section id="blog" class="fade-in">
+<div class="section-content">
 <h2 class="section-title">Latest Blog Posts</h2>
 <div class="blog-grid">
 <article class="blog-card">
@@ -1740,32 +1838,6 @@ Drug Discovery
 <div class="blog-content">
 <h3>The Future of RNA Splicing in Drug Discovery</h3>
 <p class="blog-excerpt">RNA splicing modulation represents a paradigm shift in drug discovery, offering unprecedented opportunities to target previously "undruggable" proteins. By manipulating the splicing machinery, we can correct disease-causing mutations at the RNA level, potentially treating genetic disorders like Duchenne muscular dystrophy and spinal muscular atrophy. This approach bypasses traditional protein targeting limitations and opens new therapeutic avenues for rare diseases affecting millions worldwide.</p>
-<div class="blog-footer">
-<div class="blog-author">
-<div class="author-photo">RA</div>
-<div class="author-info">
-<span class="author-name">Dr. Rauful Alam</span>
-<span class="blog-date">March 15, 2024</span>
-</div>
-</div>
-<div class="blog-engagement">
-<span class="comments">💬 12 comments</span>
-<span class="likes">❤️ 45 likes</span>
-</div>
-</div>
-</div>
-</article>
-
-<article class="blog-card">
-<div class="blog-image">
-Medicinal Chemistry
-<div class="reading-time">
-<span>⏱️ 8 min read</span>
-</div>
-</div>
-<div class="blog-content">
-<h3>From Hit to Lead: Optimizing Small Molecules for CNS Targets</h3>
-<p class="blog-excerpt">A comprehensive guide to medicinal chemistry strategies for developing central nervous system drugs, including DMPK considerations and blood-brain barrier penetration...</p>
 <div class="blog-footer">
 <div class="blog-author">
 <div class="author-photo">RA</div>
@@ -1812,9 +1884,11 @@ Career Advice
 <div style="text-align: center; margin-top: 2rem;">
 <a href="https://rauful-alam.blogspot.com/" class="pub-link" target="_blank">View All Blog Posts</a>
 </div>
+</div>
 </section>
 
 <section id="contact" class="fade-in">
+<div class="section-content">
 <h2 class="section-title">Get In Touch</h2>
 <div class="contact-info">
 <div class="contact-item">
@@ -1833,6 +1907,7 @@ Career Advice
 <a href="#" target="_blank" class="social-icon" title="Facebook">
 📘
 </a>
+</div>
 </div>
 </div>
 </div>
@@ -2140,5 +2215,30 @@ dropdown.classList.toggle('active');
 });
 </script>
 </body>
-</html>Chemistry Insights</a>
-<a href="#" target="_blank">
+</html>name">Dr. Rauful Alam</span>
+<span class="blog-date">March 15, 2024</span>
+</div>
+</div>
+<div class="blog-engagement">
+<span class="comments">💬 12 comments</span>
+<span class="likes">❤️ 45 likes</span>
+</div>
+</div>
+</div>
+</article>
+
+<article class="blog-card">
+<div class="blog-image">
+Medicinal Chemistry
+<div class="reading-time">
+<span>⏱️ 8 min read</span>
+</div>
+</div>
+<div class="blog-content">
+<h3>From Hit to Lead: Optimizing Small Molecules for CNS Targets</h3>
+<p class="blog-excerpt">A comprehensive guide to medicinal chemistry strategies for developing central nervous system drugs, including DMPK considerations and blood-brain barrier penetration...</p>
+<div class="blog-footer">
+<div class="blog-author">
+<div class="author-photo">RA</div>
+<div class="author-info">
+<span class="author-
