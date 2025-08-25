@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Copy ENTIRE <head> section from main file -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Dr. Rauful Alam</title>
+    <style>
+        /* Copy ALL CSS from main file */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* ... entire CSS section ... */
+    </style>
+</head>
+<body>
+    <!-- Copy navigation -->
+    <nav id="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="index.html#experience">My Journey</a>
+                <div class="dropdown-content">
+                    <a href="index.html#experience">Professional Experience</a>
+                    <a href="index.html#education">Education</a>
+                    <a href="index.html#skills">Skills & Expertise</a>
+                    <a href="publications.html">Publications</a>
+                    <a href="index.html#presentations">Presentations</a>
+                </div>
+            </li>
+            <li><a href="index.html#courses">Courses</a></li>
+            <li class="dropdown">
+                <a href="index.html#blog">Blog</a>
+                <div class="dropdown-content">
+                    <a href="https://rauful-alam.blogspot.com/" target="_blank">Personal Blog</a>
+                    <a href="https://rauful-alam.blogspot.com/2016/12/publications.html" target="_blank">Research Publications</a>
+                    <a href="#" target="_blank">Career Advice</a>
+                </div>
+            </li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Mobile Navigation Toggle Button -->
+    <button class="mobile-nav-toggle" id="mobileNavToggle" onclick="toggleMobileNav()">☰</button>
+
+    <!-- Publications Section (remove id="publications") -->
+    <section style="padding-top: 8rem;">
+        <div class="section-content">
+            <div class="section-title-with-icon">
+                <div class="section-icon">📚</div>
+                <h2 class="section-title">Selected Publications</h2>
+            </div>
+            <div class="publications-grid">
+                <!-- Copy all publication cards -->
+                <div class="publication-card">
+                    <h4>Photoredox-catalyzed Direct Reductive Amination of Aldehydes without an External Hydrogen/Hydride Source</h4>
+                    <p class="authors"><strong>Alam, R.</strong>; Molander, A. G.</p>
+                    <p class="journal">Org. Lett., 2018, 20, 2680-2684</p>
+                    <a href="https://pubs.acs.org/doi/10.1021/acs.orglett.8b00895" class="pub-link" target="_blank">View Publication</a>
+                </div>
+                <!-- ... other publication cards ... -->
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <p><strong>13 Peer-reviewed articles | 7 Lead authorship articles | 10+ Patent applications</strong></p>
+                <a href="https://rauful-alam.blogspot.com/" class="pub-link" target="_blank" style="margin-top: 1rem; display: inline-block;">View Complete Publication List</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Copy scroll to top button -->
+    <div class="fab" onclick="scrollToTop()">
+        <div class="icon">↑</div>
+    </div>
+
+    <!-- Copy JavaScript functions -->
+    <script>
+        // Copy mobile navigation function
+        function toggleMobileNav() { /* ... */ }
+        
+        // Copy scroll to top function  
+        function scrollToTop() { /* ... */ }
+        
+        // Copy smooth scrolling code
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => { /* ... */ });
+    </script>
+</body>
+</html>
