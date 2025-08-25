@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Copy ENTIRE <head> section from main file -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publications - Dr. Rauful Alam</title>
-    <style>
-        /* Copy ALL CSS from main file */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        /* ... entire CSS section ... */
-    </style>
+    <link rel="stylesheet" href="style.css"> <!-- Use the same CSS as index.html -->
 </head>
 <body>
-    <!-- Copy navigation -->
+    <!-- Navigation -->
     <nav id="navbar">
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -22,7 +17,7 @@
                     <a href="index.html#experience">Professional Experience</a>
                     <a href="index.html#education">Education</a>
                     <a href="index.html#skills">Skills & Expertise</a>
-                    <a href="publications.html">Publications</a>
+                    <a href="publication.html">Publications</a>
                     <a href="index.html#presentations">Presentations</a>
                 </div>
             </li>
@@ -42,7 +37,7 @@
     <!-- Mobile Navigation Toggle Button -->
     <button class="mobile-nav-toggle" id="mobileNavToggle" onclick="toggleMobileNav()">☰</button>
 
-    <!-- Publications Section (remove id="publications") -->
+    <!-- Publications Section -->
     <section style="padding-top: 8rem;">
         <div class="section-content">
             <div class="section-title-with-icon">
@@ -50,14 +45,39 @@
                 <h2 class="section-title">Selected Publications</h2>
             </div>
             <div class="publications-grid">
-                <!-- Copy all publication cards -->
+
+                <!-- Card 1 -->
                 <div class="publication-card">
                     <h4>Photoredox-catalyzed Direct Reductive Amination of Aldehydes without an External Hydrogen/Hydride Source</h4>
                     <p class="authors"><strong>Alam, R.</strong>; Molander, A. G.</p>
                     <p class="journal">Org. Lett., 2018, 20, 2680-2684</p>
                     <a href="https://pubs.acs.org/doi/10.1021/acs.orglett.8b00895" class="pub-link" target="_blank">View Publication</a>
                 </div>
-                <!-- ... other publication cards ... -->
+
+                <!-- Card 2 -->
+                <div class="publication-card">
+                    <h4>Catalytic Asymmetric Allylboration of Indoles and Dihydroisoquinolines with Allylboronic Acids</h4>
+                    <p class="authors"><strong>Alam, R.</strong>; Diner, C.; Jonker, S.; Eriksson, L.; Szabó, J. K.</p>
+                    <p class="journal">Angew. Chem. Int. Ed. 2016, 55, 14417-14421</p>
+                    <a href="http://onlinelibrary.wiley.com/doi/10.1002/anie.201608605/full" class="pub-link" target="_blank">View Publication</a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="publication-card">
+                    <h4>Synthesis of Adjacent Quaternary Stereocenters by Catalytic Asymmetric Allylboration</h4>
+                    <p class="authors"><strong>Alam, R.</strong>; Vollgraff, T.; Eriksson, L.; Szabó, J. K.</p>
+                    <p class="journal">J. Am. Chem. Soc. 2015, 137, 11262-11265</p>
+                    <a href="http://pubs.acs.org/doi/abs/10.1021/jacs.5b07498" class="pub-link" target="_blank">View Publication</a>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="publication-card">
+                    <h4>Stereoselective Intermolecular Allylic C–H Trifluoroacetoxylation of Functionalized Alkenes</h4>
+                    <p class="authors"><strong>Alam, R.</strong>; Pilarski, T. L.; Pershagen, E.; Szabó, J. K.</p>
+                    <p class="journal">J. Am. Chem. Soc., 2012, 134, 8778-8781</p>
+                    <a href="https://pubs.acs.org/doi/full/10.1021/ja302457p" class="pub-link" target="_blank">View Publication</a>
+                </div>
+
             </div>
 
             <div style="text-align: center; margin-top: 2rem;">
@@ -67,21 +87,31 @@
         </div>
     </section>
 
-    <!-- Copy scroll to top button -->
+    <!-- Scroll to top button -->
     <div class="fab" onclick="scrollToTop()">
         <div class="icon">↑</div>
     </div>
 
-    <!-- Copy JavaScript functions -->
+    <!-- JavaScript -->
     <script>
-        // Copy mobile navigation function
-        function toggleMobileNav() { /* ... */ }
-        
-        // Copy scroll to top function  
-        function scrollToTop() { /* ... */ }
-        
-        // Copy smooth scrolling code
-        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => { /* ... */ });
+        function toggleMobileNav() {
+            const navbar = document.getElementById("navbar");
+            navbar.classList.toggle("open");
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Smooth scroll (only works if there are #anchors, safe to keep)
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
 </body>
 </html>
